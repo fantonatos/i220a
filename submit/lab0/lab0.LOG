@@ -1,0 +1,315 @@
+Script started on 2020-08-27 10:11:31-04:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="97" LINES="26"]
+fantona1@remote20:~/tmp/lab0$ [Kfantona1@remote20:~/tmp/lab0$ ls !?[K[K~/.ssh
+known_hosts
+fantona1@remote20:~/tmp/lab0$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/fantona1/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/fantona1/.ssh/id_rsa.
+Your public key has been saved in /home/fantona1/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:/Sk2f9vZ6MthH9UwklNQH7p2u2GhJp4/AVKjFc/zGjQ fantona1@remote20
+The key's randomart image is:
++---[RSA 2048]----+
+|           .ooo. |
+|           +oo...|
+|          + =Eo .|
+|         + ..o=o.|
+|        S o .+ +o|
+|           ..o= +|
+|          +.o++= |
+|         ..+++o=*|
+|           oo+B=+|
++----[SHA256]-----+
+fantona1@remote20:~/tmp/lab0$ ls
+lab0.LOG
+fantona1@remote20:~/tmp/lab0$ lsssh-keygen[1Pls ~/.ssh
+id_rsa	id_rsa.pub  known_hosts
+fantona1@remote20:~/tmp/lab0$ 
+fantona1@remote20:~/tmp/lab0$ 
+fantona1@remote20:~/tmp/lab0$ ssh-copyu[K-id fantona1@remote.cs.bingha,t[K[Kmto[K[K[K[K[K[K[K[K[K[K[K[K[K[Ke
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/fantona1/.ssh/id_rsa.pub"
+The authenticity of host 'remote (128.226.114.199)' can't be established.
+ECDSA key fingerprint is SHA256:UEIh1TASIC96TC1hhxVbkVS0DrddNKHk7Q2nzgDCt+Y.
+Are you sure you want to continue connecting (yes/no)? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+fantona1@remote's password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'fantona1@remote'"
+and check to make sure that only the key(s) you wanted were added.
+
+fantona1@remote20:~/tmp/lab0$ ssh-copy-id fantona1@remote.cs.binghamton.edu
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/fantona1/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+
+/usr/bin/ssh-copy-id: WARNING: All keys were skipped because they already exist on the remote system.
+		(if you think this is a mistake, you may want to use -f option)
+
+fantona1@remote20:~/tmp/lab0$ ssh-copy-id fantona1@remote.cs.binghamton.edu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@`[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P fantona1@remote.cs.binghamton.edu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pfantona1@remote.cs.binghamton.edu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pantona1@remote.cs.binghamton.edu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pntona1@remote.cs.binghamton.edu[1Ptona1@remote.cs.binghamton.edu[1Pona1@remote.cs.binghamton.edu[1Pna1@remote.cs.binghamton.edu[1Pa1@remote.cs.binghamton.edu[1P1@remote.cs.binghamton.edu[1P@remote.cs.binghamton.edu[1Premote.cs.binghamton.edu[1Pemote.cs.binghamton.edu[1Pmote.cs.binghamton.edu[1Pote.cs.binghamton.edu[1Pte.cs.binghamton.edu[1Pe.cs.binghamton.edu[1P.cs.binghamton.edu[1Pcs.binghamton.edu[1Ps.binghamton.edu[1P.binghamton.edu[1Pbinghamton.edu[1Pinghamton.edu[1Pnghamton.edu[1Pghamton.edu[1Phamton.edu[1Pamton.edu[1Pmton.edu[1Pton.edu[1Pon.edu[1Pn.edu[1P.edu[1Pedu[1Pdu[1Pu[K
+fantona1@remote20:~/tmp/lab0$ 
+fantona1@remote20:~/tmp/lab0$ 
+fantona1@remote20:~/tmp/lab0$ mkdir -p ~/projects
+fantona1@remote20:~/tmp/lab0$ cd ~/projects
+fantona1@remote20:~/projects$ ls
+fantona1@remote20:~/projects$ git clone ssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit clone ssh://user@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git[1P [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git  [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cf@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.git [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.g[1@i[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn@remote.cs.binghamton.edu/~umrigar/git-repos/cs220.[1@g[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca@remote.cs.binghamton.edu/~umrigar/git-repos/cs220[1@.[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1@remote.cs.binghamton.edu/~umrigar/git-repos/cs22[1@0[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+Cloning into 'cs220'...
+remote: Enumerating objects: 261, done.[K
+remote: Counting objects:   0% (1/261)[Kremote: Counting objects:   1% (3/261)[Kremote: Counting objects:   2% (6/261)[Kremote: Counting objects:   3% (8/261)[Kremote: Counting objects:   4% (11/261)[Kremote: Counting objects:   5% (14/261)[Kremote: Counting objects:   6% (16/261)[Kremote: Counting objects:   7% (19/261)[Kremote: Counting objects:   8% (21/261)[Kremote: Counting objects:   9% (24/261)[Kremote: Counting objects:  10% (27/261)[Kremote: Counting objects:  11% (29/261)[Kremote: Counting objects:  12% (32/261)[Kremote: Counting objects:  13% (34/261)[Kremote: Counting objects:  14% (37/261)[Kremote: Counting objects:  15% (40/261)[Kremote: Counting objects:  16% (42/261)[Kremote: Counting objects:  17% (45/261)[Kremote: Counting objects:  18% (47/261)[Kremote: Counting objects:  19% (50/261)[Kremote: Counting objects:  20% (53/261)[Kremote: Counting objects:  21% (55/261)[Kremote: Counting objects:  22% (58/261)[Kremote: Counting objects:  23% (61/261)[Kremote: Counting objects:  24% (63/261)[Kremote: Counting objects:  25% (66/261)[Kremote: Counting objects:  26% (68/261)[Kremote: Counting objects:  27% (71/261)[Kremote: Counting objects:  28% (74/261)[Kremote: Counting objects:  29% (76/261)[Kremote: Counting objects:  30% (79/261)[Kremote: Counting objects:  31% (81/261)[Kremote: Counting objects:  32% (84/261)[Kremote: Counting objects:  33% (87/261)[Kremote: Counting objects:  34% (89/261)[Kremote: Counting objects:  35% (92/261)[Kremote: Counting objects:  36% (94/261)[Kremote: Counting objects:  37% (97/261)[Kremote: Counting objects:  38% (100/261)[Kremote: Counting objects:  39% (102/261)[Kremote: Counting objects:  40% (105/261)[Kremote: Counting objects:  41% (108/261)[Kremote: Counting objects:  42% (110/261)[Kremote: Counting objects:  43% (113/261)[Kremote: Counting objects:  44% (115/261)[Kremote: Counting objects:  45% (118/261)[Kremote: Counting objects:  46% (121/261)[Kremote: Counting objects:  47% (123/261)[Kremote: Counting objects:  48% (126/261)[Kremote: Counting objects:  49% (128/261)[Kremote: Counting objects:  50% (131/261)[Kremote: Counting objects:  51% (134/261)[Kremote: Counting objects:  52% (136/261)[Kremote: Counting objects:  53% (139/261)[Kremote: Counting objects:  54% (141/261)[Kremote: Counting objects:  55% (144/261)[Kremote: Counting objects:  56% (147/261)[Kremote: Counting objects:  57% (149/261)[Kremote: Counting objects:  58% (152/261)[Kremote: Counting objects:  59% (154/261)[Kremote: Counting objects:  60% (157/261)[Kremote: Counting objects:  61% (160/261)[Kremote: Counting objects:  62% (162/261)[Kremote: Counting objects:  63% (165/261)[Kremote: Counting objects:  64% (168/261)[Kremote: Counting objects:  65% (170/261)[Kremote: Counting objects:  66% (173/261)[Kremote: Counting objects:  67% (175/261)[Kremote: Counting objects:  68% (178/261)[Kremote: Counting objects:  69% (181/261)[Kremote: Counting objects:  70% (183/261)[Kremote: Counting objects:  71% (186/261)[Kremote: Counting objects:  72% (188/261)[Kremote: Counting objects:  73% (191/261)[Kremote: Counting objects:  74% (194/261)[Kremote: Counting objects:  75% (196/261)[Kremote: Counting objects:  76% (199/261)[Kremote: Counting objects:  77% (201/261)[Kremote: Counting objects:  78% (204/261)[Kremote: Counting objects:  79% (207/261)[Kremote: Counting objects:  80% (209/261)[Kremote: Counting objects:  81% (212/261)[Kremote: Counting objects:  82% (215/261)[Kremote: Counting objects:  83% (217/261)[Kremote: Counting objects:  84% (220/261)[Kremote: Counting objects:  85% (222/261)[Kremote: Counting objects:  86% (225/261)[Kremote: Counting objects:  87% (228/261)[Kremote: Counting objects:  88% (230/261)[Kremote: Counting objects:  89% (233/261)[Kremote: Counting objects:  90% (235/261)[Kremote: Counting objects:  91% (238/261)[Kremote: Counting objects:  92% (241/261)[Kremote: Counting objects:  93% (243/261)[Kremote: Counting objects:  94% (246/261)[Kremote: Counting objects:  95% (248/261)[Kremote: Counting objects:  96% (251/261)[Kremote: Counting objects:  97% (254/261)[Kremote: Counting objects:  98% (256/261)[Kremote: Counting objects:  99% (259/261)[Kremote: Counting objects: 100% (261/261)[Kremote: Counting objects: 100% (261/261), done.[K
+remote: Compressing objects:   0% (1/224)[Kremote: Compressing objects:   1% (3/224)[Kremote: Compressing objects:   2% (5/224)[Kremote: Compressing objects:   3% (7/224)[Kremote: Compressing objects:   4% (9/224)[Kremote: Compressing objects:   5% (12/224)[Kremote: Compressing objects:   6% (14/224)[Kremote: Compressing objects:   7% (16/224)[Kremote: Compressing objects:   8% (18/224)[Kremote: Compressing objects:   9% (21/224)[Kremote: Compressing objects:  10% (23/224)[Kremote: Compressing objects:  11% (25/224)[Kremote: Compressing objects:  12% (27/224)[Kremote: Compressing objects:  13% (30/224)[Kremote: Compressing objects:  14% (32/224)[Kremote: Compressing objects:  15% (34/224)[Kremote: Compressing objects:  16% (36/224)[Kremote: Compressing objects:  17% (39/224)[Kremote: Compressing objects:  18% (41/224)[Kremote: Compressing objects:  19% (43/224)[Kremote: Compressing objects:  20% (45/224)[Kremote: Compressing objects:  21% (48/224)[Kremote: Compressing objects:  22% (50/224)[Kremote: Compressing objects:  23% (52/224)[Kremote: Compressing objects:  24% (54/224)[Kremote: Compressing objects:  25% (56/224)[Kremote: Compressing objects:  26% (59/224)[Kremote: Compressing objects:  27% (61/224)[Kremote: Compressing objects:  28% (63/224)[Kremote: Compressing objects:  29% (65/224)[Kremote: Compressing objects:  30% (68/224)[Kremote: Compressing objects:  31% (70/224)[Kremote: Compressing objects:  32% (72/224)[Kremote: Compressing objects:  33% (74/224)[Kremote: Compressing objects:  34% (77/224)[Kremote: Compressing objects:  35% (79/224)[Kremote: Compressing objects:  36% (81/224)[Kremote: Compressing objects:  37% (83/224)[Kremote: Compressing objects:  38% (86/224)[Kremote: Compressing objects:  39% (88/224)[Kremote: Compressing objects:  40% (90/224)[Kremote: Compressing objects:  41% (92/224)[Kremote: Compressing objects:  42% (95/224)[Kremote: Compressing objects:  43% (97/224)[Kremote: Compressing objects:  44% (99/224)[Kremote: Compressing objects:  45% (101/224)[Kremote: Compressing objects:  46% (104/224)[Kremote: Compressing objects:  47% (106/224)[Kremote: Compressing objects:  48% (108/224)[Kremote: Compressing objects:  49% (110/224)[Kremote: Compressing objects:  50% (112/224)[Kremote: Compressing objects:  51% (115/224)[Kremote: Compressing objects:  52% (117/224)[Kremote: Compressing objects:  53% (119/224)[Kremote: Compressing objects:  54% (121/224)[Kremote: Compressing objects:  55% (124/224)[Kremote: Compressing objects:  56% (126/224)[Kremote: Compressing objects:  57% (128/224)[Kremote: Compressing objects:  58% (130/224)[Kremote: Compressing objects:  59% (133/224)[Kremote: Compressing objects:  60% (135/224)[Kremote: Compressing objects:  61% (137/224)[Kremote: Compressing objects:  62% (139/224)[Kremote: Compressing objects:  63% (142/224)[Kremote: Compressing objects:  64% (144/224)[Kremote: Compressing objects:  65% (146/224)[Kremote: Compressing objects:  66% (148/224)[Kremote: Compressing objects:  67% (151/224)[Kremote: Compressing objects:  68% (153/224)[Kremote: Compressing objects:  69% (155/224)[Kremote: Compressing objects:  70% (157/224)[Kremote: Compressing objects:  71% (160/224)[Kremote: Compressing objects:  72% (162/224)[Kremote: Compressing objects:  73% (164/224)[Kremote: Compressing objects:  74% (166/224)[Kremote: Compressing objects:  75% (168/224)[Kremote: Compressing objects:  76% (171/224)[Kremote: Compressing objects:  77% (173/224)[Kremote: Compressing objects:  78% (175/224)[Kremote: Compressing objects:  79% (177/224)[Kremote: Compressing objects:  80% (180/224)[Kremote: Compressing objects:  81% (182/224)[Kremote: Compressing objects:  82% (184/224)[Kremote: Compressing objects:  83% (186/224)[Kremote: Compressing objects:  84% (189/224)[Kremote: Compressing objects:  85% (191/224)[Kremote: Compressing objects:  86% (193/224)[Kremote: Compressing objects:  87% (195/224)[Kremote: Compressing objects:  88% (198/224)[Kremote: Compressing objects:  89% (200/224)[Kremote: Compressing objects:  90% (202/224)[Kremote: Compressing objects:  91% (204/224)[Kremote: Compressing objects:  92% (207/224)[Kremote: Compressing objects:  93% (209/224)[Kremote: Compressing objects:  94% (211/224)[Kremote: Compressing objects:  95% (213/224)[Kremote: Compressing objects:  96% (216/224)[Kremote: Compressing objects:  97% (218/224)[Kremote: Compressing objects:  98% (220/224)[Kremote: Compressing objects:  99% (222/224)[Kremote: Compressing objects: 100% (224/224)[Kremote: Compressing objects: 100% (224/224), done.[K
+Receiving objects:   0% (1/261)   Receiving objects:   1% (3/261)   Receiving objects:   2% (6/261)   Receiving objects:   3% (8/261)   Receiving objects:   4% (11/261)   Receiving objects:   5% (14/261)   Receiving objects:   6% (16/261)   Receiving objects:   7% (19/261)   Receiving objects:   8% (21/261)   Receiving objects:   9% (24/261)   Receiving objects:  10% (27/261)   Receiving objects:  11% (29/261)   Receiving objects:  12% (32/261)   Receiving objects:  13% (34/261)   Receiving objects:  14% (37/261)   Receiving objects:  15% (40/261)   Receiving objects:  16% (42/261)   Receiving objects:  17% (45/261)   Receiving objects:  18% (47/261)   Receiving objects:  19% (50/261)   Receiving objects:  20% (53/261)   Receiving objects:  21% (55/261)   Receiving objects:  22% (58/261)   Receiving objects:  23% (61/261)   Receiving objects:  24% (63/261)   Receiving objects:  25% (66/261)   Receiving objects:  26% (68/261)   Receiving objects:  27% (71/261)   Receiving objects:  28% (74/261)   Receiving objects:  29% (76/261)   Receiving objects:  30% (79/261)   Receiving objects:  31% (81/261)   Receiving objects:  32% (84/261)   Receiving objects:  33% (87/261)   Receiving objects:  34% (89/261)   Receiving objects:  35% (92/261)   Receiving objects:  36% (94/261)   Receiving objects:  37% (97/261)   Receiving objects:  38% (100/261)   Receiving objects:  39% (102/261)   Receiving objects:  40% (105/261)   Receiving objects:  41% (108/261)   Receiving objects:  42% (110/261)   Receiving objects:  43% (113/261)   Receiving objects:  44% (115/261)   Receiving objects:  45% (118/261)   Receiving objects:  46% (121/261)   Receiving objects:  47% (123/261)   Receiving objects:  48% (126/261)   Receiving objects:  49% (128/261)   Receiving objects:  50% (131/261)   Receiving objects:  51% (134/261)   Receiving objects:  52% (136/261)   Receiving objects:  53% (139/261)   Receiving objects:  54% (141/261)   Receiving objects:  55% (144/261)   Receiving objects:  56% (147/261)   Receiving objects:  57% (149/261)   Receiving objects:  58% (152/261)   Receiving objects:  59% (154/261)   Receiving objects:  60% (157/261)   Receiving objects:  61% (160/261)   Receiving objects:  62% (162/261)   Receiving objects:  63% (165/261)   Receiving objects:  64% (168/261)   Receiving objects:  65% (170/261)   Receiving objects:  66% (173/261)   Receiving objects:  67% (175/261)   Receiving objects:  68% (178/261)   Receiving objects:  69% (181/261)   Receiving objects:  70% (183/261)   Receiving objects:  71% (186/261)   Receiving objects:  72% (188/261)   Receiving objects:  73% (191/261)   Receiving objects:  74% (194/261)   Receiving objects:  75% (196/261)   Receiving objects:  76% (199/261)   Receiving objects:  77% (201/261)   Receiving objects:  78% (204/261)   Receiving objects:  79% (207/261)   Receiving objects:  80% (209/261)   Receiving objects:  81% (212/261)   Receiving objects:  82% (215/261)   Receiving objects:  83% (217/261)   Receiving objects:  84% (220/261)   Receiving objects:  85% (222/261)   Receiving objects:  86% (225/261)   Receiving objects:  87% (228/261)   Receiving objects:  88% (230/261)   Receiving objects:  89% (233/261)   Receiving objects:  90% (235/261)   Receiving objects:  91% (238/261)   Receiving objects:  92% (241/261)   Receiving objects:  93% (243/261)   Receiving objects:  94% (246/261)   Receiving objects:  95% (248/261)   Receiving objects:  96% (251/261)   remote: Total 261 (delta 70), reused 153 (delta 25), pack-reused 0[K
+Receiving objects:  97% (254/261)   Receiving objects:  98% (256/261)   Receiving objects:  99% (259/261)   Receiving objects: 100% (261/261)   Receiving objects: 100% (261/261), 1.62 MiB | 24.07 MiB/s, done.
+Resolving deltas:   0% (0/70)   Resolving deltas:   7% (5/70)   Resolving deltas:  11% (8/70)   Resolving deltas:  12% (9/70)   Resolving deltas:  14% (10/70)   Resolving deltas:  15% (11/70)   Resolving deltas:  18% (13/70)   Resolving deltas:  20% (14/70)   Resolving deltas:  24% (17/70)   Resolving deltas:  31% (22/70)   Resolving deltas:  32% (23/70)   Resolving deltas:  37% (26/70)   Resolving deltas:  40% (28/70)   Resolving deltas:  41% (29/70)   Resolving deltas:  42% (30/70)   Resolving deltas:  44% (31/70)   Resolving deltas:  45% (32/70)   Resolving deltas:  47% (33/70)   Resolving deltas:  51% (36/70)   Resolving deltas:  52% (37/70)   Resolving deltas:  54% (38/70)   Resolving deltas:  55% (39/70)   Resolving deltas:  58% (41/70)   Resolving deltas:  60% (42/70)   Resolving deltas:  64% (45/70)   Resolving deltas:  72% (51/70)   Resolving deltas:  80% (56/70)   Resolving deltas:  81% (57/70)   Resolving deltas:  82% (58/70)   Resolving deltas:  84% (59/70)   Resolving deltas:  85% (60/70)   Resolving deltas:  90% (63/70)   Resolving deltas:  95% (67/70)   Resolving deltas: 100% (70/70)   Resolving deltas: 100% (70/70), done.
+fantona1@remote20:~/projects$ cd ~
+fantona1@remote20:~$ 
+fantona1@remote20:~$ 
+fantona1@remote20:~$ ln -s proe[Kjecrs[K[Kts/cs220
+fantona1@remote20:~$ ln -s projects/cs220 .
+ln: failed to create symbolic link './cs220': File exists
+fantona1@remote20:~$ ls
+ Arduino   Documents   Lab02	       Lab08    lab3.s	  Music      projects	 tmp
+ cs220	   Downloads  'Lab03 adding'   lab1.s   lab4.s	  Pictures   Public	 Videos
+ Desktop   Lab01       Lab07	       lab2.s   Maildir   practice   Templates
+fantona1@remote20:~$ ln[K[Kcd ~/git-repos/cs220
+bash: cd: /home/fantona1/git-repos/cs220: No such file or directory
+fantona1@remote20:~$ cd cs220
+fantona1@remote20:~/cs220$ git pull
+Already up to date.
+fantona1@remote20:~/cs220$ ls
+announce.html  assets  docs	  hws	      index.umt  misc	   README.md  umt.make
+announce.umt   bin     exercises  index.html  labs	 projects  slides
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ git log
+[?1h=[33mcommit 286ad21f5007ce034c6f61a6b63af13208c1df43[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Aug 26 18:22:09 2020 -0400[m
+[m
+    minor addition[m
+[m
+[33mcommit 31361defeb26a162a674fae11ced0676aa018d2d[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Aug 26 15:51:33 2020 -0400[m
+[m
+    rm extraneous links[m
+[m
+[33mcommit 453106f62a39ee0ee87fcd2ba0e3c0268facefc5[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Aug 26 15:45:58 2020 -0400[m
+[m
+    class corrections[m
+[m
+[33mcommit 930607349019be282816dbfaaaa598017763c3b6[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Aug 26 12:53:25 2020 -0400[m
+[m
+    zoom class conduct[m
+[m
+[33mcommit 21c45128155536bb53912487e899ec9fdf4ad254[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Aug 26 10:11:32 2020 -0400[m
+[m
+    updates[m
+[m
+[33mcommit 89141e3cad39b0345a1c7684259d266ca0db22bc[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Aug 26 02:44:00 2020 -0400[m
+[m
+    updates[m
+[m
+[33mcommit f2c12a4278386c3a0f76882c6866e56ce170ac49[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Wed Aug 26 02:06:54 2020 -0400[m
+[m
+    course set up?[m
+[m
+[33mcommit ceb395a4f5eeabcb02d537d8aefd88e80f6ed526[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+Date:   Tue Aug 25 23:07:48 2020 -0400[m
+[m
+    mention login updates course repo[m
+[m
+[33mcommit 0ce97b1e56786401ab638ee514f961dea6e446c2[m[m
+Author: zerksis umrigar <umrigar@binghamton.edu>[m
+:[K[K[?1l>fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ vi ~/.progi[K[K[K[K[K[K[K[K[K[K[Kmcedit[K[K[K[K[K[Kmcedit ~/.profile
+bash: mcedit: command not found
+fantona1@remote20:~/cs220$ mc
+bash: mc: command not found
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ vi ~/.profile
+[?1000h[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;51r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[51;1H"~/.profile" [New File][2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;1H[94m~                                                                                                     [3;1H~                                                                                                     [4;1H~                                                                                                     [5;1H~                                                                                                     [6;1H~                                                                                                     [7;1H~                                                                                                     [8;1H~                                                                                                     [9;1H~                                                                                                     [10;1H~                                                                                                     [11;1H~                                                                                                     [12;1H~                                                                                                     [13;1H~                                                                                                     [14;1H~                                                                                                     [15;1H~                                                                                                     [16;1H~                                                                                                     [17;1H~                                                                                                     [18;1H~                                                                                                     [19;1H~                                                                                                     [20;1H~                                                                                                     [21;1H~                                                                                                     [22;1H~                                                                                                     [23;1H~                                                                                                     [24;1H~                                                                                                     [25;1H~                                                                                                     [26;1H~                                                                                                     [27;1H~                                                                                                     [28;1H~                                                                                                     [29;1H~                                                                                                     [30;1H~                                                                                                     [31;1H~                                                                                                     [32;1H~                                                                                                     [33;1H~                                                                                                     [34;1H~                                                                                                     [35;1H~                                                                                                     [36;1H~                                                                                                     [37;1H~                                                                                                     [38;1H~                                                                                                     [39;1H~                                                                                                     [40;1H~                                                                                                     [41;1H~                                                                                                     [42;1H~                                                                                                     [43;1H~                                                                                                     [44;1H~                                                                                                     [45;1H~                                                                                                     [46;1H~                                                                                                     [47;1H~                                                                                                     [48;1H~                                                                                                     [49;1H~                                                                                                     [50;1H~                                                                                                     [m[51;85H0,0-1[9CAll[1;1H[?25h[?25l[51;75Hi[1;1H[51;75H [1;1H[51;1H[1m-- INSERT --[m[51;14H[K[51;85H0,1[11CAll[1;1H[?25h[?25l.[51;85H1,2[1;2H[?25h[?25l[38;5;130m. [m[51;87H3[1;3H[?25h[?25l~[51;87H4[1;4H[?25h[?25lu[51;87H5[1;5H[?25h[?25lm[51;87H6[1;6H[?25h[?25lr[51;87H7[1;7H[?25h[?25li[51;87H8[1;8H[?25h[?25lg[51;87H9[1;9H[?25h[?25la[51;87H10[1;10H[?25h[?25lr[51;88H1[1;11H[?25h[?25l/[51;88H2[1;12H[?25h[?25lc[51;88H3[1;13H[?25h[?25ls[51;88H4[1;14H[?25h[?25l2[51;88H5[1;15H[?25h[?25l2[51;88H6[1;16H[?25h[?25l0[51;88H7[1;17H[?25h[?25l/[51;88H8[1;18H[?25h[?25lb[51;88H9[1;19H[?25h[?25li[51;87H20[1;20H[?25h[?25ln[51;88H1[1;21H[?25h[?25l/[51;88H2[1;22H[?25h[?25ls[51;88H3[1;23H[?25h[?25lt[51;88H4[1;24H[?25h[?25lu[51;88H5[1;25H[?25h[?25ld[51;88H6[1;26H[?25h[?25le[51;88H7[1;27H[?25h[?25ln[51;88H8[1;28H[?25h[?25lt[51;88H9[1;29H[?25h[?25l.[51;87H30[1;30H[?25h[?25lp[51;88H1[1;31H[?25h[?25lr[51;88H2[1;32H[?25h[?25lo[51;88H3[1;33H[?25h[?25lf[51;88H4[1;34H[?25h[?25li[51;88H5[1;35H[?25h[?25ll[51;88H6[1;36H[?25h[?25le[51;88H7[1;37H[?25h[51;1H[K[1;36H[?25l[51;75H^[[1;36H[51;75H  [1;37H[51;85H1,36[10CAll[1;36H[?25h[?25l[51;75H:[1;36H[51;75H[K[51;1H:[?2004h[?25hq[?25l[?25h[?25l[51;2H[K[51;2H[?25hw[?25l[?25h[?25l"~/.profile" [New] 1L, 37C written[1;36H[51;85H1,36[10CAll[51;85H[K[51;85H1,36[10CAll[1;36H[?25h[?25l[51;75H:[1;36H[51;1H[K[51;1H:[?2004h[?25hq[?25l[?25h[?25l[?1000l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[51;1H[K[51;1H[?2004l[?1l>[?25h[?1049l[23;0;0tfantona1@remote20:~/cs220$ vi .bachrc
+[?1000h[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;51r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[51;1H".bachrc" [New File][2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[2;1H[94m~                                                                                                     [3;1H~                                                                                                     [4;1H~                                                                                                     [5;1H~                                                                                                     [6;1H~                                                                                                     [7;1H~                                                                                                     [8;1H~                                                                                                     [9;1H~                                                                                                     [10;1H~                                                                                                     [11;1H~                                                                                                     [12;1H~                                                                                                     [13;1H~                                                                                                     [14;1H~                                                                                                     [15;1H~                                                                                                     [16;1H~                                                                                                     [17;1H~                                                                                                     [18;1H~                                                                                                     [19;1H~                                                                                                     [20;1H~                                                                                                     [21;1H~                                                                                                     [22;1H~                                                                                                     [23;1H~                                                                                                     [24;1H~                                                                                                     [25;1H~                                                                                                     [26;1H~                                                                                                     [27;1H~                                                                                                     [28;1H~                                                                                                     [29;1H~                                                                                                     [30;1H~                                                                                                     [31;1H~                                                                                                     [32;1H~                                                                                                     [33;1H~                                                                                                     [34;1H~                                                                                                     [35;1H~                                                                                                     [36;1H~                                                                                                     [37;1H~                                                                                                     [38;1H~                                                                                                     [39;1H~                                                                                                     [40;1H~                                                                                                     [41;1H~                                                                                                     [42;1H~                                                                                                     [43;1H~                                                                                                     [44;1H~                                                                                                     [45;1H~                                                                                                     [46;1H~                                                                                                     [47;1H~                                                                                                     [48;1H~                                                                                                     [49;1H~                                                                                                     [50;1H~                                                                                                     [m[51;85H0,0-1[9CAll[1;1H[?25h[?25l[51;75H.[1;1H[51;75H [1;1H[?25h[?25l[51;75Hi[1;1H[51;75H [1;1H[51;1H[1m-- INSERT --[m[51;13H[K[51;85H0,1[11CAll[1;1H[?25h[?25l.[51;85H1,2[1;2H[?25h[?25l[51;87H3[1;3H[?25h[?25l~[51;87H4[1;4H[?25h[?25lu[51;87H5[1;5H[?25h[?25lm[51;87H6[1;6H[?25h[?25lr[51;87H7[1;7H[?25h[?25li[51;87H8[1;8H[?25h[?25lg[51;87H9[1;9H[?25h[?25la[51;87H10[1;10H[?25h[?25lr[51;88H1[1;11H[?25h[?25l/[51;88H2[1;12H[?25h[?25lc[51;88H3[1;13H[?25h[?25ls[51;88H4[1;14H[?25h[?25l2[51;88H5[1;15H[?25h[?25l2[51;88H6[1;16H[?25h[?25l0[51;88H7[1;17H[?25h[?25l/[51;88H8[1;18H[?25h[?25lb[51;88H9[1;19H[?25h[?25li[51;87H20[1;20H[?25h[?25ln[51;88H1[1;21H[?25h[?25l/[51;88H2[1;22H[?25h[?25ls[51;88H3[1;23H[?25h[?25lt[51;88H4[1;24H[?25h[?25lu[51;88H5[1;25H[?25h[?25ld[51;88H6[1;26H[?25h[?25le[51;88H7[1;27H[?25h[?25ln[51;88H8[1;28H[?25h[?25lt[51;88H9[1;29H[?25h[?25l.[51;87H30[1;30H[?25h[?25lr[51;88H1[1;31H[?25h[?25lc[51;88H2[1;32H[?25h[51;1H[K[1;31H[?25l[51;75H^[[1;31H[51;75H  [1;32H[51;85H1,31[10CAll[1;31H[?25h[?25l[51;75H:[1;31H[51;75H[K[51;1H:[?2004h[?25hw[?25l[?25h[?25l".bachrc" [New] 1L, 32C written[1;31H[51;85H1,31[10CAll[51;85H[K[51;85H1,31[10CAll[1;31H[?25h[?25l[51;75H:[1;31H[51;1H[K[51;1H:[?2004h[?25hq[?25l[?25h[?25l[?1000l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[51;1H[K[51;1H[?2004l[?1l>[?25h[?1049l[23;0;0tfantona1@remote20:~/cs220$ vi .bachrc
+[?1000h[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;51r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[51;1H".bachrc" 1L, 32C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H. ~umrigar/cs220/bin/student.rc
+[94m~                                                                                                     [3;1H~                                                                                                     [4;1H~                                                                                                     [5;1H~                                                                                                     [6;1H~                                                                                                     [7;1H~                                                                                                     [8;1H~                                                                                                     [9;1H~                                                                                                     [10;1H~                                                                                                     [11;1H~                                                                                                     [12;1H~                                                                                                     [13;1H~                                                                                                     [14;1H~                                                                                                     [15;1H~                                                                                                     [16;1H~                                                                                                     [17;1H~                                                                                                     [18;1H~                                                                                                     [19;1H~                                                                                                     [20;1H~                                                                                                     [21;1H~                                                                                                     [22;1H~                                                                                                     [23;1H~                                                                                                     [24;1H~                                                                                                     [25;1H~                                                                                                     [26;1H~                                                                                                     [27;1H~                                                                                                     [28;1H~                                                                                                     [29;1H~                                                                                                     [30;1H~                                                                                                     [31;1H~                                                                                                     [32;1H~                                                                                                     [33;1H~                                                                                                     [34;1H~                                                                                                     [35;1H~                                                                                                     [36;1H~                                                                                                     [37;1H~                                                                                                     [38;1H~                                                                                                     [39;1H~                                                                                                     [40;1H~                                                                                                     [41;1H~                                                                                                     [42;1H~                                                                                                     [43;1H~                                                                                                     [44;1H~                                                                                                     [45;1H~                                                                                                     [46;1H~                                                                                                     [47;1H~                                                                                                     [48;1H~                                                                                                     [49;1H~                                                                                                     [50;1H~                                                                                                     [m[51;85H1,31[10CAll[1;31H[?25h[?25l[51;75H^[[1;31H[51;75H  [1;31H[51;75H^[[1;31H[51;75H  [1;31H[?25h[?25l[51;75H:[1;31H[51;1H[K[51;1H:[?2004h[?25h![?25l[?25hq[?25l[?25h[?25l:!q[?2004l[?1l>[?25h[?1049l[23;0;0t
+[?1000l[?2004l/bin/bash: q: command not found
+[?1000h[?2004h
+shell returned 127
+
+Press ENTER or type command to continue[?1000l[?1000h[?1049h[22;0;0t[?1h=[?2004h[?25l[1;31H[27m[23m[29m[m[H[2J[1;1H. ~umrigar/cs220/bin/student.rc
+[94m~                                                                                                     [3;1H~                                                                                                     [4;1H~                                                                                                     [5;1H~                                                                                                     [6;1H~                                                                                                     [7;1H~                                                                                                     [8;1H~                                                                                                     [9;1H~                                                                                                     [10;1H~                                                                                                     [11;1H~                                                                                                     [12;1H~                                                                                                     [13;1H~                                                                                                     [14;1H~                                                                                                     [15;1H~                                                                                                     [16;1H~                                                                                                     [17;1H~                                                                                                     [18;1H~                                                                                                     [19;1H~                                                                                                     [20;1H~                                                                                                     [21;1H~                                                                                                     [22;1H~                                                                                                     [23;1H~                                                                                                     [24;1H~                                                                                                     [25;1H~                                                                                                     [26;1H~                                                                                                     [27;1H~                                                                                                     [28;1H~                                                                                                     [29;1H~                                                                                                     [30;1H~                                                                                                     [31;1H~                                                                                                     [32;1H~                                                                                                     [33;1H~                                                                                                     [34;1H~                                                                                                     [35;1H~                                                                                                     [36;1H~                                                                                                     [37;1H~                                                                                                     [38;1H~                                                                                                     [39;1H~                                                                                                     [40;1H~                                                                                                     [41;1H~                                                                                                     [42;1H~                                                                                                     [43;1H~                                                                                                     [44;1H~                                                                                                     [45;1H~                                                                                                     [46;1H~                                                                                                     [47;1H~                                                                                                     [48;1H~                                                                                                     [49;1H~                                                                                                     [50;1H~                                                                                                     [m[51;85H1,31[10CAll[1;31H[?25h[?25l[51;75H:[1;31H[51;75H[K[51;1H:[?2004h[?25hq[?25l[?25h![?25l[?25h[?25l[?1000l[?2004l[23;2t[23;1t[22;2t[22;1t[23;2t[23;1t[?2004l[?1l>[?25h[?1049l[23;0;0t
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ 
+fantona1@remote20:~/cs220$ cd ..[K[K~
+fantona1@remote20:~$ ls
+ Arduino   Documents   Lab02	       Lab08    lab3.s	  Music      projects	 tmp
+ cs220	   Downloads  'Lab03 adding'   lab1.s   lab4.s	  Pictures   Public	 Videos
+ Desktop   Lab01       Lab07	       lab2.s   Maildir   practice   Templates
+fantona1@remote20:~$ cd projects
+fantona1@remote20:~/projects$ git clone https://github.com/fantonatos/i220a.git
+Cloning into 'i220a'...
+Username for 'https://github.com': fantonatos
+Password for 'https://fantonatos@github.com': 
+warning: You appear to have cloned an empty repository.
+fantona1@remote20:~/projects$ ls[K[Kcd i220a
+fantona1@remote20:~/projects/i220a$ ls
+fantona1@remote20:~/projects/i220a$ 
+fantona1@remote20:~/projects/i220a$ 
+fantona1@remote20:~/projects/i220a$ cd ..
+fantona1@remote20:~/projects$ cd
+fantona1@remote20:~$ lkn[K[Kn -s projects/i220a .,[K
+fantona1@remote20:~$ ls
+ Arduino   Documents   Lab01	       Lab07    lab2.s	 Maildir    practice   Templates
+ cs220	   Downloads   Lab02	       Lab08    lab3.s	 Music	    projects   tmp
+ Desktop   i220a      'Lab03 adding'   lab1.s   lab4.s	 Pictures   Public     Videos
+fantona1@remote20:~$ cd cs220
+fantona1@remote20:~/cs220$ ls
+announce.html  assets  docs	  hws	      index.umt  misc	   README.md  umt.make
+announce.umt   bin     exercises  index.html  labs	 projects  slides
+fantona1@remote20:~/cs220$ cd ..
+fantona1@remote20:~$ 
+fantona1@remote20:~$ 
+fantona1@remote20:~$ ls
+ Arduino   Documents   Lab01	       Lab07    lab2.s	 Maildir    practice   Templates
+ cs220	   Downloads   Lab02	       Lab08    lab3.s	 Music	    projects   tmp
+ Desktop   i220a      'Lab03 adding'   lab1.s   lab4.s	 Pictures   Public     Videos
+fantona1@remote20:~$ 
+fantona1@remote20:~$ 
+fantona1@remote20:~$ mkdir is[K220a/submit
+fantona1@remote20:~$ ls i220a.sum[K[K[K[K/sum[Kbmit
+fantona1@remote20:~$ ls
+ Arduino   Documents   Lab01	       Lab07    lab2.s	 Maildir    practice   Templates
+ cs220	   Downloads   Lab02	       Lab08    lab3.s	 Music	    projects   tmp
+ Desktop   i220a      'Lab03 adding'   lab1.s   lab4.s	 Pictures   Public     Videos
+fantona1@remote20:~$  ls[1Ps[Kls i220a/submit[3@mkdir[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ..[K[K[K
+fantona1@remote20:~$ 
+fantona1@remote20:~$ 
+fantona1@remote20:~$ cd i220a
+fantona1@remote20:~/i220a$ 
+fantona1@remote20:~/i220a$ 
+fantona1@remote20:~/i220a$ 
+fantona1@remote20:~/i220a$ git t[Kstatus
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+fantona1@remote20:~/i220a$ git commit -a 'just a test'
+fatal: Paths with -a does not make sense.
+fantona1@remote20:~/i220a$ git commit -a 'just a test'[C[C[C[C[C[C[C[1P[1@m
+On branch master
+
+Initial commit
+
+nothing to commit
+fantona1@remote20:~/i220a$ giut [K[K[Kt push
+error: src refspec refs/heads/master does not match any.
+[31merror: failed to push some refs to 'https://github.com/fantonatos/i220a.git'
+[mfantona1@remote20:~/i220a$ mk[K[Ktouch one[K[K[Kkeystoen[K[K[K[K[K[K[K[K[K txt[K[K[Kuntil[Ktled [K.txt[K[K[K[K
+fantona1@remote20:~/i220a$ git add -All
+error: unknown switch `l'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --chmod (+|-)x        override the executable bit of the listed files
+
+fantona1@remote20:~/i220a$ git add -A
+fantona1@remote20:~/i220a$ git commit -m 'just a test'
+[master (root-commit) 906f110] just a test
+ Committer: Fotis Antonatos <fantona1@cs.binghamton.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 untitled
+fantona1@remote20:~/i220a$ giy [K[Kt push
+Username for 'https://github.com': fantonatos
+Password for 'https://fantonatos@github.com': 
+Enumerating objects: 3, done.
+Counting objects:  33% (1/3)   Counting objects:  66% (2/3)   Counting objects: 100% (3/3)   Counting objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 218 bytes | 218.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/fantonatos/i220a.git
+ * [new branch]      master -> master
+fantona1@remote20:~/i220a$ cd
+fantona1@remote20:~$ 
+fantona1@remote20:~$ 
+fantona1@remote20:~$ ls -dl ~/cs220 ~/i220qa[K[Ka
+lrwxrwxrwx 1 fantona1 fantona1 14 Aug 27 10:16 /home/fantona1/cs220 -> projects/cs220
+lrwxrwxrwx 1 fantona1 fantona1 14 Aug 27 10:27 /home/fantona1/i220a -> projects/i220a
+fantona1@remote20:~$ ls -l ~/.ssh ~/cs220 ~/i220a
+lrwxrwxrwx 1 fantona1 fantona1 14 Aug 27 10:16 /home/fantona1/cs220 -> projects/cs220
+lrwxrwxrwx 1 fantona1 fantona1 14 Aug 27 10:27 /home/fantona1/i220a -> projects/i220a
+
+/home/fantona1/.ssh:
+total 16
+-rw------- 1 fantona1 fantona1  399 Aug 27 10:13 authorized_keys
+-rw------- 1 fantona1 fantona1 1823 Aug 27 10:12 id_rsa
+-rw-r----- 1 fantona1 fantona1  399 Aug 27 10:12 id_rsa.pub
+-rw-r--r-- 1 fantona1 fantona1 1110 Aug 27 10:13 known_hosts
+fantona1@remote20:~$ cd ~/i220a
+fantona1@remote20:~/i220a$ git checkout -b o[Klab0
+Switched to a new branch 'lab0'
+fantona1@remote20:~/i220a$ mkdir -p sum[Kbmit
+fantona1@remote20:~/i220a$ exit
+
+Script done on 2020-08-27 10:34:01-04:00 [COMMAND_EXIT_CODE="0"]
