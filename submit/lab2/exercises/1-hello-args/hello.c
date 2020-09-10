@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void
+static void 
 say_hello(const char *name)
 {
   printf("hello %s\n", name);
 }
 
-int 
+int
 main(int argc, const char *argv[])
 {
   if (argc == 1) {
@@ -15,7 +15,7 @@ main(int argc, const char *argv[])
     exit(1);
   }
   else {
-    for (int i = 1; i <= argc; i++) {
+    for (int i = 1; i < argc; i++) {
       say_hello(argv[i]);
     }
   }
