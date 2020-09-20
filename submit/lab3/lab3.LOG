@@ -1,0 +1,451 @@
+Script started on 2020-09-20 18:08:34-04:00 [TERM="xterm-256color" TTY="/dev/pts/13" COLUMNS="120" LINES="31"]
+fantona1@remote02:~/i220a/submit/lab3$ 
+fantona1@remote02:~/i220a/submit/lab3$ 
+fantona1@remote02:~/i220a/submit/lab3$ midr[K[K[Kkdir dir
+fantona1@remote02:~/i220a/submit/lab3$ ls
+dir  exercises	lab3.LOG
+fantona1@remote02:~/i220a/submit/lab3$ rm dir
+rm: cannot remove 'dir': Is a directory
+fantona1@remote02:~/i220a/submit/lab3$ rm -r dir
+fantona1@remote02:~/i220a/submit/lab3$ ls
+exercises  lab3.LOG
+fantona1@remote02:~/i220a/submit/lab3$ 
+fantona1@remote02:~/i220a/submit/lab3$ 
+fantona1@remote02:~/i220a/submit/lab3$ cd exercises
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ mkdir dir
+fantona1@remote02:~/i220a/submit/lab3/exercises$ touch t1.c T1.c v.c v1.s[1P[1@s[C[C[C[C[C[C[C[C[C x.c dir/t2.c dir/T2.s1 dir/t3
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls
+dir  t1.c  T1.s  v1.s  v.c  x.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls -l
+total 0
+drwxr-x--- 2 fantona1 fantona1 54 Sep 20 18:10 dir
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 t1.c
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 T1.s
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 v1.s
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 v.c
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 x.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls -tl
+total 0
+drwxr-x--- 2 fantona1 fantona1 54 Sep 20 18:10 dir
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 x.c
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 v1.s
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 v.c
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 T1.s
+-rw-r----- 1 fantona1 fantona1  0 Sep 20 18:10 t1.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls T*
+T1.s
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls dir/*.?
+dir/t2.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls dir/*.?[K*
+dir/t2.c  dir/T2.s1
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls [t-v]*.c
+t1.c  v.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls /[Kd[K/bin/?{[K[-[Kp-s]*
+/bin/cp    /bin/csh   /bin/ip  /bin/lsblk  /bin/openvt	/bin/ss    /bin/ypdomainname  /bin/zsh5
+/bin/cpio  /bin/grep  /bin/ls  /bin/lsmod  /bin/ps	/bin/true  /bin/zsh
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls /bin/?[p-s]*[K
+/bin/cp  /bin/ip  /bin/ls  /bin/ps  /bin/ss
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls /etc *rc
+ls: cannot access '*rc': No such file or directory
+/etc:
+3270			       ghostscript		   mail.rc		      request-key.d
+a2ps.cfg		       gimp			   manpath.config	      resolv.conf
+a2ps-site.cfg		       git-buildpackage		   matplotlibrc		      resolvconf
+acpi			       glvnd			   matplotlibrc2	      resolv.conf.class
+adduser.conf		       gnashpluginrc		   mediaprm		      resolv.conf.external
+adjtime			       gnashrc			   mercurial		      resolv.conf.internal
+aliases			       gnashthumbnailrc		   mime.types		      rlwrap
+alsa			       gnome			   minicom		      rmt
+alternatives		       gnome-vfs-2.0		   mke2fs.conf		      rpc
+anacrontab		       gnome-vfs-mime-magic	   modprobe.d		      rsyslog.conf
+apache2			       GNUstep			   modules		      rsyslog.d
+apm			       go-mmproxy		   modules-load.d	      rsyslog-haproxy.conf
+apparmor		       groff			   monit		      rsyslog-normal.conf
+apparmor.d		       groovy			   motd			      runit
+apt			       group			   mtab			      samba
+apt-venv.conf		       group-			   mtools.conf		      sane.d
+at.deny			       gshadow			   Muttrc		      sbclrc
+at-spi2			       gshadow-			   Muttrc.d		      scite
+autoconf2.13		       gss			   mysql		      screenrc
+avahi			       gssapi_mech.conf		   nanorc		      securetty
+bash.bashrc		       gssapi_mech.conf.dpkg-dist  netconf		      security
+bash_completion		       gtk-2.0			   netconfig		      selinux
+bash_completion.d	       gtk-3.0			   netgroup		      sensors3.conf
+bindresvport.blacklist	       hddtemp.db		   netscsid.conf	      sensors.d
+binfmt.d		       hdparm.conf		   network		      services
+bluetooth		       highlight		   NetworkManager	      sgml
+bogofilter.cf		       host.conf		   networks		      shadow
+bonobo-activation	       hostname			   nftables.conf	      shadow-
+bootchartd.conf		       hosts			   nscd.conf		      shells
+ca-certificates		       hosts.allow		   nslcd.conf		      skel
+ca-certificates.conf	       hosts.class		   nslcd.conf.buster-upgrade  slsh.rc
+ca-certificates.conf.dpkg-old  hosts.deny		   nslcd.conf.class	      smartd.conf
+calendar		       hosts.external		   nslcd.conf.linux	      smartmontools
+chatscripts		       hosts.internal		   nsswitch.conf	      smi.conf
+chktexrc		       idmapd.conf		   ntp.conf		      snmp
+chromium		       idmapd.conf.ucf-dist	   ntp.conf.dpkg-old	      sound
+chromium.d		       ifplugd			   nvcc.profile		      speech-dispatcher
+cifs-utils		       ImageMagick-6		   nvidia		      ssh
+common-lisp		       init			   nxagent		      ssl
+complete.tcsh		       init.d			   ocamlfind.conf	      staff-group-for-usr-local
+console			       initramfs-tools		   ODBCDataSources	      stunnel
+console-setup		       inputrc			   odbc.ini		      subgid
+cowpoke.conf		       insserv			   odbcinst.ini		      subgid-
+cracklib		       insserv.conf		   openal		      subuid
+cron.d			       insserv.conf.d		   OpenCL		      subuid-
+cron.daily		       installed_packages	   openmpi		      subversion
+cron.hourly		       iproute2			   opensc		      sudoers
+cron.monthly		       iscsi			   openvpn		      sudoers.d
+crontab			       issue			   opt			      sudoers.old
+cron.weekly		       issue.net		   os-release		      sudoers.save
+cruft			       java			   PackageKit		      sv
+csh			       java-10-oracle		   pam.conf		      sysctl.conf
+csh.cshrc		       java-11-oracle		   pam.d		      sysctl.d
+csh.login		       java-8-oracle		   pam_ldap.conf	      sysfs.conf
+csh.logout		       jed.d			   pam_ldap.conf.class	      sysfs.d
+cupshelpers		       jython			   pam_ldap.conf.linux	      sysstat
+cvsdeb.conf		       kernel			   papersize		      systemd
+dat.conf		       kernel-img.conf		   passwd		      terminfo
+dbus-1			       krb5.conf		   passwd-		      tex4ht
+debconf.conf		       krb5.keytab		   pbuilder		      texmf
+debian_version		       latex2html.conf		   pbuilderrc		      thunderbird
+debsums-ignore		       LatexMk			   perl			      tigervnc
+debtree			       ldap			   php			      timezone
+default			       ld.so.cache		   piuparts		      timidity
+deluser.conf		       ld.so.conf		   pm			      tmpfiles.d
+devscripts.conf		       ld.so.conf.d		   polkit-1		      ucf.conf
+dhcp			       libao.conf		   postgresql-common	      udev
+dictionaries-common	       libaudit.conf		   ppp			      udisks2
+dirmngr			       libblockdev		   printcap		      ufw
+discover.conf.d		       libccid_Info.plist	   profile		      updatedb.conf
+discover-modprobe.conf	       libgda-5.0		   profile.d		      update-motd.d
+dkms			       libibverbs.d		   protocols		      UPower
+dleyna-server-service.conf     libnl-3			   pulse		      usb_modeswitch.conf
+doc-base		       libnss-ldap.conf		   purple		      usb_modeswitch.d
+dpkg			       libnss-ldap.conf.class	   python		      vbox
+dpkg-list		       libnss-ldap.conf.linux	   python2.7		      vdpau_wrapper.cfg
+dput.cf			       libpaper.d		   python3		      video_format
+e2scrub.conf		       libreoffice		   python3.5		      vim
+eclipse.ini		       lightdm			   python3.7		      visualvm
+emacs			       lighttpd			   qemu-ifdown		      vmware-tools
+email-addresses		       lisp-config.lisp		   qemu-ifup		      vnc.conf
+environment		       lldpd.d			   quilt.quiltrc	      vulkan
+environment.d		       locale.alias		   quotagrpadmins	      w3m
+ethertypes		       locale.gen		   quotatab		      warnquota.conf
+exim4			       localtime		   R			      wgetrc
+fail2ban		       logcheck			   racket		      wildmidi
+fdmount.conf		       login.defs		   rarfiles.lst		      wireshark
+firebird		       login.warn		   rc0.d		      wodim.conf
+firefox-esr		       logrotate.conf		   rc1.d		      wpa_supplicant
+fonts			       logrotate.conf.dpkg-old	   rc2.d		      X11
+freeipmi		       logrotate.d		   rc3.d		      x2go
+fstab			       logrotate.d.save		   rc4.d		      xattr.conf
+fstab.save		       ltrace.conf		   rc5.d		      xdg
+fstab.save.1		       lynx			   rc6.d		      xfce4
+fuse.conf		       machine-id		   rc.local		      xml
+gai.conf		       magic			   rcS.d		      xpdf
+gamin			       magic.mime		   reader.conf.d	      xprofile
+gconf			       mailcap			   rearj.cfg		      zsh
+gdb			       mailcap.order		   reportbug.conf
+geoclue			       mailname			   request-key.conf
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls /etc *rc/ *rc[1P*rc
+/etc/bash.bashrc  /etc/gnashpluginrc	 /etc/inputrc	    /etc/Muttrc      /etc/quilt.quiltrc  /etc/slsh.rc
+/etc/chktexrc	  /etc/gnashrc		 /etc/mail.rc	    /etc/nanorc      /etc/sbclrc	 /etc/wgetrc
+/etc/csh.cshrc	  /etc/gnashthumbnailrc  /etc/matplotlibrc  /etc/pbuilderrc  /etc/screenrc
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls /etc/*rc[C[C[C[K[K[K[K[K[K[K[K[K[K[K
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls dir[K[K[K/bin/???
+/bin/cat  /bin/csh  /bin/dir  /bin/pwd	/bin/red  /bin/sed  /bin/tar  /bin/zsh
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls dir
+t2.c  T2.s1  t3
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls -l dir
+total 0
+-rw-r----- 1 fantona1 fantona1 0 Sep 20 18:10 t2.c
+-rw-r----- 1 fantona1 fantona1 0 Sep 20 18:10 T2.s1
+-rw-r----- 1 fantona1 fantona1 0 Sep 20 18:10 t3
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls dir -t
+t3  T2.s1  t2.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls ditr[K[Kr -lt
+total 0
+-rw-r----- 1 fantona1 fantona1 0 Sep 20 18:10 t3
+-rw-r----- 1 fantona1 fantona1 0 Sep 20 18:10 T2.s1
+-rw-r----- 1 fantona1 fantona1 0 Sep 20 18:10 t2.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ [Kfantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls > lo[Ks.go[K[Klog
+fantona1@remote02:~/i220a/submit/lab3/exercises$ cat ls.log
+dir
+ls.log
+t1.c
+T1.s
+v1.s
+v.c
+x.c
+fantona1@remote02:~/i220a/submit/lab3/exercises$ cat > cat.log
+test text
+fantona1@remote02:~/i220a/submit/lab3/exercises$ cat cat.log
+test text
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls dir >> ls.log
+fantona1@remote02:~/i220a/submit/lab3/exercises$ cort[K[K[Ka t[K[Kt ls.log
+dir
+ls.log
+t1.c
+T1.s
+v1.s
+v.c
+x.c
+t2.c
+T2.s1
+t3
+fantona1@remote02:~/i220a/submit/lab3/exercises$ cat l[K< ls.log
+dir
+ls.log
+t1.c
+T1.s
+v1.s
+v.c
+x.c
+t2.c
+T2.s1
+t3
+fantona1@remote02:~/i220a/submit/lab3/exercises$ w[Kls | wc -1
+wc: invalid option -- '1'
+Try 'wc --help' for more information.
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls | wc -1[Kl
+8
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls /bin/c* | wc -l
+9
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls /bin/c* | wc -l[K[K[K[K[K[K[K[K[K[K???? | wc -l
+23
+fantona1@remote02:~/i220a/submit/lab3/exercises$  ls /bin/c* > bin-c.log
+fantona1@remote02:~/i220a/submit/lab3/exercises$ cat bin.c[K[K-c.log | wc -l
+9
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls / _R[K[K-Re -Rt -Rx -R[1P -Rx -R[1P -Rc -R* -R[C[C[C | wc -l
+ls: cannot open directory '/etc/polkit-1/localauthority': Permission denied
+ls: cannot open directory '/etc/ssl/private': Permission denied
+ls: cannot open directory '/etc/systemd/system/apparmor.service.d': Permission denied
+ls: cannot open directory '/etc/systemd/system/x2goserver.service.d': Permission denied
+ls: cannot open directory '/etc/x2go/x2gosql/passwords': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/desktop': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-10': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-11': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-12': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-15': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-17': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-18': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-19': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-21': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-22': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-23': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-5': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/panel/launcher-9': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/terminal': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/xfconf/xfce-perchannel-xml': Permission denied
+ls: cannot open directory '/etc/xdg/new-xfce4/xfwm4': Permission denied
+5199
+fantona1@remote02:~/i220a/submit/lab3/exercises$ man [K[K[K[K
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls \[K| tr [:upper:}[K]
+tr: missing operand after ‘[:upper:]’
+Two strings must be given when translating.
+Try 'tr --help' for more information.
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls | tr [:upper:][K[K[K[K[K[K[K[K[K[K[K[Ktr
+tr: missing operand
+Try 'tr --help' for more information.
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls | tr upper
+tr: missing operand after ‘upper’
+Two strings must be given when translating.
+Try 'tr --help' for more information.
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls | tr upper[C[1P[1@>
+ls: cannot access 'upper': No such file or directory
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls > tr upper[C[1@([C[C[C[C[C[C[C[C)
+bash: syntax error near unexpected token `('
+fantona1@remote02:~/i220a/submit/lab3/exercises$ ls > (tr upper)[C[C[C[1P[1P[1P[1@|[1@ [C[C[C[C[C[C[C[C[C~[K[1P> tr upper|[C[C[C[C[C[C[C[C[C[K [:upper:][K[K[K[K[K[K[Klower:'[K\[K] [:upper;[K;[K:]
+BIN-C.LOG
+CAT.LOG
+DIR
+LS.LOG
+T1.C
+T1.S
+TR
+V1.S
+V.C
+X.C
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ 
+fantona1@remote02:~/i220a/submit/lab3/exercises$ exit
+
+Script done on 2020-09-20 18:57:07-04:00 [COMMAND_EXIT_CODE="0"]
