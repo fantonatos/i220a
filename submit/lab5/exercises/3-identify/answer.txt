@@ -1,0 +1,1 @@
+mystery.o cutts off past the 20th bit. Input 0xFFFFF is fine, but a 6th hex digit will be cutt off by mistery.o
