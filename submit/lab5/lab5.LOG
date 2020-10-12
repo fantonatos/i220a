@@ -1,0 +1,799 @@
+Script started on 2020-10-04 15:21:17-04:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="120" LINES="30"]
+fantona1@remote01:~/i220a/submit/lab5$ [Kfantona1@remote01:~/i220a/submit/lab5$ [Kfantona1@remote01:~/i220a/submit/lab5$ [Kfantona1@remote01:~/i220a/submit/lab5$ [Kfantona1@remote01:~/i220a/submit/lab5$ [Kfantona1@remote01:~/i220a/submit/lab5$ [Kfantona1@remote01:~/i220a/submit/lab5$ 
+fantona1@remote01:~/i220a/submit/lab5$ 
+fantona1@remote01:~/i220a/submit/lab5$ ls
+exercises  lab5.LOG
+fantona1@remote01:~/i220a/submit/lab5$ cd exercises/
+fantona1@remote01:~/i220a/submit/lab5/exercises$ cd 1-uints/
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ nano uints.c
+[?1049h[22;0;0t[1;51r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[49;41H(B[0;7m[ Reading File ](B[m[49;47H(B[0;7m 15 lines ](B[m[H(B[0;7m  GNU nano 3.2                                 uints.c                                           [1;96H(B[m[50d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[51d(B[0;7m^X(B[m Exit[51;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line[49d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[5d[34m/** Read integer's from stdin and print out value as int or short in(B[0m[42m [6d(B[0;1m[34m *  both decimal and hex.[7d */[8d(B[0m[32mint[39m(B[m main() {[9;3H(B[0;1m[33mwhile[39m(B[m (1) {[10;5H[32munsigned[39m(B[m [32mint[39m(B[m i;[11;5H[32munsigned[39m(B[m [32mshort[39m(B[m s;[12;5H(B[0;1m[33mif[39m(B[m (scanf((B[0;1m[33m"%d"[39m(B[m, &i) != 1) [35mbreak[39m(B[m;[13;5Hs = ([32munsigned[39m(B[m [32mshort[39m(B[m)i;[14;5Hprintf((B[0;1m[33m"uint = %u (0x%x); ushort = %u (0x%x)\n"[39m(B[m, i, i, s, s);[15;3H}[16d[35mreturn[39m(B[m 0;[17d}[3d[?12l[?25h[?25l[49d[J[51;97H[?12l[?25h[51;1H[?1049l[23;0;0t[?1l>fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ make[K[K[K[Kls
+Makefile  uints.c
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ make ui[K[K[K
+cc -g -Wall -std=c11    uints.c   -o uints
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ cat N[KMakefile
+CFLAGS = -g -Wall -std=c11
+
+uints:
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ make uit[Kt[Knts
+make: 'uints' is up to date.
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ ./uints
+1
+uint = 1 (0x1); ushort = 1 (0x1)
+2
+uint = 2 (0x2); ushort = 2 (0x2)
+3
+uint = 3 (0x3); ushort = 3 (0x3)
+4
+uint = 4 (0x4); ushort = 4 (0x4)
+5
+uint = 5 (0x5); ushort = 5 (0x5)
+6
+uint = 6 (0x6); ushort = 6 (0x6)
+76
+uint = 76 (0x4c); ushort = 76 (0x4c)
+8
+uint = 8 (0x8); ushort = 8 (0x8)
+65536
+uint = 65536 (0x10000); ushort = 0 (0x0)
+^[[A^[[B        65535
+uint = 65535 (0xffff); ushort = 65535 (0xffff)
+^[[A    37895246
+uint = 37895246 (0x2423c4e); ushort = 15438 (0x3c4e)
+3524067893207895463407852693407852634078526
+uint = 4294967295 (0xffffffff); ushort = 65535 (0xffff)
+3478952637895426378952463478952634789526347895263789524637895246376842953782654937865249347895263789524635247689
+uint = 4294967295 (0xffffffff); ushort = 65535 (0xffff)
+543768293785246937854968543726987694352786354923785469237895462378546297854639273895467854637854693785463784637856433978546234789526785694337854629367895428754639285746932876954387564932786547856439785694378546392785463578463587463954387658473678659438796532497645342368543657378546347895263789524637895246367895437854693789546378946537895246378546938547693785465784633789546746385378524636785249378952463247586932476859378524693789524637546823785246937895246378952463785463785463785463785463785246367852437854637895462378952467869345237895467869345278963452678934527869354786935248679352467893524786352487695437869352487694876935428769352478693548769352487693456789
+uint = 4294967295 (0xffffffff); ushort = 65535 (0xffff)
+
+
+
+
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/1-uints$ cd ../2-ints/
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ ls
+ints.c	Makefile
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ cat ints.c
+#include <stdio.h>
+
+int main() {
+  while (1) {
+    int i;
+    short s;
+    if (scanf("%d", &i) != 1) break;
+    s = (short)i;
+    printf("int = %d (0x%x); short = %d (0x%x)\n", i, i, s, s);
+  }
+  return 0;
+}
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ make ints.c[K[K[K[K[K[K[K
+cc -g -Wall -std=c11    ints.c   -o ints
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ ,./[K[K[K./ints
+1
+int = 1 (0x1); short = 1 (0x1)
+
+2
+int = 2 (0x2); short = 2 (0x2)
+3
+int = 3 (0x3); short = 3 (0x3)
+4
+int = 4 (0x4); short = 4 (0x4)
+3524
+int = 3524 (0xdc4); short = 3524 (0xdc4)
+54345
+int = 54345 (0xd449); short = -11191 (0xffffd449)
+4533545343542
+int = -1940121034 (0x8c5c1a36); short = 6710 (0x1a36)
+5435422222222222222
+int = -2016287858 (0x87d1e38e); short = -7282 (0xffffe38e)
+444444444444444444
+int = 293717788 (0x1181c71c); short = -14564 (0xffffc71c)
+00000000000000000000000000000000000000000000000^[[H            
+int = 0 (0x0); short = 0 (0x0)
+
+
+
+10000000000000000000000000000000000
+int = -1 (0xffffffff); short = -1 (0xffffffff)
+1000000000000000
+int = -1530494976 (0xa4c68000); short = -32768 (0xffff8000)
+10000000000000
+int = 1316134912 (0x4e72a000); short = -24576 (0xffffa000)
+10
+int = 10 (0xa); short = 10 (0xa)
+100000
+int = 100000 (0x186a0); short = -31072 (0xffff86a0)
+10000
+int = 10000 (0x2710); short = 10000 (0x2710)
+100000
+int = 100000 (0x186a0); short = -31072 (0xffff86a0)
+1000000
+int = 1000000 (0xf4240); short = 16960 (0x4240)
+q
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/2-ints$ cd ../3-identify/
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ cat 
+.gitignore  identify.c  Makefile    mystery.h   mystery.o   
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ cat [K[K[K[Kmake
+cc -g -Wall -std=c11   -c -o identify.o identify.c
+cc   identify.o mystery.o   -o identify
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ ls
+identify  identify.c  identify.o  Makefile  mystery.h  mystery.o
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ ./indentify
+bash: ./indentify: No such file or directory
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ ./indentify./[K[K[K[K[K[K[K[K[K[Kdentify
+1
+mystery = 1 (0x1)
+f
+mystery = 15 (0xf)
+ff  FF
+mystery = 255 (0xff)
+fff
+mystery = 4095 (0xfff)
+ffff
+mystery = 65535 (0xffff)
+fffff
+mystery = 1048575 (0xfffff)
+ffffff
+mystery = 8388607 (0x7fffff)
+
+
+
+q
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ #The mus[K[Kystery cuts if[K[Koff past the 20th b it
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ #[Kecho #must[K[K[K[K[K[K 'muster[K[K[K[K[Kystery.o cui[Ktts off past the 20 th bti[K[Kit.'[K Inpoyut[K[K[K[K[Kut[K[Kput 0xFFFFF is fine, but [1@D[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca 6th hex digit will be c[Kcutt off m[Kby histery[K[K[K[K[K[K[Kmistery.o' > ansew[K[K[Kswer.txt
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ cat answer.txt
+mystery.o cutts off past the 20th bit. Input 0xFFFFF is fine, but a 6th hex digit will be cutt off by mistery.o
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ cd ..\4[K/
+1-uints/    2-ints/     3-identify/ 4-negeq/    6-inexact/  7-nan/      8-ulp/      9-loop/
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ cd ../
+1-uints/    2-ints/     3-identify/ 4-negeq/    6-inexact/  7-nan/      8-ulp/      9-loop/
+fantona1@remote01:~/i220a/submit/lab5/exercises/3-identify$ cd ../4-negeq/
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ clear
+[H[2J[3Jfantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ ls
+Makefile  negeq.c
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ make
+cc -g -Wall -std=c11    negeq.c   -o negeq
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ cat negeq.c
+#include <stdio.h>
+
+int main() {
+  while (1) {
+    int i;
+    if (scanf("%x", &i) != 1) break;
+    printf("%d %s -%d\n", i, (i == -i) ? "==" : "!=", i);
+    if (i == -i) { printf("done\n"); break; }
+  }
+  return 0;
+}
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ ./negeq
+1
+1 != -1
+0
+0 == -0
+done
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ ./negeq
+f
+15 != -15
+FFF
+4095 != -4095
+FFFFFFFF
+-1 != --1
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+-1 != --1
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+-1 != --1
+
+
+
+0
+0 == -0
+done
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ ./negeq
+srf
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ ./negeq
+
+
+0
+0 == -0
+done
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ cd ../5[K[K\/5[K
+1-uints/    2-ints/     3-identify/ 4-negeq/    6-inexact/  7-nan/      8-ulp/      9-loop/
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ cd ../
+1-uints/    2-ints/     3-identify/ 4-negeq/    6-inexact/  7-nan/      8-ulp/      9-loop/
+fantona1@remote01:~/i220a/submit/lab5/exercises/4-negeq$ cd ../[K[K[K[K ../[K[K[K..
+fantona1@remote01:~/i220a/submit/lab5/exercises$ mkdir 5[K[K[K[K[K[K[Kpython
+Python 2.7.16 (default, Oct 10 2019, 22:02:15) 
+[GCC 8.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 10 ** 1000 -1[K 1
+9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999L
+>>> 10 ** 1000 - 1.09[K
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+OverflowError: long int too large to convert to float
+>>> 
+>>> 
+>>> 
+>>> 
+>>> exit()
+fantona1@remote01:~/i220a/submit/lab5/exercises$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises$ cd 
+1-uints/    2-ints/     3-identify/ 4-negeq/    6-inexact/  7-nan/      8-ulp/      9-loop/
+fantona1@remote01:~/i220a/submit/lab5/exercises$ cd 6-inexact/
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ clear
+[H[2J[3Jfantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ [Kfantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ [Kfantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ [Kfantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ [Kfantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ ls
+0.1.c  Makefile
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ cat 0.1.c 
+#include <stdio.h>
+
+int main() {
+  double sum = 0;
+  for (int i = 0; i < 10; i++) {
+    sum += 0.1;
+  }
+  printf("%.20f %d\n", sum, sum == 1.0);
+  return 0;
+}
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ make
+cc -g -Wall -std=c11    0.1.c   -o 0.1
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ ./0.1 
+0.99999999999999988898 0
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ # wow
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/6-inexact$ cd ../7-nan/
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ls
+Makefile  nan.c
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ cat nan.c 
+#include <stdio.h>
+
+int main() {
+
+  double v;
+  scanf("%lf", &v);
+  double x = v/v;
+  printf("x = %lg\n", x);
+  while (x != x) {
+    //loop
+  }
+  printf("loop exit\n");
+  return 0;
+}
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ make
+cc -g -Wall -std=c11    nan.c   -o nan
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 
+1
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 
+2
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 
+3
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 
+4^[[A     4
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 
+5
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 100
+
+100
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 100[K[K[K[K
+
+
+
+
+
+999
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan
+Nan N
+x = nan
+
+
+2
+3
+
+
+1234123
+3
+123
+12
+3
+
+
+
+
+^X
+^C
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan 100[K[K
+897637892637891246178264933478912678962314789643127896312487693241678932417869312467831246789
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan
+
+
+-1
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan
+-100
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan
+-65536
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan
+^[[A    -65535
+x = 1
+loop exit
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ ./nan
+NaN
+x = nan
+loops forever!!
+^C
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/7-nan$ cd ../8-ulp/
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ clear
+[H[2J[3Jfantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ ls
+Makefile  ulp.c  ulp.gp  ulp-lg.gp
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ make
+cc -g -Wall -std=c11    ulp.c  -lm -o ulp
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ ./ulp
+usage ./ulp data|lg-data|verbose
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ ./ulp verp[Kbose
+v = 0x1 (1), ulp = 1.1920928955078e-07
+v = 0x2 (2), ulp = 2.3841857910156e-07
+v = 0x4 (4), ulp = 4.7683715820312e-07
+v = 0x8 (8), ulp = 9.5367431640625e-07
+v = 0x10 (16), ulp = 1.9073486328125e-06
+v = 0x20 (32), ulp = 3.814697265625e-06
+v = 0x40 (64), ulp = 7.62939453125e-06
+v = 0x80 (128), ulp = 1.52587890625e-05
+v = 0x100 (256), ulp = 3.0517578125e-05
+v = 0x200 (512), ulp = 6.103515625e-05
+v = 0x400 (1024), ulp = 0.0001220703125
+v = 0x800 (2048), ulp = 0.000244140625
+v = 0x1000 (4096), ulp = 0.00048828125
+v = 0x2000 (8192), ulp = 0.0009765625
+v = 0x4000 (16384), ulp = 0.001953125
+v = 0x8000 (32768), ulp = 0.00390625
+v = 0x10000 (65536), ulp = 0.0078125
+v = 0x20000 (131072), ulp = 0.015625
+v = 0x40000 (262144), ulp = 0.03125
+v = 0x80000 (524288), ulp = 0.0625
+v = 0x100000 (1.04858e+06), ulp = 0.125
+v = 0x200000 (2.09715e+06), ulp = 0.25
+v = 0x400000 (4.1943e+06), ulp = 0.5
+v = 0x800000 (8.38861e+06), ulp = 1
+v = 0x1000000 (1.67772e+07), ulp = 2
+v = 0x2000000 (3.35544e+07), ulp = 4
+v = 0x4000000 (6.71089e+07), ulp = 8
+v = 0x8000000 (1.34218e+08), ulp = 16
+v = 0x10000000 (2.68435e+08), ulp = 32
+v = 0x20000000 (5.36871e+08), ulp = 64
+v = 0x40000000 (1.07374e+09), ulp = 128
+v = 0x80000000 (2.14748e+09), ulp = 256
+v = 0x100000000 (4.29497e+09), ulp = 512
+v = 0x200000000 (8.58993e+09), ulp = 1024
+v = 0x400000000 (1.71799e+10), ulp = 2048
+v = 0x800000000 (3.43597e+10), ulp = 4096
+v = 0x1000000000 (6.87195e+10), ulp = 8192
+v = 0x2000000000 (1.37439e+11), ulp = 16384
+v = 0x4000000000 (2.74878e+11), ulp = 32768
+v = 0x8000000000 (5.49756e+11), ulp = 65536
+v = 0x10000000000 (1.09951e+12), ulp = 131072
+v = 0x20000000000 (2.19902e+12), ulp = 262144
+v = 0x40000000000 (4.39805e+12), ulp = 524288
+v = 0x80000000000 (8.79609e+12), ulp = 1048576
+v = 0x100000000000 (1.75922e+13), ulp = 2097152
+v = 0x200000000000 (3.51844e+13), ulp = 4194304
+v = 0x400000000000 (7.03687e+13), ulp = 8388608
+v = 0x800000000000 (1.40737e+14), ulp = 16777216
+v = 0x1000000000000 (2.81475e+14), ulp = 33554432
+v = 0x2000000000000 (5.6295e+14), ulp = 67108864
+v = 0x4000000000000 (1.1259e+15), ulp = 134217728
+v = 0x8000000000000 (2.2518e+15), ulp = 268435456
+v = 0x10000000000000 (4.5036e+15), ulp = 536870912
+v = 0x20000000000000 (9.0072e+15), ulp = 1073741824
+v = 0x40000000000000 (1.80144e+16), ulp = 2147483648
+v = 0x80000000000000 (3.60288e+16), ulp = 4294967296
+v = 0x100000000000000 (7.20576e+16), ulp = 8589934592
+v = 0x200000000000000 (1.44115e+17), ulp = 17179869184
+v = 0x400000000000000 (2.8823e+17), ulp = 34359738368
+v = 0x800000000000000 (5.76461e+17), ulp = 68719476736
+v = 0x1000000000000000 (1.15292e+18), ulp = 137438953472
+v = 0x2000000000000000 (2.30584e+18), ulp = 274877906944
+v = 0x4000000000000000 (4.61169e+18), ulp = 549755813888
+v = 0x8000000000000000 (9.22337e+18), ulp = 1099511627776
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ run ./ulp data > ulp.dsta[K[K[Kata
+bash: run: command not found
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ run ./ulp data > ulp.data[1P[1P[1P[1P
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ gnuplat[K[Kot -p ulp.gp
+03:47:05 PM: Error: Unable to initialize GTK+, is DISPLAY set properly?
+Failed to initialize wxWidgets.
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ nano ulp.gp
+[?1049h[22;0;0t[1;51r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[49;41H(B[0;7m[ Reading File ](B[m[49;47H(B[0;7m 3 lines ](B[m[H(B[0;7m  GNU nano 3.2                                 ulp.gp                                            [1;96H(B[m[50d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[51d(B[0;7m^X(B[m Exit[51;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line[49d[3d[39;49m(B[mset xlabel "value"[4dset ylabel "ULP"[5dplot "ulp.data"[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[?12l[?25h[?25l[1;88H(B[0;7mModified(B[m7[2;48r8[2dM[1;51r[4;1H[?12l[?25h[?25l[A[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25lt[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25lm[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25l;[?12l[?25h[?25l[49d[K[3;14H[?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25lu[?12l[?25h[?25lb[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25lb[?12l[?25h[?25l;[?12l[?25h[?25l[49d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                    [50;1H Y(B[m Yes[K[51d(B[0;7m N(B[m No  [51;18H(B[0;7mC(B[m Cancel[K[49;63H[?12l[?25h[?25l[50d(B[0;7m^G(B[m Get Help[50;25H(B[0;7mM-D(B[m DOS Format[50;49H(B[0;7mM-A(B[m Append[50;73H(B[0;7mM-B(B[m Backup File[51d(B[0;7m^C(B[m Cancel[17G        (B[0;7mM-M(B[m Mac Format[51;49H(B[0;7mM-P(B[m Prepend[51;73H(B[0;7m^T(B[m To Files[49d(B[0;7mFile Name to Write: ulp.gp                                   (B[m[49;27H[?12l[?25h[?25l[K[1;96H[1;88H(B[0;7m        (B[m[49;41H(B[0;7m[ Wrote 4 lines ](B[m[J[51;97H[?12l[?25h[51;1H[?1049l[23;0;0t[?1l>fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ nano ulp.gp[6@gnuplot -p[C[C[C[C[C[C[C
+                                                                               
+     1.2e+12 +-------------------------------------------------------------+   
+             |     +     +      +     +     +     +     +      +     +     |   
+             |                                          "ulp.data"    A    |   
+       1e+12 |-+                                                         +-|   
+             |                                                             |   
+             |                                                             |   
+       8e+11 |-+                                                         +-|   
+             |                                                             |   
+             |                                                             |   
+       6e+11 |-+                                                         +-|   
+             |                            A                                |   
+             |                                                             |   
+             |                                                             |   
+       4e+11 |-+                                                         +-|   
+             |                                                             |   
+             |             A                                               |   
+       2e+11 |-+                                                         +-|   
+             |      A                                                      |   
+             | A A +     +      +     +     +     +     +      +     +     |   
+           0 +-------------------------------------------------------------+   
+             0   1e+18 2e+18  3e+18 4e+18 5e+18 6e+18 7e+18  8e+18 9e+18 1e+19 
+                                          value                                
+                                                                               
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ ./ulp lg-data > i;lp[[K[K[K[K[Kulp-lg.data
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ gnuplot[K[K[K[K[K[K[Knano ulp-lg.gp 
+[?1049h[22;0;0t[1;51r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[49;41H(B[0;7m[ Reading File ](B[m[49;47H(B[0;7m 3 lines ](B[m[H(B[0;7m  GNU nano 3.2                                ulp-lg.gp                                          [1;96H(B[m[50d(B[0;7m^G(B[m Get Help     (B[0;7m^O(B[m Write Out    (B[0;7m^W(B[m Where Is     (B[0;7m^K(B[m Cut Text     (B[0;7m^J(B[m Justify[81G(B[0;7m^C(B[m Cur Pos[51d(B[0;7m^X(B[m Exit[51;17H(B[0;7m^R(B[m Read File    (B[0;7m^\(B[m Replace[49G(B[0;7m^U(B[m Uncut Text   (B[0;7m^T(B[m To Spell     (B[0;7m^_(B[m Go To Line[49d[3d[39;49m(B[mset xlabel "lg(value)"[4dset ylabel "lg(ULP)"[5dplot "ulp-lg.data"[3d[?12l[?25h[?25l[1;88H(B[0;7mModified(B[m7[2;48r8[2dM[1;51r[4;1H[?12l[?25h[?25l[A[?12l[?25h[?25ls[?12l[?25h[?25le[?12l[?25h[?25lt[?12l[?25h[?25l [?12l[?25h[?25lt[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[?25lm[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25la[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25ld[?12l[?25h[?25lu[?12l[?25h[?25lm[?12l[?25h[?25lb[?12l[?25h[?25ll[?12l[?25h[?25l [?12l[?25h[?25l;[?12l[?25h[?25l[49d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                    [50;1H Y(B[m Yes[K[51d(B[0;7m N(B[m No  [51;18H(B[0;7mC(B[m Cancel[K[49;63H[?12l[?25h[?25l[50d(B[0;7m^G(B[m Get Help[50;25H(B[0;7mM-D(B[m DOS Format[50;49H(B[0;7mM-A(B[m Append[50;73H(B[0;7mM-B(B[m Backup File[51d(B[0;7m^C(B[m Cancel[17G        (B[0;7mM-M(B[m Mac Format[51;49H(B[0;7mM-P(B[m Prepend[51;73H(B[0;7m^T(B[m To Files[49d(B[0;7mFile Name to Write: ulp-lg.gp                                (B[m[49;30H[?12l[?25h[?25l[K[1;96H[1;88H(B[0;7m        (B[m[49;41H(B[0;7m[ Wrote 4 lines ](B[m[J[51;97H[?12l[?25h[51;1H[?1049l[23;0;0t[?1l>fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ nano ulp-lg.gp ./ulp lg-data > ulp-lg.data
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ ./ulp lg-data > ulp-lg.data[12Pnano ulp-lg.gp ./ulp lg-data > ulp-lg.data[10Pgnuplot -p ulp.gp[K[K[K-lg.data
+
+0 -23
+^
+"ulp-lg.data" line 1: invalid command
+
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ gnuplot -p ulp-lg.data[K[K[K[Kgp
+                                                                               
+         40 +--------------------------------------------------------------+   
+            |        +        +        +        +        +      AAAA       |   
+            |                                        "ulp-lg.AAAa"    A    |   
+         30 |-+                                           AAA            +-|   
+            |                                         AAAA                 |   
+         20 |-+                                    AAA                   +-|   
+            |                                   AAA                        |   
+            |                               AAAA                           |   
+         10 |-+                          AAAA                            +-|   
+            |                        AAAA                                  |   
+            |                      AA                                      |   
+          0 |-+                AAAA                                      +-|   
+            |              AAAA                                            |   
+            |            AA                                                |   
+        -10 |-+      AAAA                                                +-|   
+            |    AAAA                                                      |   
+        -20 |-+AAA                                                       +-|   
+            |AA                                                            |   
+            |        +        +        +        +        +        +        |   
+        -30 +--------------------------------------------------------------+   
+            0        10       20       30       40       50       60       70  
+                                       lg(value)                               
+                                                                               
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ ls
+Makefile  ulp  ulp.c  ulp.data	ulp.gp	ulp-lg.data  ulp-lg.gp
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ cat ulp.c
+#include <assert.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//f and i occupy same memory locations so that assigning to i changes f
+typedef union {
+  float f;
+  int i;
+} FloatInt;
+
+enum { DATA_T, LG_DATA_T, VERBOSE_T };
+const char *types[] = { //must be in same order as above enum
+  "data", "lg-data", "verbose",
+};
+
+
+static void
+usage(const char *progName)
+{
+  fprintf(stderr, "usage %s ", progName);
+  const int n = sizeof(types)/sizeof(types[0]); //# of elements in types[]
+  for (int i = 0; i < n; i++) {
+    fprintf(stderr, "%s%s", types[i], (i < (n - 1)) ? "|" : "\n");
+  }
+  exit(1);
+}
+
+/** Return enum corresponding to type.  < 0 if not found. */
+static int
+get_type(const char *type)
+{
+  for (int i = 0; i < sizeof(types)/sizeof(types[0]); i++) {
+    if (strcmp(types[i], type) == 0) { //strcmp() == 0 means equal
+      return i;
+    }
+  }
+  return -1;
+}
+
+static
+void out_ulps(int type)
+{
+  for (unsigned long v = 1; v != 0; v <<= 1) { //loop thru powers-of-2
+    float f = v;
+    FloatInt fi = {.f = f };
+    fi.i += 1;  //change ulp of fi.f
+    switch (type) {
+      case DATA_T:
+        printf("%g %g\n", f, (fi.f - f));
+        break;
+      case LG_DATA_T:
+        printf("%g %g\n", log2(f), log2(fi.f - f));
+        break;
+      case VERBOSE_T:
+        printf("v = 0x%lx (%g), ulp = %.14g\n", v, f, fi.f - f);
+        break;
+    }
+  }
+}
+
+int main(int argc, const char *argv[]) {
+  assert(sizeof(float) == sizeof(int)); //validate essential assumption
+  int type;
+  if (argc != 2 || (type = get_type(argv[1])) < 0) usage(argv[0]);
+  out_ulps(type);
+  return 0;
+}
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/8-ulp$ cd ./9[K[K./9-loop/
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ ls
+loop.c	Makefile
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ cat loop.c
+#include <stdio.h>
+
+int main() {
+
+  while (1) {
+    float d;
+    scanf("%f", &d);
+    float x;
+    for (x = d; x <= d + 1000.0; x = x + 1000.0) {
+    }
+    printf("loop exited with x = %.14g\n", x);
+  }
+  return 0;
+}
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ make[K[K[K[K./loop
+bash: ./loop: No such file or directory
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ ls
+loop.c	Makefile
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ make
+cc -g -Wall -std=c11    loop.c   -o loop
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ ./loop
+1
+loop exited with x = 2001
+2
+loop exited with x = 2002
+3
+loop exited with x = 2003
+4
+loop exited with x = 2004
+5
+loop exited with x = 2005
+^[[A^[[A        0
+loop exited with x = 2000
+-23232
+loop exited with x = -21232
+-23512353245324534
+infinite loop!!!
+^C
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ e
+bash: e: command not found
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises/9-loop$ cd ..
+fantona1@remote01:~/i220a/submit/lab5/exercises$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises$ ls
+1-uints  2-ints  3-identify  4-negeq  6-inexact  7-nan	8-ulp  9-loop
+fantona1@remote01:~/i220a/submit/lab5/exercises$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises$ 
+fantona1@remote01:~/i220a/submit/lab5/exercises$ exit
+
+Script done on 2020-10-04 15:55:01-04:00 [COMMAND_EXIT_CODE="0"]
