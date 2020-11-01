@@ -1,0 +1,78 @@
+
+cpuid:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000000011a7 <main>:
+    11a7:	55                   	push   %rbp
+    11a8:	48 89 e5             	mov    %rsp,%rbp
+    11ab:	48 83 ec 40          	sub    $0x40,%rsp
+    11af:	89 7d cc             	mov    %edi,-0x34(%rbp)
+    11b2:	48 89 75 c0          	mov    %rsi,-0x40(%rbp)
+    11b6:	83 7d cc 02          	cmpl   $0x2,-0x34(%rbp)
+    11ba:	74 2c                	je     11e8 <main+0x41>
+    11bc:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+    11c0:	48 8b 10             	mov    (%rax),%rdx
+    11c3:	48 8b 05 96 2e 00 00 	mov    0x2e96(%rip),%rax        # 4060 <stderr@@GLIBC_2.2.5>
+    11ca:	48 8d 35 37 0e 00 00 	lea    0xe37(%rip),%rsi        # 2008 <_IO_stdin_used+0x8>
+    11d1:	48 89 c7             	mov    %rax,%rdi
+    11d4:	b8 00 00 00 00       	mov    $0x0,%eax
+    11d9:	e8 62 fe ff ff       	callq  1040 <fprintf@plt>
+    11de:	bf 01 00 00 00       	mov    $0x1,%edi
+    11e3:	e8 78 fe ff ff       	callq  1060 <exit@plt>
+    11e8:	48 8b 45 c0          	mov    -0x40(%rbp),%rax
+    11ec:	48 83 c0 08          	add    $0x8,%rax
+    11f0:	48 8b 00             	mov    (%rax),%rax
+    11f3:	48 89 c7             	mov    %rax,%rdi
+    11f6:	e8 55 fe ff ff       	callq  1050 <atoi@plt>
+    11fb:	89 45 fc             	mov    %eax,-0x4(%rbp)
+    11fe:	48 8d 7d ec          	lea    -0x14(%rbp),%rdi
+    1202:	48 8d 4d f0          	lea    -0x10(%rbp),%rcx
+    1206:	48 8d 55 f4          	lea    -0xc(%rbp),%rdx
+    120a:	48 8d 75 f8          	lea    -0x8(%rbp),%rsi
+    120e:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    1211:	49 89 f8             	mov    %rdi,%r8
+    1214:	89 c7                	mov    %eax,%edi
+    1216:	e8 61 00 00 00       	callq  127c <get_cpuid>
+    121b:	8b 7d f0             	mov    -0x10(%rbp),%edi
+    121e:	8b 75 ec             	mov    -0x14(%rbp),%esi
+    1221:	8b 4d f4             	mov    -0xc(%rbp),%ecx
+    1224:	8b 55 f8             	mov    -0x8(%rbp),%edx
+    1227:	8b 45 fc             	mov    -0x4(%rbp),%eax
+    122a:	41 89 f9             	mov    %edi,%r9d
+    122d:	41 89 f0             	mov    %esi,%r8d
+    1230:	89 c6                	mov    %eax,%esi
+    1232:	48 8d 3d e7 0d 00 00 	lea    0xde7(%rip),%rdi        # 2020 <_IO_stdin_used+0x20>
+    1239:	b8 00 00 00 00       	mov    $0x0,%eax
+    123e:	e8 ed fd ff ff       	callq  1030 <printf@plt>
+    1243:	83 7d fc 00          	cmpl   $0x0,-0x4(%rbp)
+    1247:	75 2c                	jne    1275 <main+0xce>
+    1249:	8b 55 ec             	mov    -0x14(%rbp),%edx
+    124c:	8b 75 f0             	mov    -0x10(%rbp),%esi
+    124f:	8b 45 f4             	mov    -0xc(%rbp),%eax
+    1252:	48 8d 4d df          	lea    -0x21(%rbp),%rcx
+    1256:	89 c7                	mov    %eax,%edi
+    1258:	e8 08 ff ff ff       	callq  1165 <decode_vendor_string>
+    125d:	48 8d 45 df          	lea    -0x21(%rbp),%rax
+    1261:	48 89 c6             	mov    %rax,%rsi
+    1264:	48 8d 3d f0 0d 00 00 	lea    0xdf0(%rip),%rdi        # 205b <_IO_stdin_used+0x5b>
+    126b:	b8 00 00 00 00       	mov    $0x0,%eax
+    1270:	e8 bb fd ff ff       	callq  1030 <printf@plt>
+    1275:	b8 00 00 00 00       	mov    $0x0,%eax
+    127a:	c9                   	leaveq 
+    127b:	c3                   	retq   
+
+000000000000127c <get_cpuid>:
+    127c:	51                   	push   %rcx
+    127d:	52                   	push   %rdx
+    127e:	31 c0                	xor    %eax,%eax
+    1280:	0f a2                	cpuid  
+    1282:	89 07                	mov    %eax,(%rdi)
+    1284:	89 1e                	mov    %ebx,(%rsi)
+    1286:	58                   	pop    %rax
+    1287:	89 10                	mov    %edx,(%rax)
+    1289:	58                   	pop    %rax
+    128a:	89 08                	mov    %ecx,(%rax)
+    128c:	c3                   	retq   
+    128d:	0f 1f 00             	nopl   (%rax)

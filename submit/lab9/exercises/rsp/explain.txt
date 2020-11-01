@@ -1,0 +1,1 @@
+rsp is allowed to be read directly. Therefore we can use mov
