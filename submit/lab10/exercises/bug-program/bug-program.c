@@ -5,7 +5,7 @@
 
 /** A struct used to form a linear chain of key-value pairs. */
 struct KeyValue {
-  const char *key;       /** string key */
+  char *key;       /** string key */
   int value;             /** integer value */
   struct KeyValue *succ; /** next key-value in chain */
 };
@@ -18,19 +18,17 @@ static struct KeyValue *
 add_key_value(struct KeyValue *keyValues, const char *k, int v)
 {
   //allocate storage for new KeyValue struct
-  struct KeyValue *kv = malloc(sizeof(struct KeyValue *));
+  struct KeyValue *kv = malloc(sizeof(struct KeyValue));
 
-  //allocate storage for string pointed to by k
-  char *s = malloc(strlen(k));
-
-  if (kv == NULL || s == NULL) { //check if allocations succeeded
+  if (kv == NULL) { //check if allocations succeeded
     fprintf(stderr, "malloc failure: %s\n", strerror(errno));
     exit(1);
   }
-  strcpy(s, k);  //copy string k into newly allocated memory pointed to by s
-
+  
   //initialize fields of *kv.
-  kv->key = s; kv->value = v; kv->succ = keyValues;
+  kv->key = k;
+  kv->value = v; 
+  kv->succ = keyValues;
 
   return kv;
 }
@@ -39,10 +37,8 @@ add_key_value(struct KeyValue *keyValues, const char *k, int v)
 static void
 free_key_values(struct KeyValue *keyValues)
 {
-  //go thru chain of keyValues
-  for (struct KeyValue *p = keyValues; p != NULL; p = p->succ) {
-    free(p); //free KeyValue struct
-  }
+  if (keyValues->succ != NULL) free_key_values(keyValues->succ);
+  free(keyValues);
 }
 
 /** Make key-values for all the words in the first verse of Carroll's
@@ -68,9 +64,11 @@ make_key_values(void) {
  */
 int main() {
   struct KeyValue *keyValues = make_key_values();
+  
   for (struct KeyValue *p = keyValues; p != NULL; p = p->succ) {
     printf("%s: %d\n", p->key, p->value);
   }
+  
   free_key_values(keyValues);
   return 0;
 }
