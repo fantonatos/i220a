@@ -6819,3 +6819,478 @@ int main() {
 ]0;fantona1@remote04: ~/.../exercises/bug-program[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/bug-program[00m$ script[K[K[K[K[K[Kexit
 
 Script done on 2020-11-08 17:21:58-05:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2020-11-08 17:24:05-05:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="188" LINES="49"]
+]0;fantona1@remote04: ~/.../submit/lab10[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab10[00m$ ls
+[0m[01;34mexercises[0m  lab10.LOG
+]0;fantona1@remote04: ~/.../submit/lab10[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab10[00m$ cd exercises/
+]0;fantona1@remote04: ~/.../lab10/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab10/exercises[00m$ ls
+[0m[01;34mbrk[0m  [01;34mbug-program[0m  [01;34mprocess-memory[0m
+]0;fantona1@remote04: ~/.../lab10/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab10/exercises[00m$ cd brk
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ ls
+brk.c  Makefile  README
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ cat README
+2019-09-22
+
+It looks like the malloc() library sets up an initial arena and so
+to brk does not change.
+
+[According to .<https://osa1.net/posts/2018-04-08-malloc-brk-sbrk.html> this,
+sbrk() is not used at all, though this is not what I am seeing.]]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ ls
+brk.c  Makefile  README
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ cat brkc[K.c
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#define PROMPT ">> "
+
+static void
+how_to(void) {
+  printf(
+    "This program illustrates the how the upper limit of a program's data\n"
+    "area (the \"brk\") changes as memory is allocated.  To interact with\n"
+    "the program, type one of the following commands at the '" PROMPT
+    "' prompt:\n\n"
+    "To allocate a block, type a line consisting of a + followed by the\n"
+    "size of the memory to be allocated.  The program will print out\n"
+    "a non-negative integer giving an id for that memory block, the address\n"
+    "at which the memory is allocated, the current program brk and the\n"
+    "change in the size of the brk since the program started up.\n\n"
+    "To free memory, type a - followed by the id of a currently allocated\n"
+    "memory block.  The program will respond with the current program brk\n"
+    "and the change in the size of the brk since the program started up.\n\n"
+         );
+}
+
+static void
+init_addresses(void **addr, int n)
+{
+  for (int i = 0; i < n; i++) addr[i] = NULL;
+}
+
+static int
+next_id(void **addr, int n)
+{
+  for (int i = 0; i < n; i++) {
+    if (addr[i] == NULL) return i;
+  }
+  return -1;
+}
+
+static void
+do_malloc(int size, void **addr, int n, char *initBrk)
+{
+  int id = next_id(addr, n);
+  if (id < 0) {
+    fprintf(stderr, "no more memory segments, use - command to free\n");
+  }
+  else {
+    if (!(addr[id] = malloc(size))) {
+      fprintf(stderr, "memory allocation error: %s\n", strerror(errno));
+    }
+    printf("block[%d] allocated %p: brk = %p, "
+           "brk change since program start = %zu\n",
+           id, addr[id], sbrk(0), ((char *)sbrk(0)) - initBrk);
+  }
+}
+
+static void
+do_free(int id, void **addr, int n, char *initBrk)
+{
+  if (id < 0 || id >= n || addr[id] == NULL) {
+    fprintf(stderr, "bad id %d: must be id in [0, %d] of currently "
+            "allocated memory block\n", id, n - 1);
+  }
+  else {
+    free(addr[id]);
+    addr[id] = NULL;
+    printf("block[%d] free'd; brk = %p, brk change since program start = %zu\n",
+           id, sbrk(0), ((char *)sbrk(0)) - initBrk);
+  }
+}
+
+static void
+interact(FILE *in, int n)
+{
+  void *addresses[n];
+  init_addresses(addresses, n);
+  char *initBrk = sbrk(0);
+  while (!feof(in) && printf(PROMPT) && fflush(stdout) == 0) {
+    char c;
+    if (fscanf(in, " %c", &c) != 1) continue;
+    switch (c) {
+      case '+': {
+        int size = -1;
+        if (fscanf(in, "%d", &size) != 1 || size <= 0) {
+          fprintf(stderr, "bad input: type \"+ MEM_SIZE\"\n");
+        }
+        do_malloc(size, addresses, n, initBrk);
+        break;
+      }
+      case '-': {
+        int id = -1;
+        if (fscanf(in, "%d", &id) != 1 || id < 0) {
+          fprintf(stderr, "bad input: type \"- ID\"\n");
+        }
+        do_free(id, addresses, n, initBrk);
+        break;
+      }
+      default: {
+        fprintf(stderr, "bad input %c: type a line \"+ MEM_SIZE\""
+                " or \"- ID\"\n", c);
+        int ch;
+        do { ch = fgetc(in); } while (ch != EOF && ch != '\n');
+      }
+    } //switch
+  } //while (!feof(in))
+}
+
+extern char etext, edata, end; // The symbols must have some type,
+
+static void
+out_segment_ends(void)
+{
+  printf("First address past:\n");
+  printf("    program text (etext)      %10p\n", &etext);
+  printf("    initialized data (edata)  %10p\n", &edata);
+  printf("    uninitialized data (end)  %10p\n", &end);
+  printf("    brk (sbrk(0))             %10p\n\n", sbrk(0));
+}
+
+int
+main(int argc, const char **argv)
+{
+  int n;
+  if (argc != 2 || (n = atoi(argv[1])) <= 0) {
+    fprintf(stderr, "usage: %s MAX_DYNAMIC_ALLOCS\n", argv[0]);
+    exit(1);
+  }
+  how_to();
+  out_segment_ends();
+  interact(stdin, n);
+  return 0;
+}
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ make
+cc -g -Wall -std=c11 -O1 -D_DEFAULT_SOURCE   brk.c  -pthread -o brk
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ ls
+[0m[01;32mbrk[0m  brk.c  Makefile  README
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ ./brk
+usage: ./brk MAX_DYNAMIC_ALLOCS
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ ./brk 10
+This program illustrates the how the upper limit of a program's data
+area (the "brk") changes as memory is allocated.  To interact with
+the program, type one of the following commands at the '>> ' prompt:
+
+To allocate a block, type a line consisting of a + followed by the
+size of the memory to be allocated.  The program will print out
+a non-negative integer giving an id for that memory block, the address
+at which the memory is allocated, the current program brk and the
+change in the size of the brk since the program started up.
+
+To free memory, type a - followed by the id of a currently allocated
+memory block.  The program will respond with the current program brk
+and the change in the size of the brk since the program started up.
+
+First address past:
+    program text (etext)      0x557ac386966d
+    initialized data (edata)  0x557ac386c0a0
+    uninitialized data (end)  0x557ac386c0d0
+    brk (sbrk(0))             0x557ac4fab000
+
+>> +10
+block[0] allocated 0x557ac4f8aa80: brk = 0x557ac4fab000, brk change since program start = 0
+>> ^[[A    -10
+bad id 10: must be id in [0, 9] of currently allocated memory block
+>> +213443211243
+bad input: type "+ MEM_SIZE"
+memory allocation error: Cannot allocate memory
+block[1] allocated (nil): brk = 0x557ac4fab000, brk change since program start = 0
+>> +0230172655762016725367253
+bad input: type "+ MEM_SIZE"
+memory allocation error: Cannot allocate memory
+block[1] allocated (nil): brk = 0x557ac4fab000, brk change since program start = 0
+>> +37852469
+block[1] allocated 0x7fa754712010: brk = 0x557ac4fab000, brk change since program start = 0
+>> ^[[A    +307895243078952432078954307895243524789035249870
+bad input: type "+ MEM_SIZE"
+memory allocation error: Cannot allocate memory
+block[2] allocated (nil): brk = 0x557ac4fab000, brk change since program start = 0
+>> q
+bad input q: type a line "+ MEM_SIZE" or "- ID"
+>> 
+
+q -2
+bad id 2: must be id in [0, 9] of currently allocated memory block
+>> -2
+bad id 2: must be id in [0, 9] of currently allocated memory block
+>> -0x557ac4fab000
+block[0] free'd; brk = 0x557ac4fab000, brk change since program start = 0
+>> bad input x: type a line "+ MEM_SIZE" or "- ID"
+>> 
+
+q
+bad input q: type a line "+ MEM_SIZE" or "- ID"
+>> q
+bad input q: type a line "+ MEM_SIZE" or "- ID"
+>> ]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ ls
+[0m[01;32mbrk[0m  brk.c  Makefile  README
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ cat brk
+ELF          >    0      @       (\          @ 8  @ % $       @       @       @       h      h                   ®      ®      ®                                                         à	      à	                                        m      m                                           ∏      ∏                   ÿ-      ÿ=      ÿ=      »      ¯                   Ë-      Ë=      Ë=                               ƒ      ƒ      ƒ      D       D              PÂtd   `%      `%      `%      <       <              QÂtd                                                  RÂtd   ÿ-      ÿ=      ÿ=      (      (             /lib64/ld-linux-x86-64.so.2          GNU                        GNU Ó⁄é m ‘•§j≥ﬁy(∏E6             ° Ä          (å—eŒmfUa9Úã                            Ó                      G                                             ó                      n                      Ω                      ä                      ‹                      y                      º                      Ö                      	                      ~                      ß                      b                      i                      µ                      -                       ”                      ê     †@             ƒ   "                   s     ∞@             Æ     ¿@              libpthread.so.0 _ITM_deregisterTMCloneTable _ITM_registerTMCloneTable __errno_location libc.so.6 fflush exit puts stdin sbrk strtol feof fgetc stdout __isoc99_fscanf malloc stderr fwrite fprintf __cxa_finalize strerror __libc_start_main free GLIBC_2.2.5 GLIBC_2.7 __gmon_start__                                         ui	   Û         X          ii   ˇ      ui	   Û       ÿ=                   ‡=             –      ò@             ò@      ÿ?                    ‡?                    Ë?                    ?                    ¯?                    †@                    ∞@                    ¿@                    @                     @                    (@                    0@                    8@                    @@                    H@         	           P@         
+           X@                    `@                    h@                    p@                    x@                    Ä@                    à@                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            HÉÏHã›/  HÖ¿tˇ–HÉƒ√         ˇ5‚/  ˇ%‰/  @ ˇ%‚/  h    È‡ˇˇˇˇ%⁄/  h   È–ˇˇˇˇ%“/  h   È¿ˇˇˇˇ% /  h   È∞ˇˇˇˇ%¬/  h   È†ˇˇˇˇ%∫/  h   Èêˇˇˇˇ%≤/  h   ÈÄˇˇˇˇ%™/  h   Èpˇˇˇˇ%¢/  h   È`ˇˇˇˇ%ö/  h	   ÈPˇˇˇˇ%í/  h
+   È@ˇˇˇˇ%ä/  h   È0ˇˇˇˇ%Ç/  h   È ˇˇˇˇ%z/  h   Èˇˇˇˇ%r/  h   È ˇˇˇˇ%“.  fê        1ÌIâ—^Hâ‚HÉ‰PTLç  Hç≥  Hç=¡   ˇÜ.  ÙD  Hç=9/  Hç2/  H9¯tHã^.  HÖ¿t	ˇ‡Ä    √Ä    Hç=	/  Hç5/  H)˛H¡˛HâH¡Ë?H∆H—˛tHã5.  HÖ¿tˇ‡fD  √Ä    Ä=Ò.   u/UHÉ=.   HâÂtHã=™.  Ë-ˇˇˇËhˇˇˇ∆….  ]√Ä    √Ä    È{ˇˇˇUHâÂAWAVAUATSHÉÏHHâÛÉˇÖß  Hã~∫
+   æ    Ë{˛ˇˇIâƒâEºÖ¿éÜ  Hç=>  Ë˛ˇˇHç=º  Ëı˝ˇˇHç5˚  Hç=  ∏    ËÌ˝ˇˇHç5.  Hç=  ∏    Ë’˝ˇˇHç5..  Hç='  ∏    ËΩ˝ˇˇø    Ë”˝ˇˇHâ∆Hç=1  ∏    Ëü˝ˇˇHãÿ-  IcƒHç≈   HÉ‡H)ƒHâ‚Iâ’Hâ–Eçd$ˇJçT‚H«     HÉ¿H9–uø    Ëy˝ˇˇHâE∞HçEÀHâE®LçuÃIçD$HâE†ãEºÉËâE∏HâﬂËo˝ˇˇÖ¿Öï  Hç=@  Ë˝ˇˇÖ¿ÑÅ  Hã=<-  Ëw˝ˇˇAâƒÖ¿Öj  HãU®Hç5∑  Hâﬂ∏    Ëƒ¸ˇˇÉ¯u®∂UÀÄ˙+tdÄ˙-Ñm  æ“Hç5{  Hã=-  ∏    Ë‚¸ˇˇHâﬂË∫¸ˇˇÉ¯ˇÑjˇˇˇÉ¯
+uÍÈ`ˇˇˇHãHç5!  Hã=÷,  ∏    Ë¨¸ˇˇø   ËÚ¸ˇˇ«EÃˇˇˇˇLâÚHç5+  Hâﬂ∏    Ë4¸ˇˇÉ¯uÉ}Ã Hãí,  ∫   æ   Hç=˛  Ëº¸ˇˇIÉ}  t∏   AâƒH;E†tiHÉ¿IÉ|≈¯ uÎEÖ‰xXHc}ÃË]¸ˇˇIâ«IcƒMâ|≈ MÖˇtaø    Ë¸ˇˇH+E∞HâEòø    ËÒ˚ˇˇLãEòHâ¡Lâ˙DâÊHç=ù  ∏    Ë≥˚ˇˇÈw˛ˇˇHã˜+  ∫/   æ   Hç=F  Ë!¸ˇˇÈU˛ˇˇËW˚ˇˇã8Ë ¸ˇˇHâ¬Hç5a  Hã=ø+  ∏    Ëï˚ˇˇÈsˇˇˇ«EÃˇˇˇˇLâÚHç5  Hâﬂ∏    Ë"˚ˇˇÉ¯uÉ}Ã yHãÄ+  ∫   æ   Hç='  Ë™˚ˇˇDãeÃEÖ‰x\D9eº~VIcƒMç|≈ Iã?HÖˇtFË∂˙ˇˇI«    ø    Ë˚ˇˇH+E∞Iâ«ø    ËÙ˙ˇˇLâ˘Hâ¬DâÊHç=4  ∏    Ë∫˙ˇˇÈ~˝ˇˇãM∏Dâ‚Hç5–  Hã=Ò*  ∏    Ë«˙ˇˇÈ[˝ˇˇ∏    Hçeÿ[A\A]A^A_]√f.Ñ     @ AWIâ◊AVIâˆAUAâ˝ATLç%¿'  UHç-¿'  SL)ÂHÉÏË”˘ˇˇH¡˝t1€ Lâ˙LâˆDâÔAˇ‹HÉ√H9›uÍHÉƒ[]A\A]A^A_√ √   HÉÏHÉƒ√                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     usage: %s MAX_DYNAMIC_ALLOCS
+ First address past:  %c %d bad input: type "+ MEM_SIZE"
+ memory allocation error: %s
+ bad input: type "- ID"
+ >>      This program illustrates the how the upper limit of a program's data
+area (the "brk") changes as memory is allocated.  To interact with
+the program, type one of the following commands at the '>> ' prompt:
+
+To allocate a block, type a line consisting of a + followed by the
+size of the memory to be allocated.  The program will print out
+a non-negative integer giving an id for that memory block, the address
+at which the memory is allocated, the current program brk and the
+change in the size of the brk since the program started up.
+
+To free memory, type a - followed by the id of a currently allocated
+memory block.  The program will respond with the current program brk
+and the change in the size of the brk since the program started up.
+       program text (etext)      %10p
+         initialized data (edata)  %10p
+         uninitialized data (end)  %10p
+         brk (sbrk(0))             %10p
+
+    no more memory segments, use - command to free
+ block[%d] allocated %p: brk = %p, brk change since program start = %zu
+ bad id %d: must be id in [0, %d] of currently allocated memory block
+   block[%d] free'd; brk = %p, brk change since program start = %zu
+       bad input %c: type a line "+ MEM_SIZE" or "- ID"
+       ;<      ¿Íˇˇà   ¿Îˇˇ∞   –ÎˇˇX   µÏˇˇ»   †ˇˇ¯    Òˇˇ@             zR xê      pÎˇˇ+                  zR xê  $      0Íˇˇ    FJwÄ ?;*3$"       D   Îˇˇ           ,   \   ÂÎˇˇ›   AÜCMèéçåÉÀ      D   å   †Ôˇˇ]    BèEéE çE(åH0ÜH8ÉG@j8A0A(B BBB    ‘   ∏Ôˇˇ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 –                           X                            d             ÿ=                           ‡=                    ı˛ˇo                 Ä             @      
+                                                  @             h                                                            	              ˚ˇˇo           ˛ˇˇo    »      ˇˇˇo           ˇˇo    ò      ˘ˇˇo                                                                                                                                   Ë=                      6      F      V      f      v      Ü      ñ      ¶      ∂      ∆      ÷      Ê      ˆ                          ò@      GCC: (Debian 8.3.0-6) 8.3.0 ,                   ›                      Ø       x  ∫   $        ›          M   ÿ9   Ω  9   ¬  e  y  g  C   int ‡   €  ñq   b  óq   ñ   n  ñ   $   ÿ1)  	g   3j    	Z  6	ê   	‰  7	ê   	  8	ê   	Ò  9	ê    	Y   :	ê   (	å  ;	ê   0	Ñ   <	ê   8	  =	ê   @	9  @	ê   H	„  A	ê   P	6   B	ê   X	õ   DB  `	    FH  h	£  Hj   p	˘  Ij   t	>  Jx   x	  MU   Ä	*  N\   Ç	⁄  ON  É	È   Q^  à	B  YÑ   ê	  [i  ò	¬  \t  †	T  ]H  ®	≠   ^	L   ∞	r  _
+-   ∏	Õ  `j   ¿	   bz  ƒ (   ¢   
+u  +œ  =  ¢   ñ   ^  9     5    d  ø  o  ñ   ä  9    Û  âñ  )  n  äñ  Œ   ãñ  -   j   ÷  À   ¿  ù   –  G  À  €   ∏  ë   	  ê      
+$ê   «   
+2j   	  
+7j   S  
+;j   ’   nñ   l  nñ   end nñ   T   {j         ›      ú9
+  ≥  {
+j          -  {9
+  G   =   n }j   ƒ   º   √  2      2             ~  ’  *  &  E      ˆ  T0Q:  ∫  S      S             ÇD  _        U	ò         ?
+  _      _      r       É  k        à  U	"        É        ß  U	Ä#       õ        ∆  U	®#       ≥        Â  U	–#       Ω        ¸  U0 —        U	¯#        H
+  ÿ           Ñ˘	  `
+  c  a  U
+  ä  Ü      j
+  „  ∆  ¿  v
+      ä                     N—  £  g  e  ó  é  ä  ≠  ˝             Æ  ∆  ƒ    Ç
+  0   ú	   É
+  ëªç
+  p   ﬂ   í
+  ëº  D      †   Y	é  >  Ó  Í  4  ,  (  (  j  f    §  †  †   J  ‡  ‹  V  D      D      !       -ø  s      g  ?  =  }  D      !       ~  j  b    !s      '  ç        „  U0 ü        ˙  U0 Ω        -  U	P$      T| Q Xvò ﬂ      4  W  U	 $      T1Q/ !È      ?  !      K        X  T	[                e  π  Us T	:       Q~  D      4  U	=       T1QM  ü
+  –   $	   §
+  ëºŒ
+  Z          a	”  ¸
+  Õ  …  Ú
+      Ê
+  I  E  €
+  É    !z      r  ã        f  U0 ú        }  U0 ∂        ®  U	‡$      T| R  Ÿ      X  T	ò$      Q| Rv∏î  .      e  ˛  Us T	:       Q~  V      4  U	x       T1QG  ∞
+  @  r	  ±
+  ª  π  æ      X  ]	  T	(%       ∆        Us   å      e  Us T	6       Qv®          ≥	  U0 A      å  À	  Us  U        Í	  U	ê        !i      ô    "@   ‰  ﬁ  Ù      X  %
+  T	        ˛      •  U1  –  #Ô   q$ö  Kø
+  %in Kñ  %n Kj   &  M	ø
+  &”  O	ê   '(c Q
+ñ   )ü
+  &∫  Uj    )∞
+  (id ]j    '(ch gj      L   Œ
+  *9    $%  <	  %id <j   +   <	  %n <"j   +”  <+ê    L   $  +V  +∫  +j   +   +	  %n +&j   +”  +/ê   (id -j    ,  "j   ä  +   "	  %n "j   '(i $j     $  ∫  +   	  %n !j   '(i j     #¿   
+-`  ij   „  .g  i–   L   ˆ  /9   ˘	   0      ∞1µ  ´   2    L2s  s  	2    1Y  O   0      %2§   §   å2    F2n   w   ô2(  (  32~   ~   Î2J  J  ˝07  7  ⁄22  2  f %   :;9I  $ >  & I     $ >   I  :;9  	 :;9I8  
+ :;9   <  I  ! I/  4 :;9I?<  !   4 :;9I?<  4 :;9I?<  .?:;9'I@óB   :;9I∑B  4 :;9I∑B  1R∏BXYW   1∑B  âÇ1  äÇ ëB  âÇ1  1R∏BUXYW  U  4 1I∑B  4 1∑B  1  1U   4 1  !âÇ 1  "4 4I∑B  #. :;9'   $.:;9'   % :;9I  &4 :;9I  '  (4 :;9I  )  *! I  + :;9I  ,.:;9'I   -.?:;9'I   . :;9I  /! I/  0. ?<n:;9  1. ?<n:;  2. ?<n:;9   H   9  ˚      /usr/include /usr/lib/gcc/x86_64-linux-gnu/8/include /usr/include/x86_64-linux-gnu/bits /usr/include/x86_64-linux-gnu/bits/types  brk.c    stdlib.h   stddef.h   types.h   struct_FILE.h   FILE.h   stdio.h   sys_errlist.h   unistd.h   getopt_core.h   <built-in>    errno.h   string.h     	      ˚ = Îê   J û X
+ < < ì~Üà∫¯ nªuuu»Gt	<Ç…NÇZ'tJX1◊	JNi»ê	ÇÇ∫)Ç&‰É	tY	 n	<v	Ç.ü	Uû	uf*Xg	ºRuπ<gJÇ	\ê<<X[,ú0	%UX∫\AX'	*	uf(Xg	º[J ¨¨]Yu"ù+	]X#∆ . _chain __errno_location optarg addr _IO_FILE sys_nerr _IO_save_end short int size_t main _IO_write_ptr _flags __isoc99_fscanf fgetc _IO_buf_base __environ _markers strerror _freeres_buf brk.c how_to optind stderr etext long long int _lock out_segment_ends strtol _cur_column fprintf do_malloc do_free argv exit fflush _old_offset feof __builtin_fwrite atoi unsigned char sbrk GNU C11 8.3.0 -mtune=generic -march=x86-64 -g -O1 -std=c11 argc long long unsigned int _IO_marker _shortbuf _IO_read_end _IO_write_base _unused2 opterr next_id _IO_buf_end /home/fantona1/i220a/submit/lab10/exercises/brk _freeres_list __off64_t edata __pad5 short unsigned int _IO_write_end interact _fileno __builtin_puts size _IO_wide_data _mode initBrk __off_t _IO_backup_base stdin _flags2 init_addresses _IO_codecvt _IO_read_base _vtable_offset _IO_save_base sys_errlist optopt _IO_read_ptr __nptr stdout _IO_lock_t             !        U!       ›       ÛUü                                  +        T+       √        S√       ƒ       ÛTüƒ      È       SÈ      ›       ÛTü                        6       I        PI       ƒ       vºÈ      ‹       vº‹      ›       ë¨                           +        t+       /        U                  √       „        \                    √       ƒ       SÈ      …       S                      €       Ë        q Ë       ƒ       w È      …       w                             
+       P
+      ƒ       v∞È      …       v∞                 €       „        \                   €       Ë        QË       ¯        W                 €       Ë        0ü                   /      ®       v∞≠      ˚       v∞                   /      ®       vº≠      ˚       vº                   /      ®       W≠      ˚       W                   /      ]       ~ ≠      …       ~                     P      ®       \œ      ˚       \                 /      P       vº                 /      P       W                       /      ;       0ü;      >       pü>      H       PH      P       \                    E      °       v∞¶      …       v∞                    E      °       vº¶      …       vº                    E      °       W¶      …       W                    E      °       \¶      …       \                  ±      ƒ       P                     √       ∆        |  $ &1ü∆       Œ        püŒ       „        |  $ &1ü                √       ƒ      È      …                            $      _      ƒ      È      …                                  È      ˚                      /      ®      ≠      ˚                            $      ˚      …                            $      E      °      ¶      …                      é      é      ë      ƒ                                                           ®                    ƒ                    ‰                                        @                    Ä                    ò                    »                   	                    
+                                                                                     0                    d                                          `%                    †%                    ÿ=                    ‡=                    Ë=                    ÿ?                     @                    ê@                    †@                                                                                                                                                                              !                     Òˇ                     `                   ê              !     –              7     »@             F     ‡=              m                   y     ÿ=              ò    Òˇ                    Òˇ                û     ¥&                   Òˇ                ¨      ‡=              Ω     Ë=              ∆      ÿ=              Ÿ      `%              Ï      @              z                       `                                  ≥    †@              $                     B                      ^    †@             ˇ     ê@              r                     ç                     ü    ∞@             ≤    †@                 d                                   π     –@              π                     Ã                     Î                     ˝    ê@              
+                                          1                      @                     T   ò@              a                   p           ]       Ä                     î                     ∏     –@                  0      +       ®    †@              ¥          ›      π    m              ø                     —                     Â   †@              Ò                                           !  "                   =    ¿@              crtstuff.c deregister_tm_clones __do_global_dtors_aux completed.7325 __do_global_dtors_aux_fini_array_entry frame_dummy __frame_dummy_init_array_entry brk.c __FRAME_END__ __init_array_end _DYNAMIC __init_array_start __GNU_EH_FRAME_HDR _GLOBAL_OFFSET_TABLE_ __libc_csu_fini free@@GLIBC_2.2.5 __errno_location@@GLIBC_2.2.5 _ITM_deregisterTMCloneTable stdout@@GLIBC_2.2.5 __isoc99_fscanf@@GLIBC_2.7 puts@@GLIBC_2.2.5 stdin@@GLIBC_2.2.5 _edata fgetc@@GLIBC_2.2.5 __libc_start_main@@GLIBC_2.2.5 sbrk@@GLIBC_2.2.5 __data_start fprintf@@GLIBC_2.2.5 feof@@GLIBC_2.2.5 __gmon_start__ strtol@@GLIBC_2.2.5 __dso_handle _IO_stdin_used __libc_csu_init malloc@@GLIBC_2.2.5 fflush@@GLIBC_2.2.5 __bss_start main etext exit@@GLIBC_2.2.5 fwrite@@GLIBC_2.2.5 __TMC_END__ _ITM_registerTMCloneTable strerror@@GLIBC_2.2.5 __cxa_finalize@@GLIBC_2.2.5 stderr@@GLIBC_2.2.5  .symtab .strtab .shstrtab .interp .note.ABI-tag .note.gnu.build-id .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .init .plt.got .text .fini .rodata .eh_frame_hdr .eh_frame .init_array .fini_array .dynamic .got.plt .data .bss .comment .debug_aranges .debug_info .debug_abbrev .debug_line .debug_str .debug_loc .debug_ranges                                                                                     ®      ®                                    #             ƒ      ƒ                                     1             ‰      ‰      $                              D   ˆˇˇo                   4                             N             @      @      @                          V             Ä      Ä                                   ^   ˇˇˇo       ò      ò      0                            k   ˛ˇˇo       »      »      P                            z                                                    Ñ      B                     h                          é                                                         â                                                        î                                                        ù             0      0      1                             £             d      d      	                              ©                             `                             ±             `%      `%      <                              ø             †%      †%                                   …             ÿ=      ÿ-                                   ’             ‡=      ‡-                                   ·             Ë=      Ë-                                 ò             ÿ?      ÿ/      (                             Í              @       0      ê                             Û             ê@      ê0                                    ˘             †@      †0      0                               ˛      0               †0                                                        º0      0                                                   Ï0      ≥                             "                     ü=      √                             0                     b@      L                             <     0               ÆC      Ä                            G                     .G      C                             R                     qM      p                                                   ËN      à      #   4                 	                      pW      Q                                                   ¡Z      `                             ]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ cat brk.c
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#define PROMPT ">> "
+
+static void
+how_to(void) {
+  printf(
+    "This program illustrates the how the upper limit of a program's data\n"
+    "area (the \"brk\") changes as memory is allocated.  To interact with\n"
+    "the program, type one of the following commands at the '" PROMPT
+    "' prompt:\n\n"
+    "To allocate a block, type a line consisting of a + followed by the\n"
+    "size of the memory to be allocated.  The program will print out\n"
+    "a non-negative integer giving an id for that memory block, the address\n"
+    "at which the memory is allocated, the current program brk and the\n"
+    "change in the size of the brk since the program started up.\n\n"
+    "To free memory, type a - followed by the id of a currently allocated\n"
+    "memory block.  The program will respond with the current program brk\n"
+    "and the change in the size of the brk since the program started up.\n\n"
+         );
+}
+
+static void
+init_addresses(void **addr, int n)
+{
+  for (int i = 0; i < n; i++) addr[i] = NULL;
+}
+
+static int
+next_id(void **addr, int n)
+{
+  for (int i = 0; i < n; i++) {
+    if (addr[i] == NULL) return i;
+  }
+  return -1;
+}
+
+static void
+do_malloc(int size, void **addr, int n, char *initBrk)
+{
+  int id = next_id(addr, n);
+  if (id < 0) {
+    fprintf(stderr, "no more memory segments, use - command to free\n");
+  }
+  else {
+    if (!(addr[id] = malloc(size))) {
+      fprintf(stderr, "memory allocation error: %s\n", strerror(errno));
+    }
+    printf("block[%d] allocated %p: brk = %p, "
+           "brk change since program start = %zu\n",
+           id, addr[id], sbrk(0), ((char *)sbrk(0)) - initBrk);
+  }
+}
+
+static void
+do_free(int id, void **addr, int n, char *initBrk)
+{
+  if (id < 0 || id >= n || addr[id] == NULL) {
+    fprintf(stderr, "bad id %d: must be id in [0, %d] of currently "
+            "allocated memory block\n", id, n - 1);
+  }
+  else {
+    free(addr[id]);
+    addr[id] = NULL;
+    printf("block[%d] free'd; brk = %p, brk change since program start = %zu\n",
+           id, sbrk(0), ((char *)sbrk(0)) - initBrk);
+  }
+}
+
+static void
+interact(FILE *in, int n)
+{
+  void *addresses[n];
+  init_addresses(addresses, n);
+  char *initBrk = sbrk(0);
+  while (!feof(in) && printf(PROMPT) && fflush(stdout) == 0) {
+    char c;
+    if (fscanf(in, " %c", &c) != 1) continue;
+    switch (c) {
+      case '+': {
+        int size = -1;
+        if (fscanf(in, "%d", &size) != 1 || size <= 0) {
+          fprintf(stderr, "bad input: type \"+ MEM_SIZE\"\n");
+        }
+        do_malloc(size, addresses, n, initBrk);
+        break;
+      }
+      case '-': {
+        int id = -1;
+        if (fscanf(in, "%d", &id) != 1 || id < 0) {
+          fprintf(stderr, "bad input: type \"- ID\"\n");
+        }
+        do_free(id, addresses, n, initBrk);
+        break;
+      }
+      default: {
+        fprintf(stderr, "bad input %c: type a line \"+ MEM_SIZE\""
+                " or \"- ID\"\n", c);
+        int ch;
+        do { ch = fgetc(in); } while (ch != EOF && ch != '\n');
+      }
+    } //switch
+  } //while (!feof(in))
+}
+
+extern char etext, edata, end; // The symbols must have some type,
+
+static void
+out_segment_ends(void)
+{
+  printf("First address past:\n");
+  printf("    program text (etext)      %10p\n", &etext);
+  printf("    initialized data (edata)  %10p\n", &edata);
+  printf("    uninitialized data (end)  %10p\n", &end);
+  printf("    brk (sbrk(0))             %10p\n\n", sbrk(0));
+}
+
+int
+main(int argc, const char **argv)
+{
+  int n;
+  if (argc != 2 || (n = atoi(argv[1])) <= 0) {
+    fprintf(stderr, "usage: %s MAX_DYNAMIC_ALLOCS\n", argv[0]);
+    exit(1);
+  }
+  how_to();
+  out_segment_ends();
+  interact(stdin, n);
+  return 0;
+}
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ ls
+[0m[01;32mbrk[0m  brk.c  Makefile  README
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ cat Makefile
+#CFLAGS = -g -Wall -std=c11 -m32 -O1
+CFLAGS = -g -Wall -std=c11 -O1
+CPPFLAGS = -D_DEFAULT_SOURCE
+LDLIBS = -pthread
+
+TARGETS = brk
+
+all:		$(TARGETS)
+
+clean:
+		rm -f *.o *~ $(TARGETS)
+
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ cat README
+2019-09-22
+
+It looks like the malloc() library sets up an initial arena and so
+to brk does not change.
+
+[According to .<https://osa1.net/posts/2018-04-08-malloc-brk-sbrk.html> this,
+sbrk() is not used at all, though this is not what I am seeing.]]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ 
+]0;fantona1@remote04: ~/.../exercises/brk[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/brk[00m$ exit
+
+Script done on 2020-11-08 17:26:21-05:00 [COMMAND_EXIT_CODE="0"]
