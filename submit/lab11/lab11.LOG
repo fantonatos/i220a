@@ -1,0 +1,1019 @@
+Script started on 2020-11-14 17:52:01-05:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="209" LINES="52"]
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ trime[K[K[K[Kime
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time ls [K
+[0m[01;34mexercises[0m  lab11.LOG
+
+real	0m0.004s
+user	0m0.000s
+sys	0m0.002s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time ls exercises
+[0m[01;34mcoverage[0m  [01;34mint-search[0m  [01;34mmatmul-cache[0m  [01;34mparity[0m
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time sleep 5
+
+real	0m5.004s
+user	0m0.000s
+sys	0m0.002s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time sleep 5
+
+real	0m5.003s
+user	0m0.001s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m1.509s
+user	0m0.057s
+sys	0m0.310s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m1.033s
+user	0m0.051s
+sys	0m0.187s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m0.583s
+user	0m0.026s
+sys	0m0.152s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m0.562s
+user	0m0.060s
+sys	0m0.134s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m0.588s
+user	0m0.041s
+sys	0m0.141s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m0.604s
+user	0m0.036s
+sys	0m0.147s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m0.594s
+user	0m0.031s
+sys	0m0.179s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ time wc -l `find /etc -type f 2>/dev/null` 2>/dev/null | tail
+      21 /etc/xattr.conf
+      23 /etc/sysfs.conf
+      25 /etc/e2scrub.conf
+       0 /etc/netgroup
+      98 /etc/rsyslog-haproxy.conf
+      92 /etc/rsyslog-normal.conf
+       1 /etc/login.warn
+      45 /etc/ethertypes
+      14 /etc/xinetd.conf
+  254458 total
+
+real	0m0.576s
+user	0m0.023s
+sys	0m0.153s
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ ls
+[0m[01;34mexercises[0m  lab11.LOG
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ cd exercides[K[K[Kses/
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ ls
+[0m[01;34mcoverage[0m  [01;34mint-search[0m  [01;34mmatmul-cache[0m  [01;34mparity[0m
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ ls
+[0m[01;34mcoverage[0m  [01;34mint-search[0m  [01;34mmatmul-cache[0m  [01;34mparity[0m
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ cd parity
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ ls
+main.c  Makefile  parity-c.c  parity-s.c
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ ls
+main.c  Makefile  parity-c.c  parity-s.c
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ make
+cc -g -Wall -std=c11 -O1   -c -o parity-c.o parity-c.c
+cc -g -Wall -std=c11 -O1   -c -o main.o main.c
+cc   parity-c.o main.o   -o parity-c
+cc -g -Wall -std=c11 -O1   -c -o parity-s.o parity-s.c
+cc   parity-s.o main.o   -o parity-s
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ ls
+main.c  main.o  Makefile  [0m[01;32mparity-c[0m  parity-c.c  parity-c.o  [01;32mparity-s[0m  parity-s.c  parity-s.o
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ ./parity-d[Kc -d 10
+67: 0
+c6: 1
+69: 1
+73: 0
+51: 0
+ff: 1
+4a: 0
+ec: 0
+29: 0
+cd: 0
+3
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ ./parity-c -d 10[1P[1@s
+67: 0
+c6: 1
+69: 1
+73: 0
+51: 0
+ff: 1
+4a: 0
+ec: 0
+29: 0
+cd: 0
+3
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ ls
+main.c  main.o  Makefile  [0m[01;32mparity-c[0m  parity-c.c  parity-c.o  [01;32mparity-s[0m  parity-s.c  parity-s.o
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ cat main.c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define DEBUG_OPT  "-d"
+
+int parity_tests(int nTests, int doDebug);
+
+int 
+main(int argc, const char *argv[])
+{
+  int nTests = -1;
+  if (argc == 1 || argc > 3 || 
+      (argc == 3 && strcmp(argv[1], DEBUG_OPT) != 0) ||
+      ((nTests = atoi(argv[argc - 1])) <= 0)) {
+    fprintf(stderr, "usage: %s [%s] NUM_TESTS\n", argv[0], DEBUG_OPT);
+    exit(1);
+  }
+  printf("%d\n", parity_tests(nTests, argc == 3));
+  return 0;
+}	
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ cd [K[Kat parity-c.c
+#include <stdio.h>
+#include <stdlib.h>
+
+int 
+parity_tests(int nTests, int doDebug)
+{
+  int sum = 0;
+  for (int i = 0; i < nTests; i++) {
+    int value = rand() & (doDebug ? 0xFF : ~0);
+    //open code count-1s routine
+    int v = value;
+    int nOnes = 0;
+    while (v != 0) {
+      v &= (v - 1);
+      nOnes++;
+    }
+    int isEvenParity = (nOnes & 1) == 0;
+    if (doDebug) {
+      fprintf(stderr, "%x: %d\n", value, isEvenParity);
+    }
+    sum += isEvenParity;
+  }
+  return sum;
+}
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ cat parity-c.c[C[1P.cs.c
+#include <stdio.h>
+#include <stdlib.h>
+
+int 
+parity_tests(int nTests, int doDebug)
+{
+  int sum = 0;
+  for (int i = 0; i < nTests; i++) {
+    int value = rand() & (doDebug ? 0xFF : ~0);
+    int isEvenParity = 0;
+    __asm__("testl %1, %1; jpo 1f; movl $1, %0; 1:":
+	    "=r"(isEvenParity):"r"(value),"0"(isEvenParity));
+    if (doDebug) {
+      fprintf(stderr, "%x: %d\n", value, isEvenParity);
+    }
+    sum += isEvenParity;
+  }
+  return sum;
+}
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ clear
+[H[2J[3J]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ timeclearat parity-s.cc.c[4Pmain.cls[K./parity-s -d 10[1P[1P[1@ [1@t[1@i[1@m[1@e[1@ 
+bash: parity-s: command not found
+
+real	0m0.002s
+user	0m0.001s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ clearat parity-s.cc.c[4Pmain.cls[K[K[K./parity-s -d 10c[C[C[C[C[C[Cs[C[C[C[C[C[Cc[C[C[C[C[C[Cls[Kmake[2Plscd parityls[Kcd exercises/ls[Kcd parityls[Kmake[2Pls./parity-c -d 10s[C[C[C[C[C[C[Kcat main.cparity-c.cs.clear[K[Ktime ./parity-s -d 10
+67: 0
+c6: 1
+69: 1
+73: 0
+51: 0
+ff: 1
+4a: 0
+ec: 0
+29: 0
+cd: 0
+3
+
+real	0m0.003s
+user	0m0.001s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ time ./parity-s -d 10[1P[1P 10[1P10[1P0[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ ls
+main.c  main.o  Makefile  [0m[01;32mparity-c[0m  parity-c.c  parity-c.o  [01;32mparity-s[0m  parity-s.c  parity-s.o
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ lstime ./parity-s -d 10[1P[1@c
+67: 0
+c6: 1
+69: 1
+73: 0
+51: 0
+ff: 1
+4a: 0
+ec: 0
+29: 0
+cd: 0
+3
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ 
+]0;fantona1@remote04: ~/.../exercises/parity[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/parity[00m$ cd ..
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ ls
+[0m[01;34mcoverage[0m  [01;34mint-search[0m  [01;34mmatmul-cache[0m  [01;34mparity[0m
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ 
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ cd maty[Kmiul[K[K[Kul-cache/
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ls
+main.c  Makefile  matmul.h  simple-matmul.c  transpose-matmul.c
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ clear
+[H[2J[3J]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ls
+main.c  Makefile  matmul.h  simple-matmul.c  transpose-matmul.c
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ cat main.c
+#define _XOPEN_SOURCE 1
+
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "matmul.h"
+
+static void
+initMatrix(int n, double matrix[][n])
+{
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      matrix[i][j] = lrand48();
+    }
+  }
+}
+
+static void
+out_matrix(int n, double a[][n])
+{
+  FILE *out = stdout;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      fprintf(out, "%8g ", a[i][j]);
+    }
+    fprintf(out, "\n");
+  }
+}
+
+enum { MAX_TEST_MATRIX_SIZE = 6 };
+
+int
+main(int argc, const char *argv[])
+{
+  int matrixSize = -1;
+  int numTests = -1;
+  if (argc != 3 || (matrixSize = atoi(argv[1])) <= 0 ||
+      (numTests = atoi(argv[2])) <= 0) {
+    fprintf(stderr, "usage: %s MATRIX_SIZE N_TRIALS\n", argv[0]);
+    exit(1);
+  }
+  int n = matrixSize;
+  double (*a)[n] = malloc(sizeof(double[n][n]));
+  double (*b)[n] = malloc(sizeof(double[n][n]));
+  double (*c)[n] = malloc(sizeof(double[n][n]));
+  if (!a || !b || !c) {
+    fprintf(stderr, "could not malloc matrices: %s\n", strerror(errno));
+    exit(1);
+  }
+  initMatrix(n, a); initMatrix(n, b);
+  for (int t = 0; t < numTests; t++) {
+    matrix_multiply(n, a, b, c);
+  }
+  if (matrixSize <= MAX_TEST_MATRIX_SIZE) out_matrix(n, c);
+  return 0;
+}
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ cat simple-matmul.c 
+#include "matmul.h"
+
+void
+matrix_multiply(int n, double a[][n], double b[][n], double c[][n])
+{
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      c[i][j] = 0;
+      for (int k = 0; k < n; k++) {
+	c[i][j] += a[i][k]*b[k][j];
+      }
+    }
+  }
+}
+
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ make[K[K[K[Kmake
+cc -g -Wall -std=c11 -O1   -c -o main.o main.c
+cc -g -Wall -std=c11 -O1   -c -o simple-matmul.o simple-matmul.c
+cc main.o simple-matmul.o  -o simple-matmul
+cc -g -Wall -std=c11 -O1   -c -o transpose-matmul.o transpose-matmul.c
+cc main.o transpose-matmul.o  -o transpose-matmul
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ls
+main.c  main.o  Makefile  matmul.h  [0m[01;32msimple-matmul[0m  simple-matmul.c  simple-matmul.o  [01;32mtranspose-matmul[0m  transpose-matmul.c  transpose-matmul.o
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./timp[K[K[K[Ksimple-matmul
+usage: ./simple-matmul MATRIX_SIZE N_TRIALS
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./simple-matmul 10 1
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./simple-matmul 10 10
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./simple-matmul 10 10
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./simple-matmul 10 10
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./simple-matmul 10 10[1P[1P[1P[1P[1P[1P[1@t[1@r[1@a[1@n[1@s[1@p[1@o[1@s[1@e
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 10 10
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 10 10[K[K[K0 2
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 100 2
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 100 2
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 100 20
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 100 200
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 100 200[K0[1@t[1@i[1@m[1@e[1@ 
+
+real	0m0.613s
+user	0m0.603s
+sys	0m0.008s
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ time ./simple-a[Kmatmul 100 200
+
+real	0m0.611s
+user	0m0.610s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ls
+main.c  main.o  Makefile  matmul.h  [0m[01;32msimple-matmul[0m  simple-matmul.c  simple-matmul.o  [01;32mtranspose-matmul[0m  transpose-matmul.c  transpose-matmul.o
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ cd [K[K[Kmake clean
+rm -f simple-matmul transpose-matmul *.o *~
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ls
+main.c  Makefile  matmul.h  simple-matmul.c  transpose-matmul.c
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ cd [K[K[Kan[K[Knano transpose-matmul.c
+[?1049h[22;0;0t[1;52r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[50;97H(B[0;7m[ Reading File ](B[m[50;103H(B[0;7m 36 lines ](B[m[H(B[0;7m  GNU nano 3.2                                                                                   transpose-matmul.c                                                                                              [1;208H(B[m[51d(B[0;7m^G(B[m Get Help[18G(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is[52G(B[0;7m^K(B[m Cut Text[69G(B[0;7m^J(B[m Justify[86G(B[0;7m^C(B[m Cur Pos[103G(B[0;7mM-U(B[m Undo[51;120H(B[0;7mM-A(B[m Mark Text    (B[0;7mM-](B[m To Bracket   (B[0;7mM-Q(B[m Previous     (B[0;7m^B(B[m Back[51;188H(B[0;7m^◀(B[m Prev Word[52d(B[0;7m^X(B[m Exit[52;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Uncut Text    (B[0;7m^T(B[m To Spell[86G(B[0;7m^_(B[m Go To Line    (B[0;7mM-E(B[m Redo[52;120H(B[0;7mM-6(B[m Copy Text    (B[0;7m^Q(B[m Where Was     (B[0;7mM-W(B[m Next[52;171H(B[0;7m^F(B[m Forward[188G(B[0;7m^▶(B[m Next Word[50d[3d(B[0;1m[36m#include[39m(B[m (B[0;1m[33m"matmul.h"[5d[36m#include[39m(B[m (B[0;1m[33m<errno.h>[6d[36m#include[39m(B[m (B[0;1m[33m<stdio.h>[7d[36m#include[39m(B[m (B[0;1m[33m<stdlib.h>[8d[36m#include[39m(B[m (B[0;1m[33m<string.h>[10d[34m/** Fill in matrix t[n][n] as the transpose of matrix a[n][n].  That is,[11d *  for all i, j set t[i][j] to a[j][i].[12d */[13d(B[0m[32mstatic[39m(B[m [32mvoid[14d[39m(B[mmatrix_transpose([32mint[39m(B[m n, [32mdouble[39m(B[m a[][n], [32mdouble[39m(B[m t[][n])[15d{[16d (B[0;1m[34m//@[37m[43mTODO[39;49m[34m add your code here[17d[39m(B[m}[20d[32mvoid[21d[39m(B[mmatrix_multiply([32mint[39m(B[m n, [32mdouble[39m(B[m a[][n], [32mdouble[39m(B[m b[][n], [32mdouble[39m(B[m c[][n])[22d{[23d [32mdouble[39m(B[m (*tmp)[n] = malloc([32msizeof[39m(B[m([32mdouble[39m(B[m[n][n]));[24;3H(B[0;1m[33mif[39m(B[m (!tmp) {[25;5Hfprintf(stderr, (B[0;1m[33m"could not malloc transpose matrix: %s\n"[39m(B[m,[26;13Hstrerror(errno));[27;5Hexit(1);[28;3H}[29dmatrix_transpose(n, b, tmp);[30;3H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m i = 0; i < n; i++) {[31;5H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m j = 0; j < n; j++) {[32;7Hc[i][j] = 0;[33;7H(B[0;1m[33mfor[39m(B[m ([32mint[39m(B[m k = 0; k < n; k++) {[34;9Hc[i][j] += a[i][k]*tmp[j][k];[35;7H}[36;5H}[37;3H}[38d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l[11d[?12l[?25h[?25l[12d[?12l[?25h[?25l[13d[?12l[?25h[?25l[14d[?12l[?25h[?25l[15d[?12l[?25h[?25l[16d[?12l[?25h[?25l[16;29H[?12l[?25h[?25l[1;200H(B[0;7mModified(B[m[16;28H [?12l[?25h[?25l[16;12H[K[50d[K[16;12H[?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l(B[0;1m[34mTOD[39m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l/[K[?12l[?25h[?25l[42m  [49m(B[m[K[?12l[?25h[?25l  f[?12l[?25h[?25lo[?12l[?25h[?25l(B[0;1m[33mfor[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l ([?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l[32mint[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l k[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l =[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l 0[?12l[?25h[?25l;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l k[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l <[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l n[?12l[?25h[?25l;[?12l[?25h[?25l k++)[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l {[?12l[?25h[?25l7[17;50r8[17dM[1;52r[17;1H[?12l[?25h[?25l[42m  [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m  [49m(B[m[?12l[?25h[?25l[1K c[?12l[?25h[?25l[[?12l[?25h[?25li[?12l[?25h[?25l][?12l[?25h[?25l[[?12l[?25h[?25lj[?12l[?25h[?25l][?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l +[?12l[?25h[?25l=[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l a[?12l[?25h[?25l[[?12l[?25h[?25li[?12l[?25h[?25l][?12l[?25h[?25l[[?12l[?25h[?25lk[?12l[?25h[?25l][?12l[?25h[?25l*[?12l[?25h[?25lb[?12l[?25h[?25l[[?12l[?25h[?25lk[?12l[?25h[?25l][?12l[?25h[?25l[j[?12l[?25h[?25l][?12l[?25h[?25l;[?12l[?25h[?25l7[18;50r8[18dM[1;52r[18;1H[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[1K }[?12l[?25h[?25l[?12l[?25h[?25l}[K[?12l[?25h[?25l}[K[?12l[?25h[?25l}[K[?12l[?25h[?25l}[K[?12l[?25h[?25l[A[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P  [?12l[?25h[?25l   c[i][j] += a[i][k]*b[k][j];   [?12l[?25h[?25l    c[i][j] += a[i][k]*b[k][j];[5G[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P    [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P    [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l][j];[K[5G[?12l[?25h[?25l[j];[K[?12l[?25h[?25lj];[K[?12l[?25h[?25l];[K[?12l[?25h[?25l;[K[?12l[?25h[?25l[42m    [49m(B[m[K[?12l[?25h[?25l[A[?12l[?25h[?25l[?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l [?12l[?25h[?25l([?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l[C[?12l[?25h[?25l [?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25l=[?12l[?25h[?25l [?12l[?25h[?25l0[?12l[?25h[?25l;[?12l[?25h[?25l [?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25l<[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25l;[?12l[?25h[?25l [?12l[?25h[?25lk[?12l[?25h[?25l+[?12l[?25h[?25l+[?12l[?25h[?25l+) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25lin) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l) {[K[?12l[?25h[?25l[17;5H[?12l[?25h[?25l[18d[?12l[?25h[?25l[42m  [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l[K[?12l[?25h[?25l[17;50r[50;1H
+[1;52r[17;1H[42m    [49m(B[m[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[K[?12l[?25h[?25l[17;50r[50;1H
+[1;52r[16;11H[?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25lfo[K[?12l[?25h[?25l [?12l[?25h[?25l[42m  [49m(B[m[K[?12l[?25h[?25l  fo[?12l[?25h[?25l(B[0;1m[33mfor[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l ([?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l[32mint[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l i[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l =[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l 0[?12l[?25h[?25l;[?12l[?25h[?25l i[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l <[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l n;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l i[?12l[?25h[?25l+[?12l[?25h[?25l+[?12l[?25h[?25l)[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l {[?12l[?25h[?25l7[17;50r8[17dM[1;52r[17;1H[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l    f[?12l[?25h[?25lo[?12l[?25h[?25l(B[0;1m[33mfor[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l ([?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l[32mint[39m(B[m j[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l =[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l 0[?12l[?25h[?25l;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l j[42m [49m(B[m[?12l[?25h[?25l <[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l n[?12l[?25h[?25l;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l j[?12l[?25h[?25l+[?12l[?25h[?25l+[?12l[?25h[?25l)[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l {[?12l[?25h[?25l7[18;50r8[18dM[1;52r[18;1H[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[1K c[?12l[?25h[?25l[[?12l[?25h[?25li[?12l[?25h[?25l][?12l[?25h[?25l[j[?12l[?25h[?25l][?12l[?25h[?25l =[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l 0[?12l[?25h[?25l;[?12l[?25h[?25l7[19;50r8[19dM[1;52r[19;1H[42m [49m(B[m[?12l[?25h[?25l[42m   [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[1K f[?12l[?25h[?25lo[?12l[?25h[?25l(B[0;1m[33mfor[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l (i[?12l[?25h[?25ln[?12l[?25h[?25l[32mint[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l k[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l =[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l 0[?12l[?25h[?25l;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l k[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l <[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l n[?12l[?25h[?25l;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l k+[?12l[?25h[?25l+[?12l[?25h[?25l)[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l {[?12l[?25h[?25l7[20;50r8[20dM[1;52r[20;1H[?12l[?25h[?25l[42m  [49m(B[m[?12l[?25h[?25l[42m  [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[1K c[?12l[?25h[?25l[i[?12l[?25h[?25l][?12l[?25h[?25l[[?12l[?25h[?25lj][?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l +[?12l[?25h[?25l=[42m [49m(B[m[?12l[?25h[?25l a[?12l[?25h[?25l[i[?12l[?25h[?25l][?12l[?25h[?25l[[?12l[?25h[?25lk[?12l[?25h[?25l]*[?12l[?25h[?25ltm[?12l[?25h[?25lp[?12l[?25h[?25l[[?12l[?25h[?25lj[?12l[?25h[?25l][?12l[?25h[?25l[[?12l[?25h[?25lk[?12l[?25h[?25l][?12l[?25h[?25l7[21;50r8[21dM[1;52r[20;37H;[21d[?12l[?25h[?25l[42m  [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l7[21;50r8M[1;52r[21;7H}[22d[K[?12l[?25h[?25l    }[?12l[?25h[?25l7[23;50r8[23dM[1;52r[23;1H[?12l[?25h[?25l[42m  [49m(B[m[?12l[?25h[?25l  }[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[A[?12l[?25h[?25l[16;4H[?12l[?25h[?25l[17d[?12l[?25h[?25l[18d[?12l[?25h[?25l[19d[?12l[?25h[?25l[20d[?12l[?25h[?25l[21d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l}[?12l[?25h[?25l[22d[?12l[?25h[?25l[21;8H[?12l[?25h[?25l[42m[1K [49m(B[m [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[K[?12l[?25h[?25l[21;50r[50;1H
+[1;52r[20;38H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m[1K [49m(B[m [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[K[?12l[?25h[?25l[20;50r[50;1H
+[1;52r[19;36H[?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25lin[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25lfo[K[?12l[?25h[?25l [?12l[?25h[?25l[42m[1K [49m(B[m [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[K[?12l[?25h[?25l[19;50r[50;1H
+[1;52r[18;19H[?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l[42m [49m(B[m[K[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[42m[1K [49m(B[m [?12l[?25h[?25l[1K t[?12l[?25h[?25l[[?12l[?25h[?25li[?12l[?25h[?25l][?12l[?25h[?25l[[?12l[?25h[?25lj[?12l[?25h[?25l][?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l =[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l a[?12l[?25h[?25l[[?12l[?25h[?25lj[?12l[?25h[?25l][?12l[?25h[?25l[[?12l[?25h[?25li[?12l[?25h[?25l][?12l[?25h[?25l;[?12l[?25h[?25l[50d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                                                                                                                                    [51;1H Y(B[m Yes[K[52d(B[0;7m N(B[m No  [52;17H(B[0;7m^C(B[m Cancel[K[50;63H[?12l[?25h[?25l[51d(B[0;7m^G(B[m Get Help[51;53H(B[0;7mM-D(B[m DOS Format[51;105H(B[0;7mM-A(B[m Append[51;157H(B[0;7mM-B(B[m Backup File[52d(B[0;7m^C(B[m Cancel[17G         [52;53H(B[0;7mM-M(B[m Mac Format[52;105H(B[0;7mM-P(B[m Prepend[52;157H(B[0;7m^T(B[m To Files[50d(B[0;7mFile Name to Write: transpose-matmul.c                       (B[m[50;39H[?12l[?25h[?25l[K[1;208H[1;200H(B[0;7m        (B[m[50;96H(B[0;7m[ Wrote 40 lines ](B[m[J[52;209H[?12l[?25h[52;1H[?1049l[23;0;0t[?1l>]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ clear
+[H[2J[3J]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ls
+main.c  Makefile  matmul.h  simple-matmul.c  transpose-matmul.c
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ make
+cc -g -Wall -std=c11 -O1   -c -o main.o main.c
+cc -g -Wall -std=c11 -O1   -c -o simple-matmul.o simple-matmul.c
+cc main.o simple-matmul.o  -o simple-matmul
+cc -g -Wall -std=c11 -O1   -c -o transpose-matmul.o transpose-matmul.c
+cc main.o transpose-matmul.o  -o transpose-matmul
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./simple-matmul 4 1
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17 
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18 
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18 
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./simple-matmul 4 1make[K./simple-matmul 4 1[1P[1P[1P[1P[1P[1P[1@t[1@r[1@a[1@n[1@s[1@p[1@o[1@s[1@e
+2.22116e+17 7.02729e+17 9.76657e+17 2.08306e+17 
+2.17616e+18 2.16772e+18 3.40213e+18 1.2273e+18 
+4.86494e+18 4.48803e+18 7.27046e+18 2.8719e+18 
+7.68709e+18 2.14813e+18 5.99903e+18 4.12269e+18 
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ ./transpose-matmul 4 1[3Psimpl[C[C[C[C[C[C[C[C[C[C[C[C[1@t[1@i[1@m[1@ [1P[1@e[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P 11 15 10 10 1
+
+real	0m14.872s
+user	0m14.854s
+sys	0m0.008s
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ time ./simple-matmul 1500 1[1P[1P[1P[1P[1P[1P[1@t[1@r[14@anspose-matmul[1P[1P[1P[1P[1P[1P[1P
+
+real	0m12.712s
+user	0m12.691s
+sys	0m0.020s
+]0;fantona1@remote04: ~/.../exercises/matmul-cache[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/matmul-cache[00m$ cd ..
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ ls
+[0m[01;34mcoverage[0m  [01;34mint-search[0m  [01;34mmatmul-cache[0m  [01;34mparity[0m
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ cd int-search/
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ ls
+binary-search.c  int_compare.c  int_compare.h  linear-search.c  main.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ ls
+binary-search.c  int_compare.c  int_compare.h  linear-search.c  main.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ ma[K[Knano linei[Ka[K[K[Knear-search.c
+[?1049h[22;0;0t[1;52r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[50;97H(B[0;7m[ Reading File ](B[m[50;103H(B[0;7m 6 lines ](B[m[H(B[0;7m  GNU nano 3.2                                                                                     linear-search.c                                                                                               [1;208H(B[m[51d(B[0;7m^G(B[m Get Help[18G(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is[52G(B[0;7m^K(B[m Cut Text[69G(B[0;7m^J(B[m Justify[86G(B[0;7m^C(B[m Cur Pos[103G(B[0;7mM-U(B[m Undo[51;120H(B[0;7mM-A(B[m Mark Text    (B[0;7mM-](B[m To Bracket   (B[0;7mM-Q(B[m Previous     (B[0;7m^B(B[m Back[51;188H(B[0;7m^◀(B[m Prev Word[52d(B[0;7m^X(B[m Exit[52;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Uncut Text    (B[0;7m^T(B[m To Spell[86G(B[0;7m^_(B[m Go To Line    (B[0;7mM-E(B[m Redo[52;120H(B[0;7mM-6(B[m Copy Text    (B[0;7m^Q(B[m Where Was     (B[0;7mM-W(B[m Next[52;171H(B[0;7m^F(B[m Forward[188G(B[0;7m^▶(B[m Next Word[50d[3d(B[0;1m[34m/** Return index of element in a[nElements]; < 0 if not found. */[4d(B[0m[32mint[5d[39m(B[msearch_for_element([32mint[39m(B[m a[], [32mint[39m(B[m nElements, [32mint[39m(B[m element)[6d{[7d (B[0;1m[34m//@[37m[43mTODO[39;49m[34m add your code here to meet above spec.[8d[39m(B[m}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[1;200H(B[0;7mModified(B[m[7;3H/@(B[0;1m[37m[43mTODO[39;49m(B[m add your code here to meet above spec.[K  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l(B[0;1m[31mODO[39m(B[m[1P[?12l[?25h[?25l[1P[?12l[?25h[?25lO[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[50d[K[7d  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P[?12l[?25h[?25l[1P  [?12l[?25h[?25lpec.[K  [?12l[?25h[?25lec.[K[?12l[?25h[?25lc.[K[?12l[?25h[?25l.[K[?12l[?25h[?25l[42m  [49m(B[m[K[?12l[?25h[?25l  f[?12l[?25h[?25lo[?12l[?25h[?25l(B[0;1m[33mfor[39m(B[m[?12l[?25h[?25l([?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25l[32mint[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l i[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l [?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l =[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l 0[?12l[?25h[?25l;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l i[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l <[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l n[?12l[?25h[?25lE[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25ls[?12l[?25h[?25l;[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l i[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l [?12l[?25h[?25l+[?12l[?25h[?25l+[?12l[?25h[?25l)[?12l[?25h[?25l7[8;50r8[8dM[1;52r[8;1H[?12l[?25h[?25l{[?12l[?25h[?25l7[9;50r8[9dM[1;52r[9;1H[?12l[?25h[?25l7[9;50r8M[1;52r[10;1H[?12l[?25h[?25l}[?12l[?25h[?25l[?12l[?25h[?25l }[?12l[?25h[?25l  }[?12l[?25h[?25l[A[?12l[?25h[?25l[A{[?12l[?25h[?25l[?12l[?25h[?25l {[?12l[?25h[?25l  {[?12l[?25h[?25l[9d[?12l[?25h[?25l[8G[42m[1K [49m(B[m[?12l[?25h[?25l[K[?12l[?25h[?25l[9;50r[50;1H
+[1;52r[8;4H[?12l[?25h[?25l7[9;50r8[9dM[1;52r[9;1H[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l    i[?12l[?25h[?25l(B[0;1m[33mif[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l ([?12l[?25h[?25la[?12l[?25h[?25l[[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l [?12l[?25h[?25l][?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l =[?12l[?25h[?25l=[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l e[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25lm[?12l[?25h[?25le[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l [?12l[?25h[?25l)[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l r[?12l[?25h[?25le[?12l[?25h[?25lt[?12l[?25h[?25lu[?12l[?25h[?25lr[?12l[?25h[?25l[30G[35mreturn[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l i[?12l[?25h[?25ln[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l [?12l[?25h[?25l;[?12l[?25h[?25l[50d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                                                                                                                                    [51;1H Y(B[m Yes[K[52d(B[0;7m N(B[m No  [52;17H(B[0;7m^C(B[m Cancel[K[50;63H[?12l[?25h[?25l[51d(B[0;7m^G(B[m Get Help[51;53H(B[0;7mM-D(B[m DOS Format[51;105H(B[0;7mM-A(B[m Append[51;157H(B[0;7mM-B(B[m Backup File[52d(B[0;7m^C(B[m Cancel[17G         [52;53H(B[0;7mM-M(B[m Mac Format[52;105H(B[0;7mM-P(B[m Prepend[52;157H(B[0;7m^T(B[m To Files[50d(B[0;7mFile Name to Write: linear-search.c                          (B[m[50;36H[?12l[?25h[?25l[K[1;208H[1;200H(B[0;7m        (B[m[50;97H(B[0;7m[ Wrote 9 lines ](B[m[J[52;209H[?12l[?25h[52;1H[?1049l[23;0;0t[?1l>]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ ls
+binary-search.c  int_compare.c  int_compare.h  linear-search.c  main.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ make
+cc -g -Wall -std=c11 -O1   -c -o linear-search.o linear-search.c
+[01m[Klinear-search.c:[m[K In function ‘[01m[Ksearch_for_element[m[K’:
+[01m[Klinear-search.c:9:1:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K-Wreturn-type[m[K]
+ [01;35m[K}[m[K
+ [01;35m[K^[m[K
+cc -g -Wall -std=c11 -O1   -c -o main.o main.c
+cc -g -Wall -std=c11 -O1   -c -o int_compare.o int_compare.c
+cc   linear-search.o main.o int_compare.o   -o linear-search
+cc -g -Wall -std=c11 -O1   -c -o binary-search.o binary-search.c
+cc   binary-search.o main.o int_compare.o   -o binary-search
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ ./liniea[K[K[Kiar [K[K[K[Kear [K-search 100 1
+linear-search: main.c:21: do_search: Assertion `foundIndex1 < 0 || foundIndex1 == i + 1' failed.
+Aborted
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ ./linear-search 100 1make[K[2Plsnano linear-search.c
+[?1049h[22;0;0t[1;52r(B[m[4l[?7h[39;49m[?1h=[?1h=[?1h=[?25l[39;49m(B[m[H[2J[50;97H(B[0;7m[ Reading File ](B[m[50;103H(B[0;7m 9 lines ](B[m[H(B[0;7m  GNU nano 3.2                                                                                     linear-search.c                                                                                               [1;208H(B[m[51d(B[0;7m^G(B[m Get Help[18G(B[0;7m^O(B[m Write Out     (B[0;7m^W(B[m Where Is[52G(B[0;7m^K(B[m Cut Text[69G(B[0;7m^J(B[m Justify[86G(B[0;7m^C(B[m Cur Pos[103G(B[0;7mM-U(B[m Undo[51;120H(B[0;7mM-A(B[m Mark Text    (B[0;7mM-](B[m To Bracket   (B[0;7mM-Q(B[m Previous     (B[0;7m^B(B[m Back[51;188H(B[0;7m^◀(B[m Prev Word[52d(B[0;7m^X(B[m Exit[52;18H(B[0;7m^R(B[m Read File     (B[0;7m^\(B[m Replace[52G(B[0;7m^U(B[m Uncut Text    (B[0;7m^T(B[m To Spell[86G(B[0;7m^_(B[m Go To Line    (B[0;7mM-E(B[m Redo[52;120H(B[0;7mM-6(B[m Copy Text    (B[0;7m^Q(B[m Where Was     (B[0;7mM-W(B[m Next[52;171H(B[0;7m^F(B[m Forward[188G(B[0;7m^▶(B[m Next Word[50d[3d(B[0;1m[34m/** Return index of element in a[nElements]; < 0 if not found. */[4d(B[0m[32mint[5d[39m(B[msearch_for_element([32mint[39m(B[m a[], [32mint[39m(B[m nElements, [32mint[39m(B[m element)[6d{[7d (B[0;1m[33mfor[39m(B[m([32mint[39m(B[m index = 0; index < nElements; index++)[8;3H{[9d (B[0;1m[33mif[39m(B[m (a[index] == element) [35mreturn[39m(B[m index;[10;3H}[11d}[3d[?12l[?25h[?25l[4d[?12l[?25h[?25l[5d[?12l[?25h[?25l[6d[?12l[?25h[?25l[7d[?12l[?25h[?25l[8d[?12l[?25h[?25l[9d[?12l[?25h[?25l[10d[?12l[?25h[?25l  }[?12l[?25h[?25l[1;200H(B[0;7mModified(B[m[11;49r[11;1HM[1;52r[11;1H[?12l[?25h[?25l[8G[42m[1K [49m(B[m[?12l[?25h[?25l[K[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l  r[?12l[?25h[?25le[?12l[?25h[?25lt[?12l[?25h[?25lu[?12l[?25h[?25lr[?12l[?25h[?25l  [35mreturn[39m(B[m[?12l[?25h[?25l[42m [49m(B[m[?12l[?25h[?25l -[?12l[?25h[?25l1[?12l[?25h[?25l;[?12l[?25h[?25l[50d(B[0;7mSave modified buffer?  (Answering "No" will DISCARD changes.)                                                                                                                                                    [51;1H Y(B[m Yes[K[52d(B[0;7m N(B[m No  [52;17H(B[0;7m^C(B[m Cancel[K[50;63H[?12l[?25h[?25l[51d(B[0;7m^G(B[m Get Help[51;53H(B[0;7mM-D(B[m DOS Format[51;105H(B[0;7mM-A(B[m Append[51;157H(B[0;7mM-B(B[m Backup File[52d(B[0;7m^C(B[m Cancel[17G         [52;53H(B[0;7mM-M(B[m Mac Format[52;105H(B[0;7mM-P(B[m Prepend[52;157H(B[0;7m^T(B[m To Files[50d(B[0;7mFile Name to Write: linear-search.c                          (B[m[50;36H[?12l[?25h[?25l[K[1;208H[1;200H(B[0;7m        (B[m[50;96H(B[0;7m[ Wrote 10 lines ](B[m[J[52;209H[?12l[?25h[52;1H[?1049l[23;0;0t[?1l>]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ nano linear-search.c./linear-search 100 1make[K
+cc -g -Wall -std=c11 -O1   -c -o linear-search.o linear-search.c
+cc   linear-search.o main.o int_compare.o   -o linear-search
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ makenano linear-search.c./linear-search 100 1
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ time ./linear-search 2000 2000
+
+real	0m7.697s
+user	0m7.695s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ time ./linear-search 2000 2000[1P[1P[1P[1P[1P[1P[1@b[1@i[1@n[1@a[1@r[1@y
+
+real	0m0.466s
+user	0m0.465s
+sys	0m0.000s
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ 
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ ls
+[0m[01;32mbinary-search[0m  binary-search.c  binary-search.o  int_compare.c  int_compare.h  int_compare.o  [01;32mlinear-search[0m  linear-search.c  linear-search.o  main.c  main.o  Makefile
+]0;fantona1@remote04: ~/.../exercises/int-search[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/int-search[00m$ cd.[K ..
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ 
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ 
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ ls
+[0m[01;34mcoverage[0m  [01;34mint-search[0m  [01;34mmatmul-cache[0m  [01;34mparity[0m
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ 
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ 
+]0;fantona1@remote04: ~/.../lab11/exercises[01;32mfantona1@remote04[00m:[01;34m~/.../lab11/exercises[00m$ cd coverage
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ sls
+bash: sls: command not found
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ l
+bash: l: command not found
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ s
+bash: s: command not found
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ clear
+[H[2J[3J]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ cat coverage.c
+#include <stdio.h>
+
+static int v[] = {
+  211,  333, 319, 411, 911, 1001,
+};
+
+static int compute(int a, int b, int c) {
+  int s = v[2];
+  if (v[0] < a && a < v[1]) {
+    if (b < v[2]) { 
+      s += v[2];
+      if (c < v[3]) {
+	s += v[4];
+      }
+      else {
+	s += v[3];
+      }
+    }
+    else {
+      s += v[1];
+      if (c < v[1]) {
+	s += v[4];
+      }
+      else {
+	s += v[2];
+      }
+    }
+  }
+  else {
+    if (b < v[3]) {
+      if (c < v[4]) {
+	s += v[5];
+      }
+      else {
+	s += v[1];
+      }
+    }
+    else {
+      if (c < v[2]) {
+	s += v[1];
+      }
+      else {
+	s += v[3];
+      }
+    }
+  }
+  return s;
+}
+
+int 
+main()
+{
+  int a, b, c;
+  while (scanf("%d %d %d", &a, &b, &c) == 3) {
+    printf("compute(%d, %d, %d) = %d\n", a, b, c, compute(a, b, c));
+  }
+  return 0;
+}
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+coverage.c  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ make
+cc -g -Wall -std=c11 -fprofile-arcs -ftest-coverage    coverage.c   -o coverage
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+[0m[01;32mcoverage[0m  coverage.c  coverage.gcno  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ./coveraghe[K[Ke
+200
+2000
+2999
+compute(200, 2000, 2999) = 730
+gc  ^X
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ gv[Kov[K[Kcov coverage.gc[Kcda
+File 'coverage.c'
+Lines executed:45.83% of 24
+Creating 'coverage.c.gcov'
+
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+[0m[01;32mcoverage[0m  coverage.c  coverage.c.gcov  coverage.gcda  coverage.gcno  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ nan[K[K[Kcat coverage.c.gcov 
+        -:    0:Source:coverage.c
+        -:    0:Graph:coverage.gcno
+        -:    0:Data:coverage.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:static int v[] = {
+        -:    4:  211,  333, 319, 411, 911, 1001,
+        -:    5:};
+        -:    6:
+        1:    7:static int compute(int a, int b, int c) {
+        1:    8:  int s = v[2];
+       1*:    9:  if (v[0] < a && a < v[1]) {
+    #####:   10:    if (b < v[2]) { 
+    #####:   11:      s += v[2];
+    #####:   12:      if (c < v[3]) {
+    #####:   13:	s += v[4];
+        -:   14:      }
+        -:   15:      else {
+    #####:   16:	s += v[3];
+        -:   17:      }
+        -:   18:    }
+        -:   19:    else {
+    #####:   20:      s += v[1];
+    #####:   21:      if (c < v[1]) {
+    #####:   22:	s += v[4];
+        -:   23:      }
+        -:   24:      else {
+    #####:   25:	s += v[2];
+        -:   26:      }
+        -:   27:    }
+        -:   28:  }
+        -:   29:  else {
+        1:   30:    if (b < v[3]) {
+    #####:   31:      if (c < v[4]) {
+    #####:   32:	s += v[5];
+        -:   33:      }
+        -:   34:      else {
+    #####:   35:	s += v[1];
+        -:   36:      }
+        -:   37:    }
+        -:   38:    else {
+        1:   39:      if (c < v[2]) {
+    #####:   40:	s += v[1];
+        -:   41:      }
+        -:   42:      else {
+        1:   43:	s += v[3];
+        -:   44:      }
+        -:   45:    }
+        -:   46:  }
+        1:   47:  return s;
+        -:   48:}
+        -:   49:
+        -:   50:int 
+        1:   51:main()
+        -:   52:{
+        -:   53:  int a, b, c;
+        2:   54:  while (scanf("%d %d %d", &a, &b, &c) == 3) {
+        1:   55:    printf("compute(%d, %d, %d) = %d\n", a, b, c, compute(a, b, c));
+        -:   56:  }
+        1:   57:  return 0;
+        -:   58:}
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ./coverage
+1
+2
+3
+compute(1, 2, 3) = 1320
+10
+12
+30
+compute(10, 12, 30) = 1320
+12374612
+32456
+2345
+compute(12374612, 32456, 2345) = 730
+375612308456028345
+34785623087456238
+3458263450872345
+compute(-1966524231, 57352174, -1266193895) = 652
+-123
+-1232
+-12312342
+compute(-123, -1232, -12312342) = 1320
+0
+0
+0
+compute(0, 0, 0) = 1320
+0
+0
+0
+compute(0, 0, 0) = 1320
+0
+0
+1
+compute(0, 0, 1) = 1320
+1
+0
+0
+compute(1, 0, 0) = 1320
+0
+1
+0
+compute(0, 1, 0) = 1320
+
+
+
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+[0m[01;32mcoverage[0m  coverage.c  coverage.c.gcov  coverage.gcda  coverage.gcno  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ gvoc[K[K[Kcov [K[K[K[K[Kgcov coverage.gcda
+File 'coverage.c'
+Lines executed:58.33% of 24
+Creating 'coverage.c.gcov'
+
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ gcov coverage.gcda
+File 'coverage.c'
+Lines executed:58.33% of 24
+Creating 'coverage.c.gcov'
+
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ gcov coverage.gcdals[K./coveragels[Kgcov coverage.gcda[Kgcov coverage.gcdals[K./coveragecat coverage.c.gcov 
+        -:    0:Source:coverage.c
+        -:    0:Graph:coverage.gcno
+        -:    0:Data:coverage.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:static int v[] = {
+        -:    4:  211,  333, 319, 411, 911, 1001,
+        -:    5:};
+        -:    6:
+       11:    7:static int compute(int a, int b, int c) {
+       11:    8:  int s = v[2];
+       11:    9:  if (v[0] < a && a < v[1]) {
+    #####:   10:    if (b < v[2]) { 
+    #####:   11:      s += v[2];
+    #####:   12:      if (c < v[3]) {
+    #####:   13:	s += v[4];
+        -:   14:      }
+        -:   15:      else {
+    #####:   16:	s += v[3];
+        -:   17:      }
+        -:   18:    }
+        -:   19:    else {
+    #####:   20:      s += v[1];
+    #####:   21:      if (c < v[1]) {
+    #####:   22:	s += v[4];
+        -:   23:      }
+        -:   24:      else {
+    #####:   25:	s += v[2];
+        -:   26:      }
+        -:   27:    }
+        -:   28:  }
+        -:   29:  else {
+       11:   30:    if (b < v[3]) {
+        8:   31:      if (c < v[4]) {
+        8:   32:	s += v[5];
+        -:   33:      }
+        -:   34:      else {
+    #####:   35:	s += v[1];
+        -:   36:      }
+        -:   37:    }
+        -:   38:    else {
+        3:   39:      if (c < v[2]) {
+        1:   40:	s += v[1];
+        -:   41:      }
+        -:   42:      else {
+        2:   43:	s += v[3];
+        -:   44:      }
+        -:   45:    }
+        -:   46:  }
+       11:   47:  return s;
+        -:   48:}
+        -:   49:
+        -:   50:int 
+        2:   51:main()
+        -:   52:{
+        -:   53:  int a, b, c;
+       13:   54:  while (scanf("%d %d %d", &a, &b, &c) == 3) {
+       11:   55:    printf("compute(%d, %d, %d) = %d\n", a, b, c, compute(a, b, c));
+        -:   56:  }
+        2:   57:  return 0;
+        -:   58:}
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ cat coverage.c.gcov [2Pgcov coverage.gcdals[K./coverage
+300
+300
+100
+compute(300, 300, 100) = 1549
+300
+401
+501
+compute(300, 401, 501) = 971
+300
+400
+300
+compute(300, 400, 300) = 1563
+299
+400
+400
+compute(299, 400, 400) = 971
+499
+499
+900
+compute(499, 499, 900) = 730
+400
+400
+1000
+compute(400, 400, 1000) = 652
+400
+500
+2 300
+compute(400, 500, 300) = 652
+400
+500
+400
+compute(400, 500, 400) = 730
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+[0m[01;32mcoverage[0m  coverage.c  coverage.c.gcov  coverage.gcda  coverage.gcno  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls./coveragecat coverage.c.gcov [2Pgcov coverage.gcdacat coverage.c.gcov 
+        -:    0:Source:coverage.c
+        -:    0:Graph:coverage.gcno
+        -:    0:Data:coverage.gcda
+        -:    0:Runs:2
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:static int v[] = {
+        -:    4:  211,  333, 319, 411, 911, 1001,
+        -:    5:};
+        -:    6:
+       11:    7:static int compute(int a, int b, int c) {
+       11:    8:  int s = v[2];
+       11:    9:  iScript started on 2020-11-14 18:33:03-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="120" LINES="30"]
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ 
+]0;fantona1@remote04: ~/.../submit/lab11[01;32mfantona1@remote04[00m:[01;34m~/.../submit/lab11[00m$ cd exercises/coverage/
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ ls
+[0m[01;32mcoverage[0m  coverage.c  coverage.c.gcov  coverage.gcda  coverage.gcno  Makefile
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ cat coverage.c.gcov 
+        -:    0:Source:coverage.c
+        -:    0:Graph:coverage.gcno
+        -:    0:Data:coverage.gcda
+        -:    0:Runs:4
+        -:    0:Programs:1
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:static int v[] = {
+        -:    4:  211,  333, 319, 411, 911, 1001,
+        -:    5:};
+        -:    6:
+       32:    7:static int compute(int a, int b, int c) {
+       32:    8:  int s = v[2];
+       32:    9:  if (v[0] < a && a < v[1]) {
+       16:   10:    if (b < v[2]) { 
+        2:   11:      s += v[2];
+        2:   12:      if (c < v[3]) {
+        2:   13:	s += v[4];
+        -:   14:      }
+        -:   15:      else {
+    #####:   16:	s += v[3];
+        -:   17:      }
+        -:   18:    }
+        -:   19:    else {
+        6:   20:      s += v[1];
+        6:   21:      if (c < v[1]) {
+        2:   22:	s += v[4];
+        -:   23:      }
+        -:   24:      else {
+        4:   25:	s += v[2];
+        -:   26:      }
+        -:   27:    }
+        -:   28:  }
+        -:   29:  else {
+       24:   30:    if (b < v[3]) {
+       16:   31:      if (c < v[4]) {
+       14:   32:	s += v[5];
+        -:   33:      }
+        -:   34:      else {
+        2:   35:	s += v[1];
+        -:   36:      }
+        -:   37:    }
+        -:   38:    else {
+        8:   39:      if (c < v[2]) {
+        3:   40:	s += v[1];
+        -:   41:      }
+        -:   42:      else {
+        5:   43:	s += v[3];
+        -:   44:      }
+        -:   45:    }
+        -:   46:  }
+       32:   47:  return s;
+        -:   48:}
+        -:   49:
+        -:   50:int 
+        4:   51:main()
+        -:   52:{
+        -:   53:  int a, b, c;
+       36:   54:  while (scanf("%d %d %d", &a, &b, &c) == 3) {
+       32:   55:    printf("compute(%d, %d, %d) = %d\n", a, b, c, compute(a, b, c));
+        -:   56:  }
+        4:   57:  return 0;
+        -:   58:}
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ 
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ # CO[K[K100% COVERAGE
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ # Lab complete
+]0;fantona1@remote04: ~/.../exercises/coverage[01;32mfantona1@remote04[00m:[01;34m~/.../exercises/coverage[00m$ exit
+
+Script done on 2020-11-14 18:33:30-05:00 [COMMAND_EXIT_CODE="0"]

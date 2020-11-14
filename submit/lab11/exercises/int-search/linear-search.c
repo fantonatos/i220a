@@ -2,5 +2,9 @@
 int
 search_for_element(int a[], int nElements, int element)
 {
-  //@TODO add your code here to meet above spec.
+  for(int index = 0; index < nElements; index++)
+  {
+    if (a[index] == element) return index;
+  }
+  return -1;
 }
