@@ -1,0 +1,11 @@
+# Execution begins at address 0 
+        .pos    0
+       
+init:   
+	nop
+	nop
+        halt               # terminate program 
+
+#stack starts here and grows to lower addresses  
+       .pos   0x200
+stack:

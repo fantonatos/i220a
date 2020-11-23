@@ -1,0 +1,21 @@
+# Execution begins at address 0 
+        .pos    0
+       
+init:   irmovq stack, %rsp # set up stack pointer  
+        call    main       # execute main program
+        halt               # terminate program 
+
+# should set rax to 0x0
+main:
+        irmovq	$0xffffffffffffffff, %rsi
+	irmovq	$1, $rdi
+	addq	%rsi, $rdi  #should set Z and O
+	je	gotZero
+	irmovq  $1, %rax
+	ret
+	xorq	%rax, %rax
+        ret
+
+#stack starts here and grows to lower addresses  
+       .pos   0x200
+stack:

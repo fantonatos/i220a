@@ -1,0 +1,23 @@
+# Execution begins at address 0 
+        .pos    0
+       
+init:   irmovq stack, %rsp # set up stack pointer  
+        call    main       # execute main program
+        halt               # terminate program 
+
+in:	.quad		   $0x1234567890abcdef
+out:	.quad		   0
+
+# should set rax to 0x1234567890abcdef
+main:
+        irmovq	in, %rax     #in address
+	mrmovq	(%rax), %rbx #contents(in) in rcx
+        irmovq	out, %rax    #out address
+	rrmovq	%rax, %rsi   #test rrmovq too
+	rmmovq	%rbx, (%rax) #out = in
+	mrmovq	(%rsi), %rax #load into rax
+        ret
+
+#stack starts here and grows to lower addresses  
+       .pos   0x200
+stack:

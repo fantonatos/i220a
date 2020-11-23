@@ -1,0 +1,49 @@
+# Execution begins at address 0 
+       .pos    0
+       
+init:  irmovq stack, %rsp # set up stack pointer  
+       call    main       # execute main program
+       halt               # terminate program 
+
+# Array of 8 elements
+	.align 8
+array:	.quad  0x00de000000
+	.quad  0x0000ad0000
+	.quad  0x000000be00
+	.quad  0x00000000ef
+	.quad  0xca00000000000000
+	.quad  0x00fe000000000000
+	.quad  0x0000ba0000000000
+	.quad  0x000000be00000000
+
+#should set rax to 0xcafebabedeadbeef
+main:	irmovq $8, %rsi
+	irmovq array,%rdi
+	call   rsum	    # rsum(array, 8)
+	ret
+
+	# recursive function equiv to:
+	# long rsum(long *start, long count) {
+	#   return (count <= 0) ? 0 : *start + rsum(start + 1, count - 1);
+	# }
+	#
+	# rdi = start; rsi = count
+rsum:	andq   %rsi, %rsi   # Test value of count
+	jg     recurse      # If > 0, goto recurse
+	xorq   %rax, %rax   # return 0
+	ret
+recurse:	
+	mrmovq (%rdi), %rbx  # get *start
+	pushq  %rbx          # save on stack
+	irmovq  $8, %rax
+	addq    %rax, %rdi   # rdi = start + 1
+	irmovq  $1, %rax
+	subq    %rax, %rsi   # rsi = count - 1
+	call    rsum         # rsum(start+1, count-1)
+	popq %rbx            # restore *start
+	addq %rbx, %rax      # *start + recurse result
+	ret
+
+#stack starts here and grows to lower addresses  
+        .pos   0x200
+stack:
