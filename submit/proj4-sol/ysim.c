@@ -100,7 +100,13 @@ isLt0(Word word) {
 static void
 set_add_arith_cc(Y86 *y86, Word opA, Word opB, Word result)
 {
-  //@TODO
+  // Set Zero, Sign, and Overflow flags
+  if (result == 0) write_cc_y86(y86, ZF_CC);
+  if (((int)result) < 0) write_cc_y86(y86, SF_CC);
+  
+  
+  if ( ((int)opA > 0 && (int)opB > 0 && (int)result < 0) || ((int)opA < 0 && (int)opB < 0 && (int)result >= 0) ) write_cc_y86(y86, OF_CC);
+  
 }
 
 /** Set condition codes for subtraction operation with operands opA, opB
@@ -109,42 +115,58 @@ set_add_arith_cc(Y86 *y86, Word opA, Word opB, Word result)
 static void
 set_sub_arith_cc(Y86 *y86, Word opA, Word opB, Word result)
 {
-  //@TODO
+  if (result == 0) write_cc_y86(y86, ZF_CC);
+  if (((int)result) < 0) write_cc_y86(y86, SF_CC);
+  if ( ((int)opA > 0 && (int)opB > 0 && (int)result < 0) || ((int)opA < 0 && (int)opB < 0 && (int)result >= 0) ) write_cc_y86(y86, OF_CC);
 }
 
 static void
 set_logic_op_cc(Y86 *y86, Word result)
 {
-  //@TODO
+  // Set Zero and Sign flags
+  if (result == 0) write_cc_y86(y86, ZF_CC);
+  if (result < 0) write_cc_y86(y86, SF_CC);
 }
 
 /**************************** Operations *******************************/
-// Determine which mathematical function we are doing
+// Determine the math operation we are doing, and do it.
 static void
 op1(Y86 *y86, Byte op, Register regA, Register regB)
 {
   enum {ADDL_FN, SUBL_FN, ANDL_FN, XORL_FN };
+  Word result = 0, numA = 0, numB = 0;
+  
+  // Get our numbers from the registers
+  numA = read_register_y86(y86, regA);
+  numB = read_register_y86(y86, regB);
   
   
-  
-  // Tasks required: Determine which function (Add, subtract, AND, XOR)
-  // Nibble 2 of instruction contains this
+  // Determine which function (Add, subtract, AND, XOR)
+  // Nibble 2 contains this
   Byte function = get_nybble(op, 2);
   switch(function)
   {
     case ADDL_FN:
+      result = numA + numB;
+      set_add_arith_cc(y86, numA, numB, result);
       break;
     case SUBL_FN:
+      result = numA - numB;
+      set_sub_arith_cc(y86, numA, numB, result);
       break;
     case ANDL_FN:
+      result = numA & numB;
       break;
     case XORL_FN:
+      result = numA ^ numB;
       break;
     default:
+      // abbiamo un problema
       break;
   }
   
-  //@TODO
+  // Save our result in the B register
+  write_register_y86(y86, regB, result);
 }
 
 /*********************** Single Instruction Step ***********************/
