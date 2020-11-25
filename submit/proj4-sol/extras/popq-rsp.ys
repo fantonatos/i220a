@@ -8,12 +8,12 @@ init:   irmovq stack, %rsp # set up stack pointer
 # test for popping rsp (text problem 4.8).
 # should set rax to 0xabcd
 main:
-        rrmovq  %rsp, %rdi # save stack pointer
-	irmovq  0xabcd, %rax # test value
-	pushq	%rax	   # push test value
-	popq	%rsp       # pop into rsp
-        rrmovq  %rsp, %rax # copy into rax
-	rrmovq  %rdi, %rsp # restore stack pointer
+        rrmovq  %rsp, %rdi    # save stack pointer
+        irmovq  0xabcd, %rax  # test value
+        pushq	%rax	          # push test value
+        popq	%rsp            # pop into rsp
+        rrmovq  %rsp, %rax    # copy into rax
+        rrmovq  %rdi, %rsp    # restore stack pointer
         ret
 
 #stack starts here and grows to lower addresses  

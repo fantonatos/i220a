@@ -1,0 +1,13 @@
+# Execution begins at address 0 
+        .pos    0
+       
+init:   irmovq  stack, %rsp   # setup stack
+        irmovq  0xbaba, %rax
+        pushq   %rax          # push rax
+        irmovq  0x0, %rax
+        popq    %rax          # restore rax
+        halt
+
+#stack starts here and grows to lower addresses  
+       .pos   0x200
+stack:

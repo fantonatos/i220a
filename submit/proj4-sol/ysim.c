@@ -29,69 +29,6 @@ get_nybble(Byte op, int pos) {
   return (op >> (pos * 4)) & 0xF;
 }
 
-struct Instruction
-{
-
-};
-
-/* Returns the entire instruction at the current program counter address.
- * Points out_argument to the instructions argument (if there is one, otheriwise it is NULL)
- */
-static Word get_instruction(Y86* y86, Word* out_argument)
-{
-  //
-  // HALT! THIS IS ABANDONED CODE! DO NOT EVER CALL THIS FUNCTION, UNDER ANY CIRCUMSTANCE
-  //
-  Word instr = 0;
-  
-  // Start by reading the first byte (opcode, and it's function)
-  Address counter = read_pc_y86(y86);
-  Byte fullOp = read_memory_byte_y86(y86, counter);
-  Byte opcode = get_nybble(fullOp, 1);
-  
-  /*
-   * Determine how many more bytes we need to read,
-   * by identifying the opcode, and pairing it with it's offset
-   */
-  unsigned offset = 0;
-  switch (opcode)
-  {
-    case HALT_CODE:
-    case NOP_CODE:
-    case RET_CODE:
-      offset = sizeof(Byte);
-      break;
-    //case RRMOVQ_CODE:
-    case OP1_CODE:
-    case CMOVxx_CODE:
-    case PUSHQ_CODE:
-    case POPQ_CODE:
-      offset = 2 * sizeof(Byte);
-      break;
-    case Jxx_CODE:
-    case CALL_CODE:
-      offset = sizeof(Byte) + sizeof(Word);
-      break;
-    case IRMOVQ_CODE:
-    case RMMOVQ_CODE:
-    case MRMOVQ_CODE:
-      offset = 2 * sizeof(Byte) + sizeof(Word);
-      break;
-  }
-// read_memory_byte / word
-  // Read from PC current position, until offset, and save as the full instruction
-
-  unsigned pc = read_pc_y86(y86);
-  for (unsigned count = pc;
-	  count < pc + (offset / 8);
-	  count++)
-  {
-    //instr = instr << 8 * (count - pc);
-    instr |= read_memory_byte_y86(y86, count);
-  }
-
-  return -1; // hopefully nobody ever uses this
-}
 
 // Given an entire instruction, returns that instruction's argument
 // i.e. the jump address for jump
@@ -281,45 +218,45 @@ step_ysim(Y86 *y86)
   switch(opcode)
   {
     case HALT_CODE:
-      printf("halt\n");
+      //printf("halt\n");
       write_status_y86(y86, STATUS_HLT);
       return;
     case NOP_CODE:
-      printf("nop\n");
+      //printf("nop\n");
       write_pc_y86(y86, counter+sizeof(Byte));
       // Do nothing
       break;
     case CALL_CODE:	// dynamic instr fix+
-      printf("call\n");
+      //printf("call\n");
       addr = read_register_y86(y86, REG_RSP);             // Get Stack Pointer
       	// Write return address to stack
-      write_memory_word_y86(y86, addr, counter + sizeof(Byte) + sizeof(Word));
-      write_register_y86(y86, REG_RSP, (Word)addr+1);     // Increment stack pointer
-      dest = read_memory_word_y86(y86, counter + 1);	  // Callee is in word after opcode byte
-      printf("jumping to %x from %x\n", dest, counter);
+      write_memory_word_y86(y86, addr-sizeof(Word), counter + sizeof(Byte) + sizeof(Word));
+      write_register_y86(y86, REG_RSP, (Word)addr-sizeof(Word));     // decrement stack pointer
+      dest = read_memory_word_y86(y86, counter + 1);	  // Callee is in word after opcode byte instr
+      //printf("jumping to %x from %x\n", dest, counter);
       write_pc_y86(y86, dest);                            // Set Program Counter to destination (jump)
       return;
     case RET_CODE:
       addr = read_register_y86(y86, REG_RSP);             // Get Stack Pointer
-      write_register_y86(y86, REG_RSP, (Word)addr-1);     // Decrement stack pointer
-      dest = read_memory_word_y86(y86, addr-1);           // Read return address from stack
-      printf("ret to %x\n", dest);
+      write_register_y86(y86, REG_RSP, (Word)addr+sizeof(Word));     // Increment stack pointer
+      dest = read_memory_word_y86(y86, addr);           // Read return address from stack
+      //printf("ret to %x\n", dest);
       write_pc_y86(y86, dest);                            // Set Program Counter to returning destination (jump)
       break;
     case POPQ_CODE:
-      a = get_nybble(instruction, 3);                     // Get Destination Register
-      addr = read_register_y86(y86, REG_RSP);             // Get Stack Pointer
-      data = read_memory_word_y86(y86, addr);             // Read data from stack
-      write_register_y86(y86, REG_RSP, (Word)addr-1);     // Decrement stack pointer
-      write_register_y86(y86, a, data);                   // Write data to destination register
+      a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);   // Get Dest Reg (next byte instr)
+      addr = read_register_y86(y86, REG_RSP);                    // Get Stack Pointer
+      data = read_memory_word_y86(y86, addr+sizeof(Word));       // Read data from stack
+      write_register_y86(y86, REG_RSP, (Word)addr+sizeof(Word)); // increment stack pointer
+      write_register_y86(y86, a, data);                          // Write data to dest reg
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
       break;
     case PUSHQ_CODE:
-      a = get_nybble(instruction, 3);                     // Get Source Register
-      addr = read_register_y86(y86, REG_RSP);             // Get Stack Pointer
-      write_register_y86(y86, REG_RSP, (Word)addr+1);     // Increment stack pointer
-      data = read_register_y86(y86, REG_RSP);             // Read data from source register
-      write_memory_word_y86(y86, addr+1, data);           // Write data to stack
+      a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);    // Get Src Register (next byte)
+      addr = read_register_y86(y86, REG_RSP);                     // Get Stack Pointer
+      write_register_y86(y86, REG_RSP, (Word)addr-sizeof(Word));  // decrement stack pointer
+      data = read_register_y86(y86, a);                     // Read data from src reg
+      write_memory_word_y86(y86, addr, data);        // Write data to stack
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
       break;
     case OP1_CODE:
@@ -328,10 +265,10 @@ step_ysim(Y86 *y86)
         get_nybble(instruction, 4));
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
       break;
-    // ECCO! BEHOLD! LOOK NO FURTHER! MOV INSTRUCTIONS GO.. YES, in THIS very spot:
+    // ECCO! BEHOLD! LOOK NO FURTHER! MOV INSTRUCTIONS GO.. YES, in THIS very spot.............!
     case CMOVxx_CODE:
       // RRMOVQ
-      if (get_nybble(opcode, 0) == 0)
+      if (get_nybble(opcode, 1) == 0)
       {
 	      // register to register
         a = get_nybble(read_memory_byte_y86(y86, counter + 1), 1); // low nibble in next byte
@@ -341,7 +278,7 @@ step_ysim(Y86 *y86)
       write_pc_y86(y86, counter + 2*sizeof(Byte));
       break;
     case IRMOVQ_CODE:
-      printf("irmovq\n");
+      //printf("irmovq\n");
       b = get_nybble(read_memory_byte_y86(y86, read_pc_y86(y86) + 1), 0);
       data = read_memory_word_y86(y86, read_pc_y86(y86) + 2);
       write_register_y86(y86, b, data);
@@ -366,9 +303,10 @@ step_ysim(Y86 *y86)
 	    
 	    write_pc_y86(y86, counter + 2*sizeof(Byte) + sizeof(Word));
       break;
-    //END OF MOV INSTRUCTIONs
+    //END OF MOV INSTRUCTIONs........................................................
     default:
       // TODO Change CPU Status on Unrecognized Instruction
+      write_pc_y86(y86, counter+1); // program counter next byte
       break;
   }
   
