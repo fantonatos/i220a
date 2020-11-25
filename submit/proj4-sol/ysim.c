@@ -270,38 +270,38 @@ step_ysim(Y86 *y86)
       // RRMOVQ
       if (get_nybble(opcode, 1) == 0)
       {
-	      // register to register
+	      // Register-to-Register
         a = get_nybble(read_memory_byte_y86(y86, counter + 1), 1); // low nibble in next byte
 	      b = get_nybble(read_memory_byte_y86(y86, counter + 1), 0); // high nibble in next byte
 	      write_register_y86(y86, b, read_register_y86(y86, a));	// copy contents A to B
+        //printf("rrmovq %d to %d\n", a, b);
       }
       write_pc_y86(y86, counter + 2*sizeof(Byte));
       break;
-    case IRMOVQ_CODE:
-      //printf("irmovq\n");
+    case IRMOVQ_CODE: // Immediate-to-Register
       b = get_nybble(read_memory_byte_y86(y86, read_pc_y86(y86) + 1), 0);
       data = read_memory_word_y86(y86, read_pc_y86(y86) + 2);
       write_register_y86(y86, b, data);
       write_pc_y86(y86, counter + 2*sizeof(Byte) + sizeof(Word));
+      //printf("irmovq saved 0x%X in %d\n", data, b);
       break;
-    case RMMOVQ_CODE:
-      // register to memory
-      // get registers
+    case RMMOVQ_CODE: // Register-to-Memory
       a = get_nybble(read_memory_byte_y86(y86, counter + 1), 1);
 	    b = get_nybble(read_memory_byte_y86(y86, counter + 1), 0);
-	    // a contains integer value. b is pointer
-	    write_memory_word_y86(y86, read_register_y86(y86, b), read_register_y86(y86, a)); // in memory location b, store a
+	    write_memory_word_y86(y86, read_register_y86(y86, b), read_register_y86(y86, a));
 	    write_pc_y86(y86, counter + 2*sizeof(Byte) + sizeof(Word));
+      //printf("rmmovq \n");
       break;
-    case MRMOVQ_CODE:
-      // move from memory to register
-      a = get_nybble(read_memory_byte_y86(y86, counter + 1), 1); // a is a pointer to value
-	    b = get_nybble(read_memory_byte_y86(y86, counter + 1), 0); // will be moved into b
-	    
+    case MRMOVQ_CODE: // Memory-to-Register
+      a = get_nybble(read_memory_byte_y86(y86, counter + 1), 0); // a is a pointer to value
+	    b = get_nybble(read_memory_byte_y86(y86, counter + 1), 1); // will be moved into b
+	    addr = read_register_y86(y86, a);
+      data = read_memory_word_y86(y86, addr);
 	      // read the value from the pointer stored in RegA, and write it to RegB
-	    write_register_y86(y86, b, read_memory_word_y86(y86, read_register_y86(y86, a)));
+	    write_register_y86(y86, b, data);
 	    
 	    write_pc_y86(y86, counter + 2*sizeof(Byte) + sizeof(Word));
+      //printf("mrmovq src=(%d) contents=0x%X from memory 0x%x to register %d\n", a, data, addr, b);
       break;
     //END OF MOV INSTRUCTIONs........................................................
     default:
