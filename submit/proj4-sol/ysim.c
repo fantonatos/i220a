@@ -213,7 +213,7 @@ step_ysim(Y86 *y86)
    * If there was not a situation, move on to the next situation.
    */
   Word addr = 0, data = 0, argument = 0;
-  Address dest = 0;
+  Address dest = 0, rsp = read_register_y86(y86, REG_RSP);
   Register a = 0, b = 0;
   switch(opcode)
   {
@@ -235,6 +235,7 @@ step_ysim(Y86 *y86)
       dest = read_memory_word_y86(y86, counter + 1);	  // Callee is in word after opcode byte instr
       //printf("jumping to %x from %x\n", dest, counter);
       write_pc_y86(y86, dest);                            // Set Program Counter to destination (jump)
+//      printf("calling 0x%X, saved return address 0x%X to stack 0x%X\n", dest, counter + sizeof(Byte) + sizeof(Word),addr-sizeof(Word)); 
       return;
     case RET_CODE:
       addr = read_register_y86(y86, REG_RSP);             // Get Stack Pointer
@@ -242,22 +243,25 @@ step_ysim(Y86 *y86)
       dest = read_memory_word_y86(y86, addr);           // Read return address from stack
       //printf("ret to %x\n", dest);
       write_pc_y86(y86, dest);                            // Set Program Counter to returning destination (jump)
+//      printf("ret to code at 0x%X\n", dest);
       break;
     case POPQ_CODE:
       a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);   // Get Dest Reg (next byte instr)
       addr = read_register_y86(y86, REG_RSP);                    // Get Stack Pointer
-      data = read_memory_word_y86(y86, addr+sizeof(Word));       // Read data from stack
-      write_register_y86(y86, REG_RSP, (Word)addr+sizeof(Word)); // increment stack pointer
+      data = read_memory_word_y86(y86, addr);       // Read data from stack
+      //write_register_y86(y86, REG_RSP, (Word)addr+sizeof(Word)); // increment stack pointer
       write_register_y86(y86, a, data);                          // Write data to dest reg
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
+//      printf("popq got val 0x%X from stack 0x%X saved in reg %d, rsp = 0x%X\n", data, addr, a, addr);
       break;
     case PUSHQ_CODE:
       a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);    // Get Src Register (next byte)
       addr = read_register_y86(y86, REG_RSP);                     // Get Stack Pointer
-      write_register_y86(y86, REG_RSP, (Word)addr-sizeof(Word));  // decrement stack pointer
+      write_register_y86(y86, REG_RSP, addr-sizeof(Word));  // decrement stack pointer
       data = read_register_y86(y86, a);                     // Read data from src reg
-      write_memory_word_y86(y86, addr, data);        // Write data to stack
+      write_memory_word_y86(y86, addr-sizeof(Word), data);        // Write data to stack
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
+//      printf("pushq 0x%X to stack 0x%X, rsp = 0x%X\n", data, addr, addr-sizeof(Word));
       break;
     case OP1_CODE:
       op1(y86, instruction,

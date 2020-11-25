@@ -9,7 +9,8 @@ PRG=./y86-sim
 
 for f in "$@"
 do
-    gold=`echo $f | sed -e 's/\.ys$/.out/'`
+  echo "testing $f"
+  gold=`echo $f | sed -e 's/\.ys$/.out/'`
 
     if [ -e $gold ]
     then
