@@ -29,42 +29,19 @@ get_nybble(Byte op, int pos) {
   return (op >> (pos * 4)) & 0xF;
 }
 
-
-// Given an entire instruction, returns that instruction's argument
-// i.e. the jump address for jump
-// i.e. the return adress for irmovq's immediate
-static Word
-get_argument(Word instruction)
-{
-  Byte opcode = get_nybble(instruction, 1), offset = 0;
-  
-  switch(opcode)
-  {
-    case CALL_CODE:
-    case Jxx_CODE:
-      offset = 1;
-      break;
-    case IRMOVQ_CODE:
-    case RMMOVQ_CODE:
-    case MRMOVQ_CODE:
-      offset = 2;
-      break;
-  }
-  
-  Word argument = 0x00000000;
-  for (int byte = offset + 4; byte > offset; byte--)
-  {
-    argument |= get_nybble(instruction, byte) << byte * 4;
-  }
-  
-  return argument;
-}
 /************************** Condition Codes ****************************/
 
 /** Conditions used in instructions */
 typedef enum {
   ALWAYS_COND, LE_COND, LT_COND, EQ_COND, NE_COND, GE_COND, GT_COND
 } Condition;
+
+/** Function to Construct a Flag Register Byte **/
+static inline Byte
+set_cc_flags(unsigned zf, unsigned sf, unsigned of)
+{
+  return ((zf<<ZF_CC) + (sf<<SF_CC) + (of<<OF_CC));
+}
 
 /** accessing condition code flags */
 static inline bool get_cc_flag(Byte cc, unsigned flagBitIndex) {
@@ -87,17 +64,40 @@ check_cc(const Y86 *y86, Byte op)
   switch (condition) {
     case ALWAYS_COND:
       ret = true;
+      //printf("always");
       break;
     case LE_COND:
       ret = (get_sf(cc) ^ get_of(cc)) | get_zf(cc);
+      //printf("le");
       break;
-    //@TODO add other cases
+    case LT_COND:
+      ret = (get_sf(cc) ^ get_of(cc));
+      //printf("lt");
+      break;
+    case EQ_COND:
+      ret = get_zf(cc);
+     // printf("eq");
+      break;
+    case NE_COND:
+      ret = !(get_zf(cc));
+     // printf("ne !(%d) = %d ", get_zf(cc), !(get_zf(cc)));
+      break;
+    case GE_COND:
+      ret = !(get_sf(cc) ^ get_of(cc));
+      //printf("ge");
+      break;
+    case GT_COND:
+      ret = !(get_sf(cc) ^ get_of(cc)) & !get_zf(cc);
+    //  printf("gt");
+      break;
     default: {
       Address pc = read_pc_y86(y86);
       fatal("%08lx: bad condition code %d\n", pc, condition);
       break;
       }
   }
+
+  //printf(" ret=%d\n", ret);
   return ret;
 }
 
@@ -113,13 +113,16 @@ isLt0(Word word) {
 static void
 set_add_arith_cc(Y86 *y86, Word opA, Word opB, Word result)
 {
-  // Set Zero, Sign, and Overflow flags
-  if (result == 0) write_cc_y86(y86, ZF_CC);
-  if (((int)result) < 0) write_cc_y86(y86, SF_CC);
-  
-  
-  if ( ((int)opA > 0 && (int)opB > 0 && (int)result < 0) || ((int)opA < 0 && (int)opB < 0 && (int)result >= 0) ) write_cc_y86(y86, OF_CC);
-  
+  signed long long R = (signed)result; // Let's be civilized, please.
+
+  Byte flags = 0;
+
+  if (R < 0) flags = set_cc_flags(0, 1, 0);
+  if (R == 0) flags = set_cc_flags(1, get_sf(flags), 0);
+  if ((opA>0 && opB>0 && result<0) || (opA<0 && opB<0 && result>0)) 
+    { flags = set_cc_flags(get_zf(flags), get_sf(flags), 1); }
+
+  write_cc_y86(y86, flags);
 }
 
 /** Set condition codes for subtraction operation with operands opA, opB
@@ -128,17 +131,49 @@ set_add_arith_cc(Y86 *y86, Word opA, Word opB, Word result)
 static void
 set_sub_arith_cc(Y86 *y86, Word opA, Word opB, Word result)
 {
-  if (result == 0) write_cc_y86(y86, ZF_CC);
-  if (((int)result) < 0) write_cc_y86(y86, SF_CC);
-  if ( ((int)opA > 0 && (int)opB > 0 && (int)result < 0) || ((int)opA < 0 && (int)opB < 0 && (int)result >= 0) ) write_cc_y86(y86, OF_CC);
+  signed long long R = (signed)result;
+  
+  Byte flags = 0;
+
+  if (opA > opB || R < 0) flags = set_cc_flags(0, 1, 0);
+  if (result == 0) flags = set_cc_flags(1, get_sf(flags), 0);
+  if ((opB>0 && opA<0 && result>0) || (opB<0 && opA>0 && result<0))
+    { flags = set_cc_flags(get_zf(flags), get_sf(flags), 1); }
+
+  write_cc_y86(y86, flags);
 }
 
 static void
 set_logic_op_cc(Y86 *y86, Word result)
 {
-  // Set Zero and Sign flags
-  if (result == 0) write_cc_y86(y86, ZF_CC);
-  if (result < 0) write_cc_y86(y86, SF_CC);
+  signed long long R = (signed)result;
+  Byte flags = 0;
+
+  if (R < 0) flags = set_cc_flags(0, 1, 0);
+  if (result == 0) flags = set_cc_flags(1, get_sf(flags), 0);
+  flags = set_cc_flags(get_zf(flags), get_sf(flags), 0);
+
+  write_cc_y86(y86, flags);
+}
+
+/********************** Conditional Operations *************************/
+// Conditional Branches, and Moves
+
+static void jmp (Y86* y86, Byte op)
+{
+  Byte function = get_nybble (op, 0);
+  
+  Address dest = read_memory_word_y86(y86, read_pc_y86(y86)+1);
+  
+//  printf("Jump func=%d dest=0x%X\n", function, dest);
+  
+  if (check_cc(y86, op)) write_pc_y86(y86, dest);
+  else write_pc_y86(y86, read_pc_y86(y86) + sizeof(Byte) + sizeof(Word));
+}
+
+static void cmov (Y86* y86, Byte op)
+{
+
 }
 
 /**************************** Operations *******************************/
@@ -155,23 +190,28 @@ op1(Y86 *y86, Byte op, Register regA, Register regB)
   
   
   // Determine which function (Add, subtract, AND, XOR)
-  // Nibble 2 contains this
-  Byte function = get_nybble(op, 2);
+  Byte function = get_nybble(op, 0);
   switch(function)
   {
     case ADDL_FN:
-      result = numA + numB;
+      result = numB + numA;
       set_add_arith_cc(y86, numA, numB, result);
+      //printf("Adding %d + %d = %d\n", numB, numA, result);
       break;
     case SUBL_FN:
-      result = numA - numB;
+      result = numB - numA;
       set_sub_arith_cc(y86, numA, numB, result);
+      //printf("Subtracting %d - %d = %d\n", numB, numA, result);
       break;
     case ANDL_FN:
-      result = numA & numB;
+      result = numB & numA;
+      set_logic_op_cc(y86, result);
+      //printf("AND %d & %d = %d\n", numB, numA, result);
       break;
     case XORL_FN:
-      result = numA ^ numB;
+      result = numB ^ numA;
+      set_logic_op_cc(y86, result);
+      //printf("XOR %d ^ %d = %d\n", numB, numA, result);
       break;
     default:
       // abbiamo un problema
@@ -191,21 +231,13 @@ op1(Y86 *y86, Byte op, Register regA, Register regB)
 void
 step_ysim(Y86 *y86)
 {
-  // Use our new method to get the instruction
-  
-
   // Get this step's instuction, opcode, and increment program counter
   Address counter = read_pc_y86(y86);
   Byte instruction = read_memory_byte_y86(y86, counter);
   Byte opcode = get_nybble(instruction, 1);
   
-  // Stop execution if there are problems
   if (read_status_y86(y86) != STATUS_AOK) return;
   
-  //print_word(instruction);
-  //print_word(opcode);
-  //printf("opcode: 0x%X\n", opcode);
- 
   /*
    * Is there a situation? If so, determine which situation.
    * If there is a situation, handle the situation
@@ -218,56 +250,56 @@ step_ysim(Y86 *y86)
   switch(opcode)
   {
     case HALT_CODE:
-      //printf("halt\n");
       write_status_y86(y86, STATUS_HLT);
       return;
     case NOP_CODE:
-      //printf("nop\n");
       write_pc_y86(y86, counter+sizeof(Byte));
-      // Do nothing
       break;
-    case CALL_CODE:	// dynamic instr fix+
-      //printf("call\n");
-      addr = read_register_y86(y86, REG_RSP);             // Get Stack Pointer
-      	// Write return address to stack
+
+
+/** Stack Modifing Instructions **/
+    case CALL_CODE:
+      addr = read_register_y86(y86, REG_RSP);
       write_memory_word_y86(y86, addr-sizeof(Word), counter + sizeof(Byte) + sizeof(Word));
-      write_register_y86(y86, REG_RSP, (Word)addr-sizeof(Word));     // decrement stack pointer
-      dest = read_memory_word_y86(y86, counter + 1);	  // Callee is in word after opcode byte instr
-      //printf("jumping to %x from %x\n", dest, counter);
-      write_pc_y86(y86, dest);                            // Set Program Counter to destination (jump)
-//      printf("calling 0x%X, saved return address 0x%X to stack 0x%X\n", dest, counter + sizeof(Byte) + sizeof(Word),addr-sizeof(Word)); 
+      write_register_y86(y86, REG_RSP, (Word)addr-sizeof(Word));
+      dest = read_memory_word_y86(y86, counter + 1);
+      write_pc_y86(y86, dest); 
       return;
     case RET_CODE:
-      addr = read_register_y86(y86, REG_RSP);             // Get Stack Pointer
-      write_register_y86(y86, REG_RSP, (Word)addr+sizeof(Word));     // Increment stack pointer
-      dest = read_memory_word_y86(y86, addr);           // Read return address from stack
-      //printf("ret to %x\n", dest);
-      write_pc_y86(y86, dest);                            // Set Program Counter to returning destination (jump)
-//      printf("ret to code at 0x%X\n", dest);
+      addr = read_register_y86(y86, REG_RSP);
+      write_register_y86(y86, REG_RSP, (Word)addr+sizeof(Word));
+      dest = read_memory_word_y86(y86, addr);
+      write_pc_y86(y86, dest);
       break;
     case POPQ_CODE:
-      a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);   // Get Dest Reg (next byte instr)
-      addr = read_register_y86(y86, REG_RSP);                    // Get Stack Pointer
-      data = read_memory_word_y86(y86, addr);       // Read data from stack
-      //write_register_y86(y86, REG_RSP, (Word)addr+sizeof(Word)); // increment stack pointer
-      write_register_y86(y86, a, data);                          // Write data to dest reg
+      a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);  // Get Dest Reg (next byte instr)
+      addr = read_register_y86(y86, REG_RSP);                   // Get Stack Pointer
+      data = read_memory_word_y86(y86, addr);                   // Read data from stack
+      write_register_y86(y86, a, data);                         // Write data to dest reg
+      write_register_y86(y86, REG_RSP, addr+sizeof(Word));      // Increment stack pointer
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
-//      printf("popq got val 0x%X from stack 0x%X saved in reg %d, rsp = 0x%X\n", data, addr, a, addr);
       break;
     case PUSHQ_CODE:
-      a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);    // Get Src Register (next byte)
-      addr = read_register_y86(y86, REG_RSP);                     // Get Stack Pointer
-      write_register_y86(y86, REG_RSP, addr-sizeof(Word));  // decrement stack pointer
-      data = read_register_y86(y86, a);                     // Read data from src reg
-      write_memory_word_y86(y86, addr-sizeof(Word), data);        // Write data to stack
+      a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);  // Get Src Register (next byte)
+      data = read_register_y86(y86, a);                         // Read data from src Reg
+      addr = read_register_y86(y86, REG_RSP);                   // Get Stack Pointer
+      write_register_y86(y86, REG_RSP, addr-sizeof(Word));      // decrement stack pointer
+      write_memory_word_y86(y86, addr-sizeof(Word), data);      // Write data to stack
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
-//      printf("pushq 0x%X to stack 0x%X, rsp = 0x%X\n", data, addr, addr-sizeof(Word));
       break;
+      
+/** Jump, OP1 (ALU) **/
+      
+    case Jxx_CODE:
+      jmp(y86, instruction);    
+      break;
+      
     case OP1_CODE:
-      op1(y86, instruction,
-        get_nybble(instruction, 3),
-        get_nybble(instruction, 4));
-      write_pc_y86(y86, counter+(2*sizeof(Byte)));
+      // Get the next pcounter byte, contains A B registers
+      a = get_nybble(read_memory_byte_y86(y86, counter + 1), 1);
+      b = get_nybble(read_memory_byte_y86(y86, counter + 1), 0);
+      op1(y86, instruction, a, b);  // Call math function
+      write_pc_y86(y86, counter+(2*sizeof(Byte)));  // jump 2 bytes down program memory
       break;
     // ECCO! BEHOLD! LOOK NO FURTHER! MOV INSTRUCTIONS GO.. YES, in THIS very spot.............!
     case CMOVxx_CODE:
@@ -292,7 +324,9 @@ step_ysim(Y86 *y86)
     case RMMOVQ_CODE: // Register-to-Memory
       a = get_nybble(read_memory_byte_y86(y86, counter + 1), 1);
 	    b = get_nybble(read_memory_byte_y86(y86, counter + 1), 0);
-	    write_memory_word_y86(y86, read_register_y86(y86, b), read_register_y86(y86, a));
+	    write_memory_word_y86(y86, 
+	        read_register_y86(y86, b), 
+	        read_register_y86(y86, a));
 	    write_pc_y86(y86, counter + 2*sizeof(Byte) + sizeof(Word));
       //printf("rmmovq \n");
       break;
@@ -305,18 +339,15 @@ step_ysim(Y86 *y86)
 	    write_register_y86(y86, b, data);
 	    
 	    write_pc_y86(y86, counter + 2*sizeof(Byte) + sizeof(Word));
-      //printf("mrmovq src=(%d) contents=0x%X from memory 0x%x to register %d\n", a, data, addr, b);
       break;
-    //END OF MOV INSTRUCTIONs........................................................
+    
     default:
       // TODO Change CPU Status on Unrecognized Instruction
       write_pc_y86(y86, counter+1); // program counter next byte
       break;
   }
-  
-  // Change Status to OK, Increment Program Counter
+
+  // Status -> OK
   write_status_y86(y86, STATUS_AOK);
-  //write_pc_y86(y86, counter+1);
-  //printf("Complete Instruction opcode: 0x%X, counter was %d, now is %d\n", opcode, counter, counter+1);
 }
 

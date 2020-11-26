@@ -1,0 +1,121 @@
+testing ./extras/abs-diff.ys
+4c4
+< rbx: 7000000000000000
+---
+> rbx: 9000000000000000
+*** ./extras/abs-diff.ys failed; see output in /home/fantona1/tmp/abs-diff.out
+testing ./extras/asumr.ys
+1c1
+< rax: cafebabedeadbeef
+---
+> rax: 0000000000000000
+4,5c4,5
+< rbx: 00000000de000000
+< rsp: 0000000000000200
+---
+> rbx: 0000000000000000
+> rsp: 00000000000001e8
+7,8c7,8
+< rsi: 0000000000000000
+< rdi: 0000000000000058
+---
+> rsi: 0000000000000008
+> rdi: 0000000000000018
+16,18c16,18
+<  pc: 0000000000000013
+< status: HLT
+< cc: Z=0 S=1 O=0
+---
+>  pc: 0000000000000079
+> status: BAD_ADDR
+> cc: Z=0 S=0 O=0
+21,36c21
+< W[000001e8]: 00000000de000000
+< W[000001e0]: 00000000000000b1
+< W[000001d8]: 0000000000ad0000
+< W[000001d0]: 00000000000000b1
+< W[000001c8]: 000000000000be00
+< W[000001c0]: 00000000000000b1
+< W[000001b8]: 00000000000000ef
+< W[000001b0]: 00000000000000b1
+< W[000001a8]: ca00000000000000
+< W[000001a0]: 00000000000000b1
+< W[00000198]: 00fe000000000000
+< W[00000190]: 00000000000000b1
+< W[00000188]: 0000ba0000000000
+< W[00000180]: 00000000000000b1
+< W[00000178]: 000000be00000000
+< W[00000170]: 00000000000000b1
+---
+> W[000001e8]: 0000000000000082
+*** ./extras/asumr.ys failed; see output in /home/fantona1/tmp/asumr.out
+testing ./extras/asum.ys
+1c1
+< rax: 0000abcdabcdabcd
+---
+> rax: 0000000000000000
+5c5
+< rsp: 0000000000000200
+---
+> rsp: 00000000000001e8
+7,8c7,8
+< rsi: 0000000000000000
+< rdi: 0000000000000038
+---
+> rsi: 0000000000000004
+> rdi: 0000000000000018
+11c11
+< r10: 0000a000a000a000
+---
+> r10: 0000000000000000
+16,18c16,18
+<  pc: 0000000000000013
+< status: HLT
+< cc: Z=1 S=0 O=0
+---
+>  pc: 000000000000006f
+> status: BAD_ADDR
+> cc: Z=0 S=0 O=0
+20a21
+> W[000001e8]: 0000000000000078
+*** ./extras/asum.ys failed; see output in /home/fantona1/tmp/asum.out
+testing ./extras/basic.ys
+testing ./extras/halt.ys
+testing ./extras/main-sum.ys
+11c11
+< rax: 0000000000000037
+---
+> rax: 000000000200f430
+15c15
+< rsp: 0000000000000200
+---
+> rsp: 00000000000001f0
+17,18c17,18
+< rsi: 0000000000000000
+< rdi: 0000000000002000
+---
+> rsi: 000000000000000a
+> rdi: 0000000000001fb0
+21c21
+< r10: 000000000000000a
+---
+> r10: 0000000000000000
+26c26
+<  pc: 0000000000000013
+---
+>  pc: 0000000000000047
+28c28
+< cc: Z=1 S=0 O=0
+---
+> cc: Z=0 S=0 O=0
+*** ./extras/main-sum.ys failed; see output in /home/fantona1/tmp/main-sum.out
+testing ./extras/mem-mov.ys
+testing ./extras/mov.ys
+testing ./extras/nops-halt.ys
+testing ./extras/popq-rsp.ys
+1c1
+< rax: 000000000000abcd
+---
+> rax: 00000000000001f8
+*** ./extras/popq-rsp.ys failed; see output in /home/fantona1/tmp/popq-rsp.out
+testing ./extras/pushq-rsp.ys
