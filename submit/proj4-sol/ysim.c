@@ -173,7 +173,18 @@ static void jmp (Y86* y86, Byte op)
 
 static void cmov (Y86* y86, Byte op)
 {
+  Byte function = get_nybble (op, 0);
+  Address pcounter = read_pc_y86 (y86);
 
+  // Are we doing the move?
+  if (!check_cc(y86, op)) return;
+
+  // The move is confirmed. Do it.
+  Byte
+  a = get_nybble(read_memory_byte_y86(y86, pcounter+1), 1),
+  b = get_nybble(read_memory_byte_y86(y86, pcounter+1), 0);
+
+  write_register_y86(y86, b, read_register_y86(y86, a));
 }
 
 /**************************** Operations *******************************/
@@ -275,8 +286,9 @@ step_ysim(Y86 *y86)
       a = get_nybble(read_memory_byte_y86(y86, counter+1), 1);  // Get Dest Reg (next byte instr)
       addr = read_register_y86(y86, REG_RSP);                   // Get Stack Pointer
       data = read_memory_word_y86(y86, addr);                   // Read data from stack
+      write_register_y86(y86, REG_RSP, addr+sizeof(Word));      // rsp++
       write_register_y86(y86, a, data);                         // Write data to dest reg
-      write_register_y86(y86, REG_RSP, addr+sizeof(Word));      // Increment stack pointer
+//      write_register_y86(y86, REG_RSP, addr+sizeof(Word));      // Increment stack pointer
       write_pc_y86(y86, counter+(2*sizeof(Byte)));
       break;
     case PUSHQ_CODE:
@@ -303,15 +315,16 @@ step_ysim(Y86 *y86)
       break;
     // ECCO! BEHOLD! LOOK NO FURTHER! MOV INSTRUCTIONS GO.. YES, in THIS very spot.............!
     case CMOVxx_CODE:
+      cmov(y86, instruction);
       // RRMOVQ
-      if (get_nybble(opcode, 1) == 0)
+      /*if (get_nybble(opcode, 1) == 0)
       {
 	      // Register-to-Register
         a = get_nybble(read_memory_byte_y86(y86, counter + 1), 1); // low nibble in next byte
 	      b = get_nybble(read_memory_byte_y86(y86, counter + 1), 0); // high nibble in next byte
 	      write_register_y86(y86, b, read_register_y86(y86, a));	// copy contents A to B
         //printf("rrmovq %d to %d\n", a, b);
-      }
+      }*/
       write_pc_y86(y86, counter + 2*sizeof(Byte));
       break;
     case IRMOVQ_CODE: // Immediate-to-Register
