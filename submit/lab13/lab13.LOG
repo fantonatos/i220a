@@ -1,0 +1,434 @@
+Script started on 2020-12-05 21:53:43-05:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="80" LINES="44"]
+]0;fantona1@remote01: .../submit/lab13[01;32mfantona1@remote01[00m:[01;34m.../submit/lab13[00m$ cd exercises/
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ ls
+block.com  block.s      key-int.lst  Makefile  poll.lst
+block.lst  key-int.com  key-int.s    poll.com  poll.s
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ cat nb[K[Kblock.s
+		#dos starts all .com programs at this offset
+		.org	0x100
+
+	        .code16
+
+#Define constants
+DOS_INT 	=       0x21
+COUNT  		=       25 
+QUIT   		= 	'q'
+DELAY_LO 	=	0x0
+DELAY_HI 	=	0x1
+
+#Entered at program startup.
+		jmp	main
+
+
+#data area	
+inChar:		.byte	0
+
+main:
+main1:	
+		call    getchar         #read input char into inChar
+		mov	inChar, %al	#al set to char read
+		cmp	$QUIT, %al	#is it a QUIT character?
+		jz	main3		#quit if got QUIT character
+		mov     $COUNT, %cx     #set output counter
+main2:  
+	        call    putchar         #output inChar to console
+		call    delay           #delay for time proportional to DELAY
+                dec	%cx             #decrement loop counter
+		jnz     main2           #loop if output counter nonzero
+		jmp     main1           #back to read next char
+main3:		call	exit
+
+#Read next char from stdin into inChar.  Quit if ^C
+getchar:
+		push	%ax
+		mov     $0x08,%ah       #specify fn: read without echo into al
+		int     $DOS_INT        #read stdin into %al
+		mov     %al,inChar      #mov char read to inChar
+		pop	%ax
+		ret
+
+#Write inChar to console	
+putchar:
+		push	%ax
+		movb    $02,%ah         #specify fn: output dl to stdout
+		movb    inChar,%dl      #char to output
+		int     $DOS_INT        #output inChar
+		pop	%ax
+		ret
+
+exit:
+		mov	$0x4c,%ah      	#specify fn: program exit
+		mov	$0x0,%al        #setup exit status
+		int	$DOS_INT        #exit program
+	
+	
+
+#spin loop for delay time proportional to value in DELAY_HI_DELAY_LO
+delay:		push	%ax
+		push	%bx
+		push	%cx
+		mov	$DELAY_HI, %bx
+delay1:		mov     $DELAY_LO, %cx
+delay2:		mov     $0x0f0a0, %ax
+	        imul    %cl
+	        dec     %cx
+	        jnz     delay2
+	        dec     %bx
+	        jnz	delay1
+	        pop	%cx
+		pop	%bx
+		pop	%ax
+		ret
+
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ cat poll.s
+		#dos starts all .com programs at this offset
+		.org	0x100
+
+	        .code16
+
+#Define constants
+DOS_INT 	=       0x21
+COUNT  		=        50
+QUIT   		= 	'q'
+DELAY_LO 	=	0x0
+DELAY_HI 	=	0x2
+
+#Entered at program startup.
+		jmp	main
+
+
+#data area	
+inChar:		.byte	0
+hasKey:		.byte   1
+
+main:
+main1:	
+		call    getchar         #read input char into inChar
+		mov	inChar, %al	#al set to char read
+		cmp	$QUIT, %al	#is it a QUIT character?
+		jz	main3		#quit if got QUIT character
+		mov     $COUNT, %cx     #set output counter
+main2:
+	        call    checkKey	#check if key has been pressed
+    mov	hasKey, %al	#put checkKey result into al
+		test	%al, %al	#non-zero if keyboard has char
+	        jz	main4           #no key press
+	        xor	%al, %al
+		mov	%al, hasKey     #reset hasKey flag
+		call	getchar         #read new input key
+main4:	
+	        call    putchar         #output inChar to console
+		call    delay           #delay for time proportional to DELAY
+                dec	%cx             #decrement loop counter
+		jnz     main2           #loop if output counter nonzero
+		jmp     main1           #back to read next char
+main3:		call	exit
+
+#Set hasKey to non-zero if key has been pressed
+checkKey:
+		push    %ax
+		movb    $0xb, %ah       #specify fn: get stdin status
+		int     $DOS_INT
+		mov     %al, hasKey     #0 iff no key pressed
+		pop     %ax
+		ret
+
+	
+
+#Read next char from stdin into inChar.  Quit if ^C
+getchar:
+		push	%ax
+		mov     $0x08,%ah       #specify fn: read without echo into al
+		int     $DOS_INT        #read stdin into %al
+
+# HARD STOP
+    cmp $QUIT, %al          # E' un alphabeto di chiudere?
+    jz exit                 # Se si, chiude!
+
+		mov     %al,inChar      #mov char read to inChar
+		pop	%ax
+		ret
+
+#Write inChar to console	
+putchar:
+		push	%ax
+		movb    $02,%ah         #specify fn: output dl to stdout
+		movb    inChar,%dl      #char to output
+		int     $DOS_INT        #output inChar
+		pop	%ax
+		ret
+
+exit:
+		mov	$0x4c,%ah      	#specify fn: program exit
+		mov	$0x0,%al        #setup exit status
+		int	$DOS_INT        #exit program
+	
+	
+
+#spin loop for delay time proportional to value in DELAY_HI_DELAY_LO
+delay:		push	%ax
+		push	%bx
+		push	%cx
+		mov	$DELAY_HI, %bx
+delay1:		mov     $DELAY_LO, %cx
+delay2:		mov     $0x0f0a0, %ax
+	        imul    %cl
+	        dec     %cx
+	        jnz     delay2
+	        dec     %bx
+	        jnz	delay1
+	        pop	%cx
+		pop	%bx
+		pop	%ax
+		ret
+
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ ls
+block.com  block.s      key-int.lst  Makefile  poll.lst
+block.lst  key-int.com  key-int.s    poll.com  poll.s
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ cat key-int.s
+		#dos starts all .com programs at this offset
+		.org	0x100
+
+	        .code16
+
+#Define constants
+DOS_INT		=       0x21  #use INT 0x21 to generate s/w interrupt to DOS
+KEY_INT 	= 	0x9   #interrupt vector # for keyboard interrupt
+CHK_INT 	= 	0x16  #
+COUNT  		=         50
+QUIT   		= 	'q'
+DELAY_LO 	=	0x0
+DELAY_HI 	=	0x2
+
+#Entered at program startup.
+		jmp	main
+
+
+#data area	
+inChar:		.byte	0
+hasKey:	        .byte   0
+intAddr:	.word   0, 0
+chkAddr:	.word   0, 0
+
+main:
+	        call    setupHandler
+main1:	
+		call    getchar         #read input char into inChar
+		mov	inChar, %al	#al set to char read
+		cmp	$QUIT, %al	#is it a QUIT character?
+		jz	main3		#quit if got QUIT character
+		mov     $COUNT, %cx     #set output counter
+main2:
+		mov	hasKey, %al	#put checkKey result into al
+		test	%al, %al	#non-zero if keyboard has char
+	        jz	main4           #no key press
+		call	getchar
+main4:	
+	        call    putchar         #output inChar to console
+		call    delay           #delay for time proportional to DELAY
+                dec	%cx             #decrement loop counter
+		jnz     main2           #loop if output counter nonzero
+		jmp     main1           #back to read next char
+main3:
+		call    resetHandler
+		call	exit
+
+#Save address of current interrupt handler for keyboard interrupt in intAddr
+#and address of bios interrupt handler in chkAddr.
+#Point keyboard interrupt to intHandler	
+setupHandler:
+		push	%ax
+		push	%bx
+		push	%dx
+		push	%es
+
+	        #save address of handler for CHK_INT in chkAddr
+		mov	$CHK_INT, %al   #int vec for checking keyboard buf
+		mov	$0x35, %ah      #specify fn to read current int vector
+		int	$DOS_INT	#interrupt vector addr in es:bx
+		mov     %bx, chkAddr    #save old int vector 
+		mov     %es, chkAddr+2  #in mem
+
+	        #save address of handler for KEY_INT in intAddr
+		mov	$KEY_INT, %al   #int vec for reading keyboard
+		mov	$0x35, %ah      #specify fn to read current int vector
+		int	$DOS_INT	#interrupt vector addr in es:bx
+		mov     %bx, intAddr    #save old int vector
+		mov     %es, intAddr+2  #in mem
+
+	        #set address of keyboard interrupt handler to intHandler
+		mov	$KEY_INT, %al   #replace int vec for reading keyboard
+		mov	$0x25, %ah      #specify fn to write int vec from dx
+		mov     $intHandler, %dx#point dx to new int handler
+		int     $DOS_INT        #set int address to ds:dx
+		pop	%es
+		pop	%dx
+		pop	%bx
+		pop	%ax
+		ret
+
+#Cleanup keyboard interrupt handler: restore to original value saved
+#in intAddr.
+resetHandler:
+		push	%ax
+		push	%dx
+		push	%ds
+		mov	$KEY_INT, %al
+		mov	$0x25, %ah
+		mov	intAddr, %dx
+		mov	intAddr + 2, %ax
+		mov	%ax, %ds
+		int     $DOS_INT        #set int address to ds:dx
+		pop	%ds
+		pop	%dx
+		pop	%ax
+		ret
+	
+#Interrupt handler for keyboard
+#stack contains ret addr + flags
+intHandler:
+		push    %ds
+		push    %ax
+		mov     %cs, %ax	#ensure ds register same as
+		mov	%ax, %ds	#cs register
+		pushf                   #save flags
+		lcall   *intAddr	#call original keyboard handler
+		mov 	$0x01, %ah	#setup for keyboard status bios call
+		pushf
+		lcall	*chkAddr	#call bios interrupt handler
+		cli			#disable interrupts
+	        jz      intHandler1     #no key available
+		mov	$0x1, %al
+	        mov     %al, hasKey     #signal we have a key
+intHandler1:	sti			#renable interrupts
+		#stack contains flags
+		pop 	%ax
+		pop	%ds
+		iret                    #special return from interrupt handler
+
+#Read next char from stdin into inChar.  Quit if ^C
+getchar:
+		push	%ax
+		mov     $0x08, %ah      #setup input function
+		int     $DOS_INT        #read stdin into %al
+		mov     %al, inChar     #mov char read to inChar
+	        xor	%al, %al
+		mov	%al, hasKey     #reset hasKey flag
+		pop	%ax
+		ret
+
+#Write inChar to console	
+putchar:
+		push	%ax
+		movb    $02,%ah         #setup output call
+		movb    inChar,%dl      #char to output
+		int     $DOS_INT        #output inChar
+		pop	%ax
+		ret
+
+exit:
+		mov	$0x4c,%ah      	#setup program exit
+		mov	$0x0,%al        #setup exit status
+		int	$DOS_INT        #exit program
+	
+	
+
+#delay loop for time proportional to value in DELAY_HI_DELAY_LO
+delay:		push	%ax
+		push	%bx
+		push	%cx
+		mov	$DELAY_HI, %bx
+delay1:		mov     $DELAY_LO, %cx
+delay2:		mov     $0x0f0a0, %ax
+	        imul    %cl
+	        dec     %cx
+	        jnz     delay2
+	        dec     %bx
+	        jnz	delay1
+	        pop	%cx
+		pop	%bx
+		pop	%ax
+		ret
+
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ ox -[K[K[Kd -x block.com
+0000000 01eb e800 0018 02a0 3c01 7471 b90e 0019
+0000020 15e8 e800 0023 7549 ebf7 e8e8 0015 b450
+0000040 cd08 a221 0102 c358 b450 8a02 0216 cd01
+0000060 5821 b4c3 b04c cd00 5021 5153 01bb b900
+0000100 0000 a0b8 f6f0 49e9 f875 754b 59f2 585b
+0000120 00c3
+0000121
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ od -x block.com[1Pblock.com[1Pblock.com[1Pblock.com[1Pblock.com block.com
+0000000 000753 164000 000030 001240 036001 072161 134416 000031
+0000020 012750 164000 000043 072511 165767 164350 000025 132120
+0000040 146410 121041 000402 141530 132120 105002 001026 146401
+0000060 054041 132303 130114 146400 050041 050523 000673 134400
+0000100 000000 120270 173360 044751 174165 072513 054762 054133
+0000120 000303
+0000121
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ od block.com-block.com[Cblock.com block.com
+0000000 353 001 000 350 030 000 240 002 001 074 161 164 016 271 031 000
+0000020 350 025 000 350 043 000 111 165 367 353 350 350 025 000 120 264
+0000040 010 315 041 242 002 001 130 303 120 264 002 212 026 002 001 315
+0000060 041 130 303 264 114 260 000 315 041 120 123 121 273 001 000 271
+0000100 000 000 270 240 360 366 351 111 165 370 113 165 362 131 133 130
+0000120 303
+0000121
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ ls
+block.com  block.s      key-int.lst  Makefile  poll.lst
+block.lst  key-int.com  key-int.s    poll.com  poll.s
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ makre[K[Ke all
+make: Nothing to be done for 'all'.
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ vmi [K[K[K[Kcat Makefile
+CC = gcc
+CFLAGS = -g -Wall -std=c11
+
+#Address at which com program starts executing in msdos.
+ORG = 256
+
+TARGETS =       block.com key-int.com poll.com
+
+all:		$(TARGETS)
+
+.SUFFIXES:      .com
+
+#Building a msdos .com using linux as.  First run as to produce standard
+#linux .o.  Then use objcopy to convert to simple binary image.  But
+#because of .org 0x100 directive, image has extra 256 bytes at start,
+#so use dd to strip off those extra bytes
+%.com:		%.s
+		as --32 -a=$*.lst $< -o $*.o
+		objcopy -O binary $*.o $*.bin
+		rm $*.o
+		dd if=$*.bin of=$@ bs=$(ORG) skip=1
+		rm $*.bin
+
+clean:
+		rm -f *.com *.lst *.o *~
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ make block
+gcc    block.s   -o block
+/usr/bin/ld: /tmp/cc9Z2Iwe.o: relocation R_X86_64_16 against `.text' can not be used when making a PIE object; recompile with -fPIC
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x20): undefined reference to `main'
+/usr/bin/ld: final link failed: invalid operation
+collect2: error: ld returned 1 exit status
+make: *** [<builtin>: block] Error 1
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ make block.com
+make: 'block.com' is up to date.
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ make block.com[K[K[K[K[K[K[K[K[Kpoll.com
+make: 'poll.com' is up to date.
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ make key-int.com
+make: 'key-int.com' is up to date.
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ # LAB COMPLETYE[K[KE,. [K[K PROPER [K[K[K[K[K[K[KCORRECT MODIFICATIONS MAD E TO COM A[K[K[K[K[K>S[K[KASSEMBLY CODEs
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ 
+]0;fantona1@remote01: .../lab13/exercises[01;32mfantona1@remote01[00m:[01;34m.../lab13/exercises[00m$ exit
+
+Script done on 2020-12-05 21:56:37-05:00 [COMMAND_EXIT_CODE="0"]
